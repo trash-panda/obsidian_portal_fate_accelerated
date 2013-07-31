@@ -4,28 +4,51 @@
 
   $ = jQuery;
 
-  ({
-    fate_core_dataPreLoad: function(options) {},
-    fate_core_dataPostLoad: function(options) {
-      return fate_core_process_skills;
-    },
-    fate_core_dataChange: function(options) {},
-    fate_core_dataPreSave: function(options) {},
-    fate_core_trim_skill_name: function(name) {
-      return name.replace(/^(\s*)'|'(\s*)$/g, '');
-    },
-    fate_core_skill_html: function(skill) {
-      return '<li>' + skill + '</li>';
-    },
-    fate_core_process_skills: function() {
-      var html, skill_container, skill_containers, skills;
-      skill_containers = $('.skills').children().children('.dsf');
-      skill_container = skill_containers.first();
-      skills = skill_container.text().split(',').map(fate_core_trim_skill_name);
-      html = '<ul>' + skills.map(fate_core_skill_html).join('') + '</ul>';
-      console.log(skills);
-      return skill_container.html(html);
+  window.fate_core_dataPreLoad = function(options) {};
+
+  window.fate_core_dataPostLoad = function(options) {
+    return fate_core_process_skills();
+  };
+
+  window.fate_core_dataChange = function(options) {};
+
+  window.fate_core_dataPreSave = function(options) {};
+
+  window.fate_core_trim_skill_name = function(name) {
+    return name.replace(/^(\s*)'|'(\s*)$/g, '');
+  };
+
+  window.fate_core_skill_html = function(skill) {
+    return '<li>' + skill + '</li>';
+  };
+
+  window.fate_core_set_skill_html = function(index, skill_container) {
+    var html, skills;
+    console.log('inside');
+    console.log(skill_container);
+    console.log(skill_container.textContent);
+    console.log(skill_container.textContent.split(','));
+    console.log(skill_container.textContent.split(',').map(fate_core_trim_skill_name));
+    console.log('before skills');
+    skills = skill_container.textContent.split(',').map(fate_core_trim_skill_name);
+    console.log('after skills');
+    console.log(skills);
+    if (skills.length < 2 && skills[0].length === 0) {
+      return true;
     }
-  });
+    html = '<ul>' + skills.map(fate_core_skill_html).join('') + '</ul>';
+    console.log('html');
+    console.log(html);
+    skill_container.innerHTML = html;
+    return console.log(skills);
+  };
+
+  window.fate_core_process_skills = function() {
+    var skill_containers;
+    skill_containers = $('.skills').children().children('.dsf');
+    console.log(skill_containers);
+    $.each(skill_containers, fate_core_set_skill_html);
+    return skill_containers;
+  };
 
 }).call(this);
