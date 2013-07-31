@@ -12,10 +12,10 @@ pan {
   display: inline-block;
   width: 100%;
 }
-.legendsofanglerrecharacter_container {
+.fate_core_container {
   width: 630px;
 }
-.legendsofanglerrecharacter_stunts {
+.fate_core_stunts {
   width: 100%;
   border: 2px solid #000;
   padding: 10px;
@@ -23,7 +23,7 @@ pan {
   -moz-border-radius: 10px; -webkit-border-radius: 10px; 
 }
 
-.legendsofanglerrecharacter_basic_info {
+.fate_core_basic_info {
   background-color: #FFF;
   padding: 10px;
   border: 2px solid #000;
@@ -32,7 +32,7 @@ pan {
   -webkit-border-radius: 10px;
 }
 
-.legendsofanglerrecharacter_skills {
+.fate_core_skills {
   padding: 10px;
   border: 2px solid #000;
   width: 100%;
@@ -41,13 +41,13 @@ pan {
   -moz-border-radius: 10px; -webkit-border-radius: 10px; 
 
 }
-.legendsofanglerrecharacter_left_column {
+.fate_core_left_column {
   width: 400px;
   margin-top: 10px;
   margin-right: 10px;
   float: left;
 }
-.legendsofanglerrecharacter_right_column {
+.fate_core_right_column {
   margin-top: 10px;
   position: relative;
   top: 0px;
@@ -58,7 +58,7 @@ pan {
 }
 
 
-.legendsofanglerrecharacter_heading_one {
+.fate_core_heading_one {
   font-weight: bold;
   font-variant: normal;
   text-transform: uppercase;
@@ -69,14 +69,14 @@ pan {
   padding: 0px;
   width: auto;
 }
-.legendsofanglerrecharacter_fate_points {
+.fate_core_fate_points {
   width: 100%;
   margin-top: 10px;
   border: 2px solid #000;
   padding: 10px;
   -moz-border-radius: 10px; -webkit-border-radius: 10px; 
 }
-.legendsofanglerrecharacter_aspects {
+.fate_core_aspects {
   padding: 10px;
   border: 2px solid #000;
   width: 100%;
@@ -89,7 +89,7 @@ pan {
 }
 
 
-.legendsofanglerrecharacter_heading_two {
+.fate_core_heading_two {
   font-weight: bold;
   font-variant: normal;
   text-transform: uppercase;
@@ -97,7 +97,7 @@ pan {
   font-size: 12px;
   margin-right: 5px;
 }
-.legendsofanglerrecharacter_title {
+.fate_core_title {
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 20px;
   font-size: 24px;
@@ -105,7 +105,7 @@ pan {
   color: #900;
 }
 
-.legendsofanglerrecharacter_bio {
+.fate_core_bio {
   padding: 10px;
   border: 2px solid #000;
   width: 100%;
@@ -117,7 +117,7 @@ pan {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-.legendsofanglerrecharacter_frame {
+.fate_core_frame {
   padding: 10px;
   border: 2px solid #000;
   width: 100%;
