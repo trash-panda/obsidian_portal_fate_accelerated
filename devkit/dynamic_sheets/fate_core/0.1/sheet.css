@@ -1,67 +1,132 @@
 /****************************
-* This is the CSS for the DST.
-* Copy and paste this directly into the CSS textarea on obsidianportal.com
-*****************************/
+ * This is the CSS for the DST.
+ * Copy and paste this directly into the CSS textarea on obsidianportal.com
+ *****************************/
 
-
-/****************************
-* Basic Info
-*****************************/
-.ds_minimal4e .level {
+pan {
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  display: inline-block;
+  width: 100%;
+}
+.legendsofanglerrecharacter_container {
+  width: 630px;
+}
+.legendsofanglerrecharacter_stunts {
+  width: 100%;
+  border: 2px solid #000;
+  padding: 10px;
+  margin-bottom: 10px;
+  -moz-border-radius: 10px; -webkit-border-radius: 10px; 
 }
 
-/****************************
-* Ability Scores
-*****************************/
-.ds_minimal4e .ability_scores {
-  margin-top: 30px;
+.legendsofanglerrecharacter_basic_info {
+  background-color: #FFF;
+  padding: 10px;
+  border: 2px solid #000;
+  width: 100%;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 
-.ds_minimal4e .ability_score {
-  clear: left;
-}
-
-.ds_minimal4e .ability_score_header span {
-  display: block;
+.legendsofanglerrecharacter_skills {
+  padding: 10px;
+  border: 2px solid #000;
+  width: 100%;
   float: left;
-  width: 120px;
+  margin: 0px;
+  -moz-border-radius: 10px; -webkit-border-radius: 10px; 
+
+}
+.legendsofanglerrecharacter_left_column {
+  width: 400px;
+  margin-top: 10px;
+  margin-right: 10px;
+  float: left;
+}
+.legendsofanglerrecharacter_right_column {
+  margin-top: 10px;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  float: right;
+  clear: right;
+  width: 200px;
+}
+
+
+.legendsofanglerrecharacter_heading_one {
   font-weight: bold;
+  font-variant: normal;
+  text-transform: uppercase;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0px;
+  width: auto;
+}
+.legendsofanglerrecharacter_fate_points {
+  width: 100%;
+  margin-top: 10px;
+  border: 2px solid #000;
+  padding: 10px;
+  -moz-border-radius: 10px; -webkit-border-radius: 10px; 
+}
+.legendsofanglerrecharacter_aspects {
+  padding: 10px;
+  border: 2px solid #000;
+  width: 100%;
+  float: left;
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  -moz-border-radius: 10px; -webkit-border-radius: 10px; 
 }
 
-.ds_minimal4e .ability_score_name {
-  display: block;
-  float: left;
-  width: 120px;
+
+.legendsofanglerrecharacter_heading_two {
   font-weight: bold;
+  font-variant: normal;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.legendsofanglerrecharacter_title {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #900;
 }
 
-.ds_minimal4e .ability_score_score {
-  display: block;
+.legendsofanglerrecharacter_bio {
+  padding: 10px;
+  border: 2px solid #000;
+  width: 100%;
   float: left;
-  width: 120px;
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
-
-.ds_minimal4e .ability_score_modifier {
-  display: block;
+.legendsofanglerrecharacter_frame {
+  padding: 10px;
+  border: 2px solid #000;
+  width: 100%;
   float: left;
-  width: 120px;
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 
-.ds_minimal4e .ability_score_modifier_plus_half_level {
-  display: block;
-  float: left;
-  width: 120px;
-}
-
-/****************************
-* Ability Scores
-*****************************/
-
-.ds_minimal4e .trained_skills {
-  margin-top: 30px;
-  clear: both;
-}
-
-.ds_minimal4e .trained_skills ul {
-  list-style-type: none;
-}
