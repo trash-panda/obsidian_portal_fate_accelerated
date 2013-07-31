@@ -2,131 +2,43 @@
  * This is the CSS for the DST.
  * Copy and paste this directly into the CSS textarea on obsidianportal.com
  *****************************/
+.basic_info {
+  border: 1px solid red; }
+  .basic_info .left_box {
+    width: 90%;
+    height: 75px; }
+  .basic_info .right_box {
+    width: 10%;
+    height: 75px;
+    float: right; }
+  .basic_info .name {
+    border: 3px solid black;
+    height: 21px; }
+  .basic_info .description {
+    border: 3px solid black;
+    height: 42px; }
+  .basic_info .refresh {
+    border: 3px solid black;
+    height: 69px; }
 
-pan {
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  display: inline-block;
-  width: 100%;
-}
-.fate_core_container {
-  width: 630px;
-}
-.fate_core_stunts {
-  width: 100%;
-  border: 2px solid #000;
-  padding: 10px;
-  margin-bottom: 10px;
-  -moz-border-radius: 10px; -webkit-border-radius: 10px; 
-}
+.core_stats {
+  clear: both;
+  border: 1px solid red;
+  height: auto; }
+  .core_stats .aspects {
+    width: 40%; }
+    .core_stats .aspects .aspect {
+      border: 3px solid black; }
+  .core_stats .skills {
+    width: 60%;
+    float: right; }
 
-.fate_core_basic_info {
-  background-color: #FFF;
-  padding: 10px;
-  border: 2px solid #000;
-  width: 100%;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-}
-
-.fate_core_skills {
-  padding: 10px;
-  border: 2px solid #000;
-  width: 100%;
-  float: left;
-  margin: 0px;
-  -moz-border-radius: 10px; -webkit-border-radius: 10px; 
-
-}
-.fate_core_left_column {
-  width: 400px;
-  margin-top: 10px;
-  margin-right: 10px;
-  float: left;
-}
-.fate_core_right_column {
-  margin-top: 10px;
-  position: relative;
-  top: 0px;
-  right: 0px;
-  float: right;
-  clear: right;
-  width: 200px;
-}
-
-
-.fate_core_heading_one {
-  font-weight: bold;
-  font-variant: normal;
-  text-transform: uppercase;
-  font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 16px;
-  margin-top: 10px;
-  margin-bottom: 0px;
-  padding: 0px;
-  width: auto;
-}
-.fate_core_fate_points {
-  width: 100%;
-  margin-top: 10px;
-  border: 2px solid #000;
-  padding: 10px;
-  -moz-border-radius: 10px; -webkit-border-radius: 10px; 
-}
-.fate_core_aspects {
-  padding: 10px;
-  border: 2px solid #000;
-  width: 100%;
-  float: left;
-  margin-top: 10px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  -moz-border-radius: 10px; -webkit-border-radius: 10px; 
-}
-
-
-.fate_core_heading_two {
-  font-weight: bold;
-  font-variant: normal;
-  text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  margin-right: 5px;
-}
-.fate_core_title {
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #900;
-}
-
-.fate_core_bio {
-  padding: 10px;
-  border: 2px solid #000;
-  width: 100%;
-  float: left;
-  margin-top: 10px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-}
-.fate_core_frame {
-  padding: 10px;
-  border: 2px solid #000;
-  width: 100%;
-  float: left;
-  margin-top: 10px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-}
-
+.things {
+  clear: both;
+  border: 1px solid red;
+  height: auto; }
+  .things .extras {
+    width: 50%; }
+  .things .stunts {
+    width: 50%;
+    float: right; }

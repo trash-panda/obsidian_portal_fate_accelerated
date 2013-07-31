@@ -1,0 +1,60 @@
+/****************************
+ * This is the CSS for the DST.
+ * Copy and paste this directly into the CSS textarea on obsidianportal.com
+ *****************************/
+
+.basic_info {
+  border: 1px solid red;
+  .left_box {
+    width: 90%;
+    height: 75px;
+  }
+  .right_box {
+    width: 10%;
+    height: 75px;
+    float: right;
+  }
+  .name {
+    border: 3px solid black;
+    height: 21px;
+  }
+  .description {
+    border: 3px solid black;
+    height: 42px;
+  }
+  .refresh {
+    border: 3px solid black;
+    height: 69px;
+  }
+}
+
+.core_stats {
+  clear:both;
+  border: 1px solid red;
+  height: auto;
+  .aspects {
+    width: 40%;
+    .aspect {
+      border: 3px solid black;
+    }
+  }
+  .skills {
+    width: 60%;
+    float: right;
+  }
+}
+
+.things {
+  clear:both;
+  border: 1px solid red;
+  height: auto;
+  .extras {
+    width: 50%;
+  }
+  .stunts {
+    width: 50%;
+    float: right;
+  }
+}
+
+
