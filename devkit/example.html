@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>DST Dev Kit</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+
+    <!-- This is where we do our magic. Take a look to get a better understanding of how to write javascript for your DST. -->
+    <script type="text/javascript" src="http://www.obsidianportal.com/assets/manifest-02b4fcde2b92220d5e08cd7d01a5e256.js"></script>
+
+
+    <!-- Load the example data. Modify this file to make sample data for your chosen system. -->
+    <script type="text/javascript" src="example_data.js"></script>
+
+    <!-- Load the CSS for the DST, replace with your own! -->
+    <link href="dynamic_sheets/example/0.1/sheet.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <!-- Load the JS for the DST, replace with your own! -->
+    <script type="text/javascript" src="dynamic_sheets/example/0.1/sheet.js"></script>
+
+  </head>
+  <body>
+    <p>
+    Below is an example dynamic character sheet. Try clicking on the values in order to edit them. This is how users will interact with a dynamic sheet.
+    </p>
+    <p>
+    If you want to make your own, make sure to <a href="http://help.obsidianportal.com/faqs/advanced/creating-a-dynamic-character-sheet-template-dst">read the tutorial</a> first. Then, just start editing the HTML in this file. Edit the sample data in <em>example_data.js</em> in order to create data that works with your chosen game system.
+    </p>
+
+    <div class="dynamic_sheet_container">
+
+      <!-- Every dynamic sheet will be surrounded by a div that has the class of "ds_DST_SLUG". In this example, the slug for my DST is 'example' -->
+      <div id="dynamic_sheet_999" class="dynamic_sheet ds_example editable">
+        <!-- This is inserted automatically. Ignore it... -->
+        <span style="display:none;" class="dst_slug">example</span>
+        <!-- 
+        Below is your HTML template.
+        Copy ONLY this section into the HTML Template textarea on Obsidian Portal. Do not copy any of the
+        surrounding HTML!
+        -->
+        <link href="styles.css" rel="stylesheet" type="text/css">
+        <div class="legendsofanglerrecharacter_container">
+          <div class="legendsofanglerrecharacter_title">Legends of Anglerre (FATE 3.0) </div>
+          <div class="legendsofanglerrecharacter_basic_info">
+            <span class="legendsofanglerrecharacter_heading_one">Campaign:</span>
+            <span class="dsf dsf_campaign"></span>
+            <br>
+            <div class="legendsofanglerrecharacter_heading_one">Player:</div><span class="dsf dsf_player"></span>
+            <div class="legendsofanglerrecharacter_heading_one">Character:</div><span class="dsf dsf_name"></span>
+            <div class="legendsofanglerrecharacter_heading_one">Occupation:</div><span class="dsf dsf_occupation"></span>
+            <div class="legendsofanglerrecharacter_heading_one">Description:</div><span class="dsf dsf_description"></span>
+          </div>
+
+          <div class="legendsofanglerrecharacter_left_column">
+
+            <div class="legendsofanglerrecharacter_skills">
+              <span class="legendsofanglerrecharacter_heading_one">Skills</span><br>
+
+              <span class="legendsofanglerrecharacter_heading_two">Legendary (+8):</span><span class="dsf dsf_skill_legendary"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">Epic (+7):</span><span class="dsf dsf_skill_epic"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">Fantastic (+6):</span><span class="dsf dsf_skill_fantastic"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">Superb (+5):</span><span class="dsf dsf_skill_superb"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">Great (+4):</span><span class="dsf dsf_skill_great"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">Good (+3):></span><span class="dsf dsf_skill_good"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">Fair (+2):</span><span class="dsf dsf_skill_fair"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">Average (+1):</span><span class="dsf dsf_skill_average"></span>
+            </div>
+
+            <div class="legendsofanglerrecharacter_aspects">
+              <span class="legendsofanglerrecharacter_heading_one">Aspects</span><br>
+              <span class="legendsofanglerrecharacter_heading_two">1. </span><span class="dsf dsf_aspect1"></span> <br>
+              <span class="legendsofanglerrecharacter_heading_two">2. </span><span class="dsf dsf_aspect2"></span> <br>
+              <span class="legendsofanglerrecharacter_heading_two">3. </span><span class="dsf dsf_aspect3"></span> <br>
+              <span class="legendsofanglerrecharacter_heading_two">4. </span><span class="dsf dsf_aspect4"></span> <br>
+              <span class="legendsofanglerrecharacter_heading_two">5. </span><span class="dsf dsf_aspect5"></span> <br>
+              <span class="legendsofanglerrecharacter_heading_two">6. </span><span class="dsf dsf_aspect6"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">7. </span><span class="dsf dsf_aspect7"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">8. </span><span class="dsf dsf_aspect8"></span> <br>
+              <span class="legendsofanglerrecharacter_heading_two">9. </span><span class="dsf dsf_aspect9"></span> <br>
+              <span class="legendsofanglerrecharacter_heading_two">10.</span><span class="dsf dsf_aspect10"></span> 
+            </div>
+
+            <div class="legendsofanglerrecharacter_frame">
+              <span class="legendsofanglerrecharacter_heading_one">equipment</span>
+              <span class="dsf dsf_character_equipment"></span>
+            </div>
+
+            <div class="legendsofanglerrecharacter_frame">
+              <span class="legendsofanglerrecharacter_heading_one">notes</span>
+              <span class="dsf dsf_character_notes"></span>
+            </div>
+
+            <div class="legendsofanglerrecharacter_bio">
+              <span class="legendsofanglerrecharacter_heading_one">Phases</span><br>
+              <span class="dsf dsf_bio"></span>
+            </div>
+          </div>
+
+          <div class="legendsofanglerrecharacter_right_column">
+            <div class="legendsofanglerrecharacter_stunts">
+              <span class="legendsofanglerrecharacter_heading_one">Stunts</span><br>
+              <span class="legendsofanglerrecharacter_heading_two">1. </span><span class="dsf dsf_stunt_01"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">2. </span><span class="dsf dsf_stunt_02"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">3. </span><span class="dsf dsf_stunt_03"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">4. </span><span class="dsf dsf_stunt_04"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">5. </span><span class="dsf dsf_stunt_05"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">6. </span><span class="dsf dsf_stunt_06"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">7. </span><span class="dsf dsf_stunt_07"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">8. </span><span class="dsf dsf_stunt_08"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">9. </span><span class="dsf dsf_stunt_09"></span><br>
+              <span class="legendsofanglerrecharacter_heading_two">10. </span><span class="dsf dsf_stunt_10"></span>
+            </div>
+
+            <div class="legendsofanglerrecharacter_fate_points">
+              <span class="legendsofanglerrecharacter_heading_one">Fate Points</span><br>
+              <span class="legendsofanglerrecharacter_heading_two">Current:</span><span class="dsf dsf_current_fate"></span></span><br>
+            <span class="legendsofanglerrecharacter_heading_two">Refresh:</span><span class="dsf dsf_refresh_fate"></span> 
+          </div>
+
+          <div class="legendsofanglerrecharacter_frame">
+            <span class="legendsofanglerrecharacter_heading_one">status</span><br>
+            <span class="legendsofanglerrecharacter_heading_two">Physical Stress</span><br>
+            <span class="dsf dsf_physicalstress_1 checkbox"></span>
+            <span class="dsf dsf_physicalstress_2 checkbox"></span>
+            <span class="dsf dsf_physicalstress_3 checkbox"></span>
+            <span class="dsf dsf_physicalstress_4 checkbox"></span>
+            <span class="dsf dsf_physicalstress_5 checkbox"></span>
+            <span class="dsf dsf_physicalstress_6 checkbox"></span>
+            <span class="dsf dsf_physicalstress_7 checkbox"></span>
+            <span class="dsf dsf_physicalstress_8 checkbox"></span>
+            <span class="dsf dsf_physicalstress_9 checkbox"></span>
+            <span class="dsf dsf_physicalstress_10 checkbox"></span><br>
+            <span class="legendsofanglerrecharacter_heading_two">Composure Stress</span><br>
+            <span class="dsf dsf_composurestress_1 checkbox"></span>
+            <span class="dsf dsf_composurestress_2 checkbox"></span>
+            <span class="dsf dsf_composurestress_3 checkbox"></span>
+            <span class="dsf dsf_composurestress_4 checkbox"></span>
+            <span class="dsf dsf_composurestress_5 checkbox"></span>
+            <span class="dsf dsf_composurestress_6 checkbox"></span>
+            <span class="dsf dsf_composurestress_7 checkbox"></span>
+            <span class="dsf dsf_composurestress_8 checkbox"></span>
+            <span class="dsf dsf_composurestress_9 checkbox"></span>
+            <span class="dsf dsf_composurestress_10 checkbox"></span><br>
+            <div class="legendsofanglerrecharacter_heading_one">Consequences</div>
+            <span class="legendsofanglerrecharacter_heading_two">Minor (2)</span><br>
+            <span class="dsf dsf_minor_consequence"></span><br>
+            <span class="legendsofanglerrecharacter_heading_two">Major (4)</span><br>
+            <span class="dsf dsf_major_consequence"></span><br>
+            <span class="legendsofanglerrecharacter_heading_two">Severe (6)</span><br>
+            <span class="dsf dsf_severe_consequence"></span><br>
+            <span class="legendsofanglerrecharacter_heading_two">Extreme (8)</span><br>
+            <span class="dsf dsf_extreme_consequence"></span>
+
+
+          </div>
+
+
+
+          <div class="legendsofanglerrecharacter_frame">
+            <span class="legendsofanglerrecharacter_heading_one">armor</span><br>
+            <span class="legendsofanglerrecharacter_heading_two">Type</span><br>
+            <span class="dsf dsf_armor_type"></span><br>
+            <span class="legendsofanglerrecharacter_heading_two">Aspects</span><br>
+            <span class="dsf dsf_armor_aspects"></span><br>
+            <span class="legendsofanglerrecharacter_heading_two">Bonus</span><br>
+            <span class="dsf dsf_armor_bonus"></span><br>
+            <div class="legendsofanglerrecharacter_heading_one">Consequences</div>
+            <span class="legendsofanglerrecharacter_heading_two">Minor (2)</span><br>
+            <span class="dsf dsf_armor_minor_consequence"></span><br>
+            <span class="legendsofanglerrecharacter_heading_two">Major (4)</span><br>
+            <span class="dsf dsf_armor_major_consequence"></span><br>
+            <span class="legendsofanglerrecharacter_heading_two">Severe (6)</span><br>
+            <span class="dsf dsf_armor_severe_consequence"></span><br>
+            <span class="legendsofanglerrecharacter_heading_two">Extreme (8)</span><br>
+            <span class="dsf dsf_armor_extreme_consequence"></span>
+          </div>
+
+        </div>
+
+
+
+        <div class="legendsofanglerrecharacter_frame">
+          <span class="dsf dsf_dst_author"></span>
+        </div>
+      </div>
+      <!-- End HTML Template - Don't copy anything below here into the template! -->
+    </div> <!-- ds_example -->
+  </div> <!-- dynamic_sheet_container -->
+  <br/><br/>
+
+  <button id="character-save-button">Save</button>
+  <br/>
+  <p>
+  Right here is a hidden &lt;div&gt; that holds the data values that will be saved to the server. Click the save button and then examine the DOM (using Firebug) to see what will be sent.
+  </p>
+  <div id="dynamic_sheet_values" style="display:none;"></div>
+</body>
+</html>
