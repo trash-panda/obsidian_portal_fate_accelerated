@@ -11,18 +11,40 @@
   };
 
   window.fate_core_dataChange = function(options) {
-    return fate_core_update_skill(options['fieldName'], options['fieldValue']);
+    return fate_core_update_skill(options);
   };
 
   window.fate_core_dataPreSave = function(options) {};
 
-  window.fate_core_find_rank_skills = function(rank) {
-    var empty_count, i, new_li, new_span, skill, skills, _i, _len;
+  window.fate_core_create_new_skill = function(rank, i, content) {
+    var li, span;
+    if (content == null) {
+      content = '';
+    }
+    i = "00" + i.toString();
+    li = document.createElement('li');
+    span = document.createElement('span');
+    span.textContent = content;
+    span.classList.add("skill_" + rank);
+    span.classList.add('dsf');
+    span.classList.add("dsf_skill_" + rank + "_" + (i.slice(-2)));
+    li.appendChild(span);
+    return li;
+  };
+
+  window.fate_core_update_skill = function(opts) {
+    var empty_count, i, match, name, new_li, rank, skill, skills, value, _i, _len;
+    name = opts['fieldName'];
+    value = opts['fieldValue'];
+    match = name.match(/skill_(\w+)_(\d\d)/);
+    if (!match) {
+      return;
+    }
+    rank = match[1];
     skills = $(".skill_" + rank);
     empty_count = 0;
     for (_i = 0, _len = skills.length; _i < _len; _i++) {
       skill = skills[_i];
-      console.log(skill.innerText);
       if (empty_count > 0) {
         skill.parentNode.remove();
       } else {
@@ -32,64 +54,37 @@
       }
     }
     if (empty_count === 0) {
-      console.log(skills[0]);
-      console.log(skills[0].parentNode);
-      console.log(skills[0].parentNode.parentNode);
-      new_li = document.createElement('li');
-      new_span = document.createElement('span');
-      new_span.classList.add("skill_" + rank);
-      new_span.classList.add('dsf');
-      i = '00' + skills.length.toString();
-      new_span.classList.add("dsf_skill_" + rank + "_" + (i.slice(-2)));
-      new_li.appendChild(new_span);
+      i = skills.length.toString();
+      new_li = fate_core_create_new_skill(rank, i);
       skills[0].parentNode.parentNode.appendChild(new_li);
     }
-    return console.log(empty_count);
-  };
-
-  window.fate_core_update_skill = function(name, value) {
-    var initial_value, match, skill, skills;
-    match = name.match(/skill_(\w+)_(\d\d)/);
-    if (match) {
-      skills = fate_core_find_rank_skills(match[1]);
-      console.log(name);
-      console.log(value);
-      skill = $('.dsf_' + name)[0];
-      initial_value = skill.innerText;
-      console.log(initial_value);
-      console.log(skill);
-      if (!value) {
-        return console.log('this is blank');
-      }
-    }
-  };
-
-  window.fate_core_skill_html = function(skill, rank, i) {
-    i = "00" + i.toString();
-    return "<li><span class='skill_" + rank + " dsf dsf_skill_" + rank + "_" + (i.slice(-2)) + "'>" + skill + "</span></li>";
+    return aisleten.characters.bindAllFields(opts['slug'], opts['containerId']);
   };
 
   window.fate_core_render_skills = function() {
-    var holder, html, i, rank, s, value, _i, _len, _ref;
+    var holder, i, li, rank, s, ul, value, _ref, _results;
     _ref = this.skills;
+    _results = [];
     for (rank in _ref) {
       value = _ref[rank];
       if (value[value.length - 1] || value.length === 0) {
         value.push('');
       }
-      console.log(rank);
-      console.log(value);
       holder = $('.skill.' + rank).children('.skill_holder')[0];
-      html = '<ul>';
-      for (i = _i = 0, _len = value.length; _i < _len; i = ++_i) {
-        s = value[i];
-        html = html + fate_core_skill_html(s, rank, i);
-        console.log(html);
-      }
-      html = html + '</ul>';
-      holder.innerHTML = html;
+      ul = document.createElement('ul');
+      _results.push((function() {
+        var _i, _len, _results1;
+        _results1 = [];
+        for (i = _i = 0, _len = value.length; _i < _len; i = ++_i) {
+          s = value[i];
+          li = fate_core_create_new_skill(rank, i, s);
+          ul.appendChild(li);
+          _results1.push(holder.appendChild(ul));
+        }
+        return _results1;
+      })());
     }
-    return console.log('skills rendered');
+    return _results;
   };
 
   window.fate_core_load_skills = function() {
