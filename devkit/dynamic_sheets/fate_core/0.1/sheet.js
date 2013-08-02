@@ -10,12 +10,23 @@
     return fate_core_load_skills();
   };
 
-  window.fate_core_dataChange = function(options) {};
+  window.fate_core_dataChange = function(options) {
+    return fate_core_update_skill(options['fieldName'], options['fieldValue']);
+  };
 
   window.fate_core_dataPreSave = function(options) {};
 
-  window.fate_core_trim_skill_name = function(name) {
-    return name.replace(/^(\s*)'|'(\s*)$/g, '');
+  window.fate_core_update_skill = function(name, value) {
+    var initial_value, skill;
+    console.log(name);
+    console.log(value);
+    skill = $('.dsf_' + name)[0];
+    initial_value = skill.innerText;
+    console.log(initial_value);
+    console.log(skill);
+    if (!value) {
+      return console.log('this is blank');
+    }
   };
 
   window.fate_core_skill_html = function(skill, rank, i) {
@@ -23,34 +34,14 @@
     return '<li><span class="dsf dsf_skill_' + rank + '_' + i.slice(-2) + '">' + skill + '</span></li>';
   };
 
-  window.fate_core_load_skills = function() {
-    var holder, html, i, key, match, rank, s, skills, value, _i, _len, _results;
-    skills = {
-      'average': [],
-      'fair': [],
-      'good': [],
-      'great': [],
-      'superb': []
-    };
-    for (key in dynamic_sheet_attrs) {
-      value = dynamic_sheet_attrs[key];
-      match = key.match(/skill_(\w+)_(\d\d)/);
-      if (match) {
-        console.log('matched');
-        console.log(match[1]);
-        console.log(match[2]);
-        if (skills[match[1]]) {
-          skills[match[1]].push(value);
-        } else {
-          skills[match[1]] = [value];
-        }
+  window.fate_core_render_skills = function() {
+    var holder, html, i, rank, s, value, _i, _len, _ref;
+    _ref = this.skills;
+    for (rank in _ref) {
+      value = _ref[rank];
+      if (value[value.length - 1] || value.length === 0) {
+        value.push('');
       }
-    }
-    console.log(skills);
-    _results = [];
-    for (rank in skills) {
-      value = skills[rank];
-      value.push('');
       console.log(rank);
       console.log(value);
       holder = $('.skill.' + rank).children('.skill_holder')[0];
@@ -61,39 +52,31 @@
       }
       html = html + '</ul>';
       holder.innerHTML = html;
-      console.log(html);
-      _results.push(console.log(holder));
     }
-    return _results;
+    return console.log('skills rendered');
   };
 
-  window.fate_core_set_skill_html = function(index, skill_container) {
-    var html, skills;
-    console.log('inside');
-    console.log(skill_container);
-    console.log(skill_container.textContent);
-    console.log(skill_container.textContent.split(','));
-    console.log(skill_container.textContent.split(',').map(fate_core_trim_skill_name));
-    console.log('before skills');
-    skills = skill_container.textContent.split(',').map(fate_core_trim_skill_name);
-    console.log('after skills');
-    console.log(skills);
-    if (skills.length < 2 && skills[0].length === 0) {
-      return true;
+  window.fate_core_load_skills = function() {
+    var key, match, value;
+    this.skills = {
+      'average': [],
+      'fair': [],
+      'good': [],
+      'great': [],
+      'superb': []
+    };
+    for (key in dynamic_sheet_attrs) {
+      value = dynamic_sheet_attrs[key];
+      match = key.match(/skill_(\w+)_(\d\d)/);
+      if (match) {
+        if (this.skills[match[1]]) {
+          this.skills[match[1]].push(value);
+        } else {
+          this.skills[match[1]] = [value];
+        }
+      }
     }
-    html = '<ul>' + skills.map(fate_core_skill_html).join('') + '</ul>';
-    console.log('html');
-    console.log(html);
-    skill_container.innerHTML = html;
-    return console.log(skills);
-  };
-
-  window.fate_core_process_skills = function() {
-    var skill_containers;
-    skill_containers = $('.skills').children().children('.dsf');
-    console.log(skill_containers);
-    $.each(skill_containers, fate_core_set_skill_html);
-    return skill_containers;
+    return fate_core_render_skills();
   };
 
 }).call(this);
