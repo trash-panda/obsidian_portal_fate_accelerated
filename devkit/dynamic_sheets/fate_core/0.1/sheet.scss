@@ -41,6 +41,23 @@
   .skills {
     width: 60%;
     float: right;
+    .skill {
+      padding: 3px 20px;
+      ul {
+        display:inline;
+        list-style: none;
+        li {
+          display:inline;
+          border: 3px solid black;
+          margin:0px 3px;
+          span {
+            display: inline-block;
+            width: 100px;
+          }
+        }
+      }
+
+    }
   }
 }
 

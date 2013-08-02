@@ -9,6 +9,8 @@
  # Copy and paste this directly into the javascript textarea on obsidianportal.com
 $ = jQuery
 
+#window.fate_core_convert_skills = () ->
+  #$('.skill')
 window.fate_core_dataPreLoad = (options) ->
   # Called just before the data is loaded.
   #alert("dataPreLoad")
@@ -16,7 +18,8 @@ window.fate_core_dataPreLoad = (options) ->
 window.fate_core_dataPostLoad = (options) ->
   # Called just after the data is loaded.
   #alert("dataPostLoad")
-  fate_core_process_skills()
+  #fate_core_process_skills()
+  fate_core_load_skills()
 
 window.fate_core_dataChange = (options) ->
   # Called immediately after a data value is changed.
@@ -31,9 +34,37 @@ window.fate_core_dataPreSave = (options) ->
 window.fate_core_trim_skill_name = (name) ->
   name.replace(/^(\s*)'|'(\s*)$/g, '')
 
-window.fate_core_skill_html = (skill) ->
-  '<li>' + skill + '</li>'
+window.fate_core_skill_html = (skill, rank, i) ->
+  i = "00" + i.toString()
+  '<li><span class="dsf dsf_skill_'+rank+'_'+i.slice(-2)+'">' + skill + '</span></li>'
 
+window.fate_core_load_skills = () ->
+  skills = {'average':[], 'fair':[], 'good':[],'great':[], 'superb':[]}
+  for key, value of dynamic_sheet_attrs
+    match = key.match(/skill_(\w+)_(\d\d)/)
+    if match
+      console.log 'matched'
+      console.log match[1]
+      console.log match[2]
+      if skills[match[1]]
+        skills[match[1]].push(value)
+      else
+        skills[match[1]] = [value]
+  console.log skills
+  for rank, value of skills
+    # Add an extra blank cell for borders and to add into
+    value.push('')
+    console.log rank
+    console.log value
+    holder = $('.skill.'+rank).children('.skill_holder')[0]
+    html = '<ul>'
+    for s, i in value
+      html = html + fate_core_skill_html(s, rank, i)
+    html = html + '</ul>'
+    holder.innerHTML = html
+    console.log html
+    console.log holder
+  
 window.fate_core_set_skill_html = (index, skill_container) ->
   console.log 'inside'
   console.log skill_container

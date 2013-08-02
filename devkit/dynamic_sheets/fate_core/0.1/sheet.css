@@ -32,6 +32,18 @@
   .core_stats .skills {
     width: 60%;
     float: right; }
+    .core_stats .skills .skill {
+      padding: 3px 20px; }
+      .core_stats .skills .skill ul {
+        display: inline;
+        list-style: none; }
+        .core_stats .skills .skill ul li {
+          display: inline;
+          border: 3px solid black;
+          margin: 0px 3px; }
+          .core_stats .skills .skill ul li span {
+            display: inline-block;
+            width: 100px; }
 
 .things {
   clear: both;

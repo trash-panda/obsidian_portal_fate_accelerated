@@ -9,5 +9,14 @@ var dynamic_sheet_attrs = {
   "your_adventure" : "I can fix anything",
   "crossing_paths" : "Helps the little man",
   "crossing_paths_again" : "I can make friends with anyone",
-  "skills_fair" : "'crafts', 'notice'"
+  //"skills" : { 
+    //"average" : [],
+    //"fair" : ['drive', 'notice', 'shoot' ],
+    //"good" : [],
+    //'great' : [],
+    //'superb' : ['crafts']
+  //},
+  "skill_average_00" : 'drive',
+  'skill_average_01' : 'shoot',
+  "skill_great_00" : "deceive"
 };
