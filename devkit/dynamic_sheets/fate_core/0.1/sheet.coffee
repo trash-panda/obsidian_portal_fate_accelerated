@@ -29,18 +29,46 @@ window.fate_core_dataPreSave = (options) ->
 
 # You can define your own variables...just make sure to namespace them!
 
+window.fate_core_find_rank_skills = (rank) ->
+  skills = $(".skill_#{rank}")
+  empty_count = 0
+  for skill in skills
+    console.log skill.innerText
+    if empty_count > 0
+      skill.parentNode.remove()
+    else
+      empty_count++ if skill.innerText == aisleten.characters.jeditablePlaceholder or skill.innerText == ''
+  if empty_count == 0
+    console.log skills[0]
+    console.log skills[0].parentNode
+    console.log skills[0].parentNode.parentNode
+    new_li = document.createElement('li')
+    new_span = document.createElement('span')
+    new_span.classList.add("skill_#{rank}")
+    new_span.classList.add('dsf')
+    i = '00' + skills.length.toString()
+    new_span.classList.add("dsf_skill_#{rank}_#{i.slice(-2)}")
+    new_li.appendChild(new_span)
+
+    skills[0].parentNode.parentNode.appendChild(new_li)
+
+  console.log empty_count
+
 window.fate_core_update_skill = (name, value) ->
-  console.log name
-  console.log value
-  skill = $('.dsf_'+name)[0]
-  initial_value = skill.innerText
-  console.log initial_value
-  console.log skill
-  unless value
-    console.log 'this is blank'
+  match = name.match(/skill_(\w+)_(\d\d)/)
+  if match
+    skills = fate_core_find_rank_skills(match[1])
+    console.log name
+    console.log value
+    skill = $('.dsf_'+name)[0]
+    initial_value = skill.innerText
+    console.log initial_value
+    console.log skill
+    unless value
+      console.log 'this is blank'
 window.fate_core_skill_html = (skill, rank, i) ->
   i = "00" + i.toString()
-  '<li><span class="dsf dsf_skill_'+rank+'_'+i.slice(-2)+'">' + skill + '</span></li>'
+  "<li><span class='skill_#{rank} dsf dsf_skill_#{rank}_#{i.slice(-2)}'>#{skill}</span></li>"
 
 window.fate_core_render_skills = () ->
   for rank, value of @skills
@@ -52,6 +80,7 @@ window.fate_core_render_skills = () ->
     html = '<ul>'
     for s, i in value
       html = html + fate_core_skill_html(s, rank, i)
+      console.log html
     html = html + '</ul>'
     holder.innerHTML = html
   console.log 'skills rendered'
