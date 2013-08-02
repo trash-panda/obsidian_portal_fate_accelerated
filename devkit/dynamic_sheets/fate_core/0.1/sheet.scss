@@ -4,6 +4,10 @@
  *****************************/
 
 .ds_fate_core {
+  .sheet_boundary {
+    border: 1px solid blue;
+    width: 730px;
+  }
   .container {
     margin: 5px;
   }
@@ -12,6 +16,7 @@
     margin-bottom: 5px;
   }
   .header.left {
+    float:none;
     color: white;
     background: -webkit-linear-gradient(315deg, transparent 7px, #000000 5px, #000000 100%);
     padding-left: 10px;
@@ -26,23 +31,25 @@
   .logo {
     border: 1px solid red;
     float: right;
-    width: 300px;
+    width: 215px;
     height: 75px;
   }
   .basic_info {
     border: 1px solid red;
+    width: 492px;
+    height: 90px;
     .header.left {
-      width: 600px;
+      width: 394px;
     }
     .header.right {
       width: 100px;
     }
     .left_box {
-      width: 600px;
+      width: 423px;
       height: 75px;
     }
     .right_box {
-      width: 100px;
+      width: 67px;
       height: 75px;
       float: right;
     }

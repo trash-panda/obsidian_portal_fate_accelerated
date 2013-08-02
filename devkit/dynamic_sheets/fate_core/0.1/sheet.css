@@ -2,12 +2,16 @@
  * This is the CSS for the DST.
  * Copy and paste this directly into the CSS textarea on obsidianportal.com
  *****************************/
+.ds_fate_core .sheet_boundary {
+  border: 1px solid blue;
+  width: 730px; }
 .ds_fate_core .container {
   margin: 5px; }
 .ds_fate_core .header {
   background: black;
   margin-bottom: 5px; }
 .ds_fate_core .header.left {
+  float: none;
   color: white;
   background: -webkit-linear-gradient(315deg, transparent 7px, black 5px, black 100%);
   padding-left: 10px;
@@ -20,19 +24,21 @@
 .ds_fate_core .logo {
   border: 1px solid red;
   float: right;
-  width: 300px;
+  width: 215px;
   height: 75px; }
 .ds_fate_core .basic_info {
-  border: 1px solid red; }
+  border: 1px solid red;
+  width: 492px;
+  height: 90px; }
   .ds_fate_core .basic_info .header.left {
-    width: 600px; }
+    width: 394px; }
   .ds_fate_core .basic_info .header.right {
     width: 100px; }
   .ds_fate_core .basic_info .left_box {
-    width: 600px;
+    width: 423px;
     height: 75px; }
   .ds_fate_core .basic_info .right_box {
-    width: 100px;
+    width: 67px;
     height: 75px;
     float: right; }
   .ds_fate_core .basic_info .name {
