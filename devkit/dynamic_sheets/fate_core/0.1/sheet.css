@@ -10,6 +10,21 @@
 .ds_fate_core .header {
   background: black;
   margin-bottom: 5px; }
+.ds_fate_core tr.header {
+  background: none; }
+.ds_fate_core td.header {
+  width: 100%; }
+.ds_fate_core td.header.left {
+  float: none;
+  color: white;
+  background: -webkit-linear-gradient(315deg, transparent 7px, black 5px, black 100%);
+  padding-left: 10px;
+  font-style: bold;
+  width: 90%; }
+.ds_fate_core td.header.right {
+  background: -webkit-linear-gradient(135deg, transparent 7px, black 5px, black 100%);
+  float: none;
+  width: 10%; }
 .ds_fate_core .header.left {
   float: none;
   color: white;
@@ -51,29 +66,34 @@
     border: 3px solid black;
     height: 69px; }
 .ds_fate_core .core_stats {
-  clear: both;
   border: 1px solid red;
   height: auto; }
   .ds_fate_core .core_stats .aspects {
-    width: 40%; }
+    width: 280px;
+    border: 1px solid green; }
     .ds_fate_core .core_stats .aspects .aspect {
       border: 3px solid black; }
-  .ds_fate_core .core_stats .skills {
-    width: 60%;
-    float: right;
-    margin-left: 10px; }
-    .ds_fate_core .core_stats .skills .skill {
-      padding: 3px 20px; }
-      .ds_fate_core .core_stats .skills .skill ul {
+  .ds_fate_core .core_stats table.skills {
+    width: 400px;
+    margin-left: 10px;
+    border: 1px solid green;
+    padding: 3px 20px; }
+    .ds_fate_core .core_stats table.skills tr.skill {
+      margin-left: 0px; }
+      .ds_fate_core .core_stats table.skills tr.skill span {
+        display: inline-block; }
+      .ds_fate_core .core_stats table.skills tr.skill .skill_holder {
+        display: inline-block; }
+    .ds_fate_core .core_stats table.skills ul {
+      display: inline;
+      list-style: none; }
+      .ds_fate_core .core_stats table.skills ul li {
         display: inline;
-        list-style: none; }
-        .ds_fate_core .core_stats .skills .skill ul li {
-          display: inline;
-          border: 3px solid black;
-          margin: 0px 3px; }
-          .ds_fate_core .core_stats .skills .skill ul li span {
-            display: inline-block;
-            width: 100px; }
+        border: 3px solid black;
+        margin: 0px 3px; }
+        .ds_fate_core .core_stats table.skills ul li span {
+          display: inline-block;
+          width: 70px; }
 .ds_fate_core .things {
   clear: both;
   border: 1px solid red;

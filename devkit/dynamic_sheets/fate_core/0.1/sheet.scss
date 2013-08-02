@@ -15,6 +15,25 @@
     background: black;
     margin-bottom: 5px;
   }
+  tr.header {
+    background:none;
+  }
+  td.header {
+    width: 100%;
+  }
+  td.header.left {
+    float:none;
+    color: white;
+    background: -webkit-linear-gradient(315deg, transparent 7px, #000000 5px, #000000 100%);
+    padding-left: 10px;
+    font-style: bold;
+    width: 90%;
+  }
+  td.header.right {
+    background: -webkit-linear-gradient(135deg, transparent 7px, #000000 5px, #000000 100%);
+    float:none;
+    width: 10%;
+  }
   .header.left {
     float:none;
     color: white;
@@ -68,35 +87,41 @@
   }
 
   .core_stats {
-    clear:both;
     border: 1px solid red;
     height: auto;
     .aspects {
-      width: 40%;
+      width: 280px;
+      border: 1px solid green;
       .aspect {
         border: 3px solid black;
       }
     }
-    .skills {
-      width: 60%;
-      float: right;
+    table.skills {
+      width: 400px;
       margin-left: 10px;
-      .skill {
-        padding: 3px 20px;
-        ul {
+      border: 1px solid green;
+      tr.skill {
+        margin-left: 0px;
+        span {
+          display: inline-block;
+        }
+        .skill_holder {
+          display: inline-block;
+        }
+      }
+      padding: 3px 20px;
+      ul {
+        display:inline;
+        list-style: none;
+        li {
           display:inline;
-          list-style: none;
-          li {
-            display:inline;
-            border: 3px solid black;
-            margin:0px 3px;
-            span {
-              display: inline-block;
-              width: 100px;
-            }
+          border: 3px solid black;
+          margin:0px 3px;
+          span {
+            display: inline-block;
+            width: 70px;
           }
         }
-
       }
     }
   }
