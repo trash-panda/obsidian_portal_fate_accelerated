@@ -2,55 +2,78 @@
  * This is the CSS for the DST.
  * Copy and paste this directly into the CSS textarea on obsidianportal.com
  *****************************/
-.basic_info {
+.ds_fate_core .container {
+  margin: 5px; }
+.ds_fate_core .header {
+  background: black;
+  margin-bottom: 5px; }
+.ds_fate_core .header.left {
+  color: white;
+  background: -webkit-linear-gradient(315deg, transparent 7px, black 5px, black 100%);
+  padding-left: 10px;
+  font-style: bold;
+  width: 90%; }
+.ds_fate_core .header.right {
+  background: -webkit-linear-gradient(135deg, transparent 7px, black 5px, black 100%);
+  float: right;
+  width: 10%; }
+.ds_fate_core .logo {
+  border: 1px solid red;
+  float: right;
+  width: 300px;
+  height: 75px; }
+.ds_fate_core .basic_info {
   border: 1px solid red; }
-  .basic_info .left_box {
-    width: 90%;
+  .ds_fate_core .basic_info .header.left {
+    width: 600px; }
+  .ds_fate_core .basic_info .header.right {
+    width: 100px; }
+  .ds_fate_core .basic_info .left_box {
+    width: 600px;
     height: 75px; }
-  .basic_info .right_box {
-    width: 10%;
+  .ds_fate_core .basic_info .right_box {
+    width: 100px;
     height: 75px;
     float: right; }
-  .basic_info .name {
+  .ds_fate_core .basic_info .name {
     border: 3px solid black;
     height: 21px; }
-  .basic_info .description {
+  .ds_fate_core .basic_info .description {
     border: 3px solid black;
     height: 42px; }
-  .basic_info .refresh {
+  .ds_fate_core .basic_info .refresh {
     border: 3px solid black;
     height: 69px; }
-
-.core_stats {
+.ds_fate_core .core_stats {
   clear: both;
   border: 1px solid red;
   height: auto; }
-  .core_stats .aspects {
+  .ds_fate_core .core_stats .aspects {
     width: 40%; }
-    .core_stats .aspects .aspect {
+    .ds_fate_core .core_stats .aspects .aspect {
       border: 3px solid black; }
-  .core_stats .skills {
+  .ds_fate_core .core_stats .skills {
     width: 60%;
-    float: right; }
-    .core_stats .skills .skill {
+    float: right;
+    margin-left: 10px; }
+    .ds_fate_core .core_stats .skills .skill {
       padding: 3px 20px; }
-      .core_stats .skills .skill ul {
+      .ds_fate_core .core_stats .skills .skill ul {
         display: inline;
         list-style: none; }
-        .core_stats .skills .skill ul li {
+        .ds_fate_core .core_stats .skills .skill ul li {
           display: inline;
           border: 3px solid black;
           margin: 0px 3px; }
-          .core_stats .skills .skill ul li span {
+          .ds_fate_core .core_stats .skills .skill ul li span {
             display: inline-block;
             width: 100px; }
-
-.things {
+.ds_fate_core .things {
   clear: both;
   border: 1px solid red;
   height: auto; }
-  .things .extras {
+  .ds_fate_core .things .extras {
     width: 50%; }
-  .things .stunts {
+  .ds_fate_core .things .stunts {
     width: 50%;
     float: right; }
