@@ -6,7 +6,7 @@
 .ds_fate_core {
   .sheet_boundary {
     border: 1px solid blue;
-    width: 730px;
+    width: 728px;
   }
   .container {
     margin: 5px;
@@ -26,7 +26,7 @@
     color: white;
     background: -webkit-linear-gradient(315deg, transparent 7px, #000000 5px, #000000 100%);
     padding-left: 10px;
-    font-style: bold;
+    font-weight: bold;
     width: 90%;
   }
   td.header.right {
@@ -39,7 +39,7 @@
     color: white;
     background: -webkit-linear-gradient(315deg, transparent 7px, #000000 5px, #000000 100%);
     padding-left: 10px;
-    font-style: bold;
+    font-weight: bold;
     width: 90%;
   }
   .header.right {
@@ -56,7 +56,8 @@
   .basic_info {
     border: 1px solid red;
     width: 492px;
-    height: 90px;
+    //height: 90px;
+    height: auto;
     .header.left {
       width: 394px;
     }
@@ -86,56 +87,45 @@
     }
   }
 
-  .core_stats {
-    border: 1px solid red;
-    height: auto;
-    .aspects {
-      width: 280px;
-      border: 1px solid green;
-      .aspect {
-        border: 3px solid black;
-      }
-    }
-    table.skills {
-      width: 400px;
-      margin-left: 10px;
-      border: 1px solid green;
-      tr.skill {
-        margin-left: 0px;
-        span {
-          display: inline-block;
-        }
-        .skill_holder {
-          display: inline-block;
-        }
-      }
-      padding: 3px 20px;
-      ul {
-        display:inline;
-        list-style: none;
-        li {
-          display:inline;
-          border: 3px solid black;
-          margin:0px 3px;
-          span {
-            display: inline-block;
-            width: 70px;
-          }
-        }
-      }
+  .aspects {
+    width: 700px;
+    border: 1px solid green;
+    .aspect {
+      border: 3px solid black;
     }
   }
-
-  .things {
-    clear:both;
-    border: 1px solid red;
-    height: auto;
-    .extras {
-      width: 50%;
+  table.skills {
+    width: 720px;
+    border: 1px solid green;
+    tr.skill {
+      height: 30px;
+      span {
+        display: inline-block;
+      }
+      .skill_holder {
+        display: inline-block;
+      }
+      td.title {
+        width:120px;
+        text-align:right;
+      }
     }
-    .stunts {
-      width: 50%;
-      float: right;
+    ul {
+      display:inline;
+      list-style: none;
+      margin-left: -40px;
+      li.inactive {
+        border: 3px solid grey;
+      }
+      li {
+        display:inline;
+        border: 3px solid black;
+        margin:0px 3px;
+        span {
+          display: inline-block;
+          width: 81px;
+        }
+      }
     }
   }
 }

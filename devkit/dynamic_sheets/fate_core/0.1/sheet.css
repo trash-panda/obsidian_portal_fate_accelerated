@@ -4,7 +4,7 @@
  *****************************/
 .ds_fate_core .sheet_boundary {
   border: 1px solid blue;
-  width: 730px; }
+  width: 728px; }
 .ds_fate_core .container {
   margin: 5px; }
 .ds_fate_core .header {
@@ -19,7 +19,7 @@
   color: white;
   background: -webkit-linear-gradient(315deg, transparent 7px, black 5px, black 100%);
   padding-left: 10px;
-  font-style: bold;
+  font-weight: bold;
   width: 90%; }
 .ds_fate_core td.header.right {
   background: -webkit-linear-gradient(135deg, transparent 7px, black 5px, black 100%);
@@ -30,7 +30,7 @@
   color: white;
   background: -webkit-linear-gradient(315deg, transparent 7px, black 5px, black 100%);
   padding-left: 10px;
-  font-style: bold;
+  font-weight: bold;
   width: 90%; }
 .ds_fate_core .header.right {
   background: -webkit-linear-gradient(135deg, transparent 7px, black 5px, black 100%);
@@ -44,7 +44,7 @@
 .ds_fate_core .basic_info {
   border: 1px solid red;
   width: 492px;
-  height: 90px; }
+  height: auto; }
   .ds_fate_core .basic_info .header.left {
     width: 394px; }
   .ds_fate_core .basic_info .header.right {
@@ -65,41 +65,33 @@
   .ds_fate_core .basic_info .refresh {
     border: 3px solid black;
     height: 69px; }
-.ds_fate_core .core_stats {
-  border: 1px solid red;
-  height: auto; }
-  .ds_fate_core .core_stats .aspects {
-    width: 280px;
-    border: 1px solid green; }
-    .ds_fate_core .core_stats .aspects .aspect {
-      border: 3px solid black; }
-  .ds_fate_core .core_stats table.skills {
-    width: 400px;
-    margin-left: 10px;
-    border: 1px solid green;
-    padding: 3px 20px; }
-    .ds_fate_core .core_stats table.skills tr.skill {
-      margin-left: 0px; }
-      .ds_fate_core .core_stats table.skills tr.skill span {
-        display: inline-block; }
-      .ds_fate_core .core_stats table.skills tr.skill .skill_holder {
-        display: inline-block; }
-    .ds_fate_core .core_stats table.skills ul {
+.ds_fate_core .aspects {
+  width: 700px;
+  border: 1px solid green; }
+  .ds_fate_core .aspects .aspect {
+    border: 3px solid black; }
+.ds_fate_core table.skills {
+  width: 720px;
+  border: 1px solid green; }
+  .ds_fate_core table.skills tr.skill {
+    height: 30px; }
+    .ds_fate_core table.skills tr.skill span {
+      display: inline-block; }
+    .ds_fate_core table.skills tr.skill .skill_holder {
+      display: inline-block; }
+    .ds_fate_core table.skills tr.skill td.title {
+      width: 120px;
+      text-align: right; }
+  .ds_fate_core table.skills ul {
+    display: inline;
+    list-style: none;
+    margin-left: -40px; }
+    .ds_fate_core table.skills ul li.inactive {
+      border: 3px solid grey; }
+    .ds_fate_core table.skills ul li {
       display: inline;
-      list-style: none; }
-      .ds_fate_core .core_stats table.skills ul li {
-        display: inline;
-        border: 3px solid black;
-        margin: 0px 3px; }
-        .ds_fate_core .core_stats table.skills ul li span {
-          display: inline-block;
-          width: 70px; }
-.ds_fate_core .things {
-  clear: both;
-  border: 1px solid red;
-  height: auto; }
-  .ds_fate_core .things .extras {
-    width: 50%; }
-  .ds_fate_core .things .stunts {
-    width: 50%;
-    float: right; }
+      border: 3px solid black;
+      margin: 0px 3px; }
+      .ds_fate_core table.skills ul li span {
+        display: inline-block;
+        width: 81px; }
