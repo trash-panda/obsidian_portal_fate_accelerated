@@ -9,14 +9,32 @@
   };
 
   window.fate_core_dataPostLoad = function(options) {
-    return fate_core_mark_used_skills();
+    fate_core_mark_used_skills();
+    return fate_core_set_stress();
   };
 
   window.fate_core_dataChange = function(options) {
-    return fate_core_update_skill(options);
+    fate_core_update_skill(options);
+    return fate_core_update_stress(options);
   };
 
   window.fate_core_dataPreSave = function(options) {};
+
+  window.fate_core_set_stress = function() {
+    var listing, listings, stress, _i, _len, _results;
+    listings = $('.stress.group');
+    _results = [];
+    for (_i = 0, _len = listings.length; _i < _len; _i++) {
+      listing = listings[_i];
+      stress = listing.children[1];
+      if (stress.innerText.trim().length === 0) {
+        _results.push(stress.innerText = "_");
+      } else {
+        _results.push(void 0);
+      }
+    }
+    return _results;
+  };
 
   window.fate_core_set_placeholder = function() {
     return aisleten.characters.jeditablePlaceholder = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -36,6 +54,20 @@
       }
     }
     return _results;
+  };
+
+  window.fate_core_update_stress = function(opts) {
+    var match, name, stress, value;
+    name = opts['fieldName'];
+    value = opts['fieldValue'];
+    match = name.match(/(\w+)_stress_(\d\d)/);
+    if (!match) {
+      return;
+    }
+    stress = $(".dsf_" + name).first();
+    if (stress.text() === aisleten.characters.jeditablePlaceholder || stress.text() === '') {
+      return stress.text('_');
+    }
   };
 
   window.fate_core_update_skill = function(opts) {

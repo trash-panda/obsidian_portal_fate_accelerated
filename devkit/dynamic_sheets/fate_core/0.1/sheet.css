@@ -3,7 +3,6 @@
  * Copy and paste this directly into the CSS textarea on obsidianportal.com
  *****************************/
 .ds_fate_core .sheet_boundary {
-  border: 1px solid blue;
   width: 728px; }
 .ds_fate_core .container {
   margin: 5px; }
@@ -37,12 +36,10 @@
   float: right;
   width: 10%; }
 .ds_fate_core .logo {
-  border: 1px solid red;
   float: right;
   width: 215px;
   height: 75px; }
 .ds_fate_core .basic_info {
-  border: 1px solid red;
   width: 492px;
   height: auto; }
   .ds_fate_core .basic_info .header.left {
@@ -50,29 +47,75 @@
   .ds_fate_core .basic_info .header.right {
     width: 100px; }
   .ds_fate_core .basic_info .left_box {
-    width: 423px;
+    width: 402px;
     height: 75px; }
   .ds_fate_core .basic_info .right_box {
-    width: 67px;
+    width: 85px;
     height: 75px;
     float: right; }
   .ds_fate_core .basic_info .name {
-    border: 3px solid black;
-    height: 21px; }
+    border: 2px solid black;
+    height: 21px;
+    background: lightgray;
+    margin-bottom: 3px; }
+    .ds_fate_core .basic_info .name span.title {
+      background: white;
+      text-align: right;
+      width: 105px;
+      height: 21px;
+      font-weight: bold;
+      float: left;
+      padding-right: 3px; }
+    .ds_fate_core .basic_info .name span.dsf {
+      padding-left: 3px; }
   .ds_fate_core .basic_info .description {
-    border: 3px solid black;
-    height: 42px; }
+    border: 2px solid black;
+    height: 42px;
+    background: lightgray; }
+    .ds_fate_core .basic_info .description span.title {
+      background: white;
+      text-align: right;
+      width: 105px;
+      height: 42px;
+      font-weight: bold;
+      float: left;
+      padding-right: 3px; }
+    .ds_fate_core .basic_info .description span.dsf {
+      padding-left: 3px; }
   .ds_fate_core .basic_info .refresh {
-    border: 3px solid black;
-    height: 69px; }
+    border: 2px solid black;
+    height: 72px;
+    background: lightgray; }
+    .ds_fate_core .basic_info .refresh span.title {
+      background: white;
+      text-align: right;
+      width: 76px;
+      height: 21px;
+      font-weight: bold;
+      float: left;
+      padding-right: 3px; }
+    .ds_fate_core .basic_info .refresh span.dsf {
+      padding-left: 3px;
+      font-size: 2em;
+      width: 76px;
+      align: center; }
 .ds_fate_core .aspects {
-  width: 700px;
-  border: 1px solid green; }
+  width: 720px; }
   .ds_fate_core .aspects .aspect {
-    border: 3px solid black; }
+    border: 2px solid black;
+    margin: 3px 0px;
+    background: lightgray; }
+    .ds_fate_core .aspects .aspect span.title {
+      background: white;
+      text-align: right;
+      width: 200px;
+      font-weight: bold;
+      float: left;
+      padding-right: 3px; }
+    .ds_fate_core .aspects .aspect span.dsf {
+      padding-left: 3px; }
 .ds_fate_core table.skills {
-  width: 720px;
-  border: 1px solid green; }
+  width: 720px; }
   .ds_fate_core table.skills tr.skill {
     height: 30px; }
     .ds_fate_core table.skills tr.skill span {
@@ -80,18 +123,66 @@
     .ds_fate_core table.skills tr.skill .skill_holder {
       display: inline-block; }
     .ds_fate_core table.skills tr.skill td.title {
-      width: 120px;
-      text-align: right; }
+      font-weight: bold;
+      width: 112px;
+      text-align: right;
+      padding-left: 0px;
+      padding-right: 2px; }
+    .ds_fate_core table.skills tr.skill td.skill_holder {
+      padding-left: 0px; }
   .ds_fate_core table.skills ul {
     display: inline;
     list-style: none;
-    margin-left: -40px; }
+    margin-left: 0px;
+    margin-right: 0px; }
     .ds_fate_core table.skills ul li.inactive {
-      border: 3px solid grey; }
+      border: 2px solid grey; }
     .ds_fate_core table.skills ul li {
       display: inline;
-      border: 3px solid black;
+      border: 2px solid black;
       margin: 0px 3px; }
       .ds_fate_core table.skills ul li span {
         display: inline-block;
-        width: 81px; }
+        width: 84px; }
+.ds_fate_core .stress_container {
+  width: 350px; }
+.ds_fate_core .stress table {
+  margin-bottom: 5px; }
+.ds_fate_core .stress .group {
+  padding: 0px 5px;
+  margin: 5px 5px;
+  border: 2px solid black;
+  height: 20px; }
+.ds_fate_core .stress .inactive {
+  border: 2px solid grey;
+  color: grey; }
+.ds_fate_core .stress td .label {
+  width: 5px;
+  font-weight: bold;
+  font-size: 1.5em;
+  position: relative;
+  top: -15px;
+  left: -10px; }
+.ds_fate_core .stress td span.dsf {
+  position: relative;
+  left: 0px;
+  top: -26px; }
+.ds_fate_core .consequences {
+  width: 350px;
+  margin-top: 0px;
+  float: right; }
+  .ds_fate_core .consequences .consequence {
+    height: 20px;
+    margin: 12px 0px;
+    border: 2px solid black; }
+    .ds_fate_core .consequences .consequence .label {
+      position: relative;
+      left: -10px;
+      top: -15px;
+      font-size: 1.5em;
+      font-weight: bold; }
+    .ds_fate_core .consequences .consequence span.dsf {
+      /*float: left;*/
+      position: relative;
+      left: 10px;
+      top: -28px; }

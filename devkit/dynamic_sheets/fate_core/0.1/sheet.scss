@@ -5,7 +5,6 @@
 
 .ds_fate_core {
   .sheet_boundary {
-    border: 1px solid blue;
     width: 728px;
   }
   .container {
@@ -48,13 +47,11 @@
     width: 10%;
   }
   .logo {
-    border: 1px solid red;
     float: right;
     width: 215px;
     height: 75px;
   }
   .basic_info {
-    border: 1px solid red;
     width: 492px;
     //height: 90px;
     height: auto;
@@ -65,38 +62,92 @@
       width: 100px;
     }
     .left_box {
-      width: 423px;
+      width: 402px;
       height: 75px;
     }
     .right_box {
-      width: 67px;
+      width: 85px;
       height: 75px;
       float: right;
     }
     .name {
-      border: 3px solid black;
+      border: 2px solid black;
       height: 21px;
+      background: lightgray;
+      margin-bottom: 3px;
+      span.title {
+        background: white;
+        text-align: right;
+        width: 105px;
+        height: 21px;
+        font-weight: bold;
+        float:left;
+        padding-right: 3px;
+      }
+      span.dsf {
+        padding-left: 3px;
+      }
     }
     .description {
-      border: 3px solid black;
+      border: 2px solid black;
       height: 42px;
+      background: lightgray;
+      span.title {
+        background: white;
+        text-align: right;
+        width: 105px;
+        height: 42px;
+        font-weight: bold;
+        float:left;
+        padding-right: 3px;
+      }
+      span.dsf {
+        padding-left: 3px;
+      }
     }
     .refresh {
-      border: 3px solid black;
-      height: 69px;
+      border: 2px solid black;
+      height: 72px;
+      background: lightgray;
+      span.title {
+        background: white;
+        text-align: right;
+        width: 76px;
+        height: 21px;
+        font-weight: bold;
+        float:left;
+        padding-right: 3px;
+      }
+      span.dsf {
+        padding-left: 3px;
+        font-size: 2em;
+        width: 76px;
+        align: center;
+      }
     }
   }
 
   .aspects {
-    width: 700px;
-    border: 1px solid green;
+    width: 720px;
     .aspect {
-      border: 3px solid black;
+      border: 2px solid black;
+      margin: 3px 0px;
+      background: lightgray;
+      span.title {
+        background: white;
+        text-align: right;
+        width: 200px;
+        font-weight: bold;
+        float:left;
+        padding-right: 3px;
+      }
+      span.dsf {
+        padding-left: 3px;
+      }
     }
   }
   table.skills {
     width: 720px;
-    border: 1px solid green;
     tr.skill {
       height: 30px;
       span {
@@ -106,25 +157,90 @@
         display: inline-block;
       }
       td.title {
-        width:120px;
+        font-weight: bold;
+        width:112px;
         text-align:right;
+        padding-left:0px;
+        padding-right:2px;
+      }
+      td.skill_holder {
+        padding-left:0px;
       }
     }
     ul {
       display:inline;
       list-style: none;
-      margin-left: -40px;
+      margin-left: 0px;
+      margin-right: 0px;
       li.inactive {
-        border: 3px solid grey;
+        border: 2px solid grey;
       }
       li {
         display:inline;
-        border: 3px solid black;
+        border: 2px solid black;
         margin:0px 3px;
         span {
           display: inline-block;
-          width: 81px;
+          width: 84px;
         }
+      }
+    }
+  }
+  .stress_container {
+    width: 350px;
+  }
+  .stress {
+    table {
+      margin-bottom: 5px;
+    }
+    .group {
+      padding: 0px 5px;
+      margin: 5px 5px;
+      border: 2px solid black;
+      height: 20px;
+    }
+    .inactive {
+      border: 2px solid grey;
+      color:grey;
+    }
+    td {
+      .label {
+        width: 5px;
+        font-weight: bold;
+        font-size: 1.5em;
+        position: relative;
+        top: -15px;
+        left: -10px;
+      }
+
+      span.dsf {
+        position:relative;
+        left: 0px;
+        top: -26px;
+      }
+    }
+  }
+  .consequences {
+    width: 350px;
+    margin-top: 0px;
+
+    float:right;
+    .consequence {
+      height: 20px;
+      margin: 12px 0px;
+      border: 2px solid black;
+      .label {
+        position: relative;
+        left: -10px;
+        top: -15px;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      span.dsf {
+        /*float: left;*/
+        position:relative;
+        left:10px;
+        top: -28px;
       }
     }
   }
