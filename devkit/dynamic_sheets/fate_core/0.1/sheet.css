@@ -2,6 +2,11 @@
  * This is the CSS for the DST.
  * Copy and paste this directly into the CSS textarea on obsidianportal.com
  *****************************/
+.ds_fate_core.editable .activator {
+  display: block; }
+
+.ds_fate_core .activator {
+  display: none; }
 .ds_fate_core .sheet_boundary {
   width: 728px; }
 .ds_fate_core .container {
@@ -38,7 +43,12 @@
 .ds_fate_core .logo {
   float: right;
   width: 215px;
-  height: 75px; }
+  height: 100px;
+  background: dimgray;
+  margin-bottom: 4px;
+  border-radius: 3px; }
+  .ds_fate_core .logo img {
+    margin: 10px; }
 .ds_fate_core .basic_info {
   width: 492px;
   height: auto; }
@@ -89,7 +99,7 @@
     .ds_fate_core .basic_info .refresh span.title {
       background: white;
       text-align: right;
-      width: 76px;
+      width: 78px;
       height: 21px;
       font-weight: bold;
       float: left;
@@ -146,27 +156,30 @@
         width: 84px; }
 .ds_fate_core .stress_container {
   width: 350px; }
-.ds_fate_core .stress table {
+.ds_fate_core .stress table.stress {
   margin-bottom: 5px; }
 .ds_fate_core .stress .group {
   padding: 0px 5px;
   margin: 5px 5px;
+  height: 20px;
+  width: 15px; }
+.ds_fate_core .stress .active {
   border: 2px solid black;
-  height: 20px; }
+  color: black; }
 .ds_fate_core .stress .inactive {
   border: 2px solid grey;
   color: grey; }
-.ds_fate_core .stress td .label {
+.ds_fate_core .stress td .group .label {
   width: 5px;
   font-weight: bold;
   font-size: 1.5em;
   position: relative;
   top: -15px;
-  left: -10px; }
-.ds_fate_core .stress td span.dsf {
+  left: -15px; }
+.ds_fate_core .stress td .group span.dsf {
   position: relative;
-  left: 0px;
-  top: -26px; }
+  left: -3px;
+  top: -29px; }
 .ds_fate_core .consequences {
   width: 350px;
   margin-top: 0px;

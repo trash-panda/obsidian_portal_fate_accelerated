@@ -11,20 +11,17 @@ $ = jQuery
 
 window.fate_core_dataPreLoad = (options) ->
   # Called just before the data is loaded.
-  #alert("dataPreLoad")
   fate_core_set_placeholder()
 
 window.fate_core_dataPostLoad = (options) ->
   # Called just after the data is loaded.
-  #alert("dataPostLoad")
   fate_core_mark_used_skills()
-  fate_core_set_stress()
+  fate_core_set_active_stress()
 
 window.fate_core_dataChange = (options) ->
   # Called immediately after a data value is changed.
-  # alert("dataChange. " + options['fieldName'] + " = " + options['fieldValue'])
   fate_core_update_skill(options)
-  fate_core_update_stress(options)
+  fate_core_update_active_stress(options)
 
 window.fate_core_dataPreSave = (options) ->
   # Called just before the data is saved to the server.
@@ -32,12 +29,15 @@ window.fate_core_dataPreSave = (options) ->
 
 # You can define your own variables...just make sure to namespace them!
 
-window.fate_core_set_stress = () ->
-  listings = $('.stress.group')
-  for listing in listings
-    stress = listing.children[1]
-    if stress.innerText.trim().length == 0
-      stress.innerText = "_"
+window.fate_core_set_active_stress = () ->
+  stresses = $('td.stress')
+  for entry in stresses
+    group = entry.children[0]
+    activator = entry.children[1].children[0].children[0]
+    if activator.value == '0'
+      group.classList.add('inactive')
+    else
+      group.classList.add('active')
 
 window.fate_core_set_placeholder = () ->
   aisleten.characters.jeditablePlaceholder = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
@@ -49,14 +49,18 @@ window.fate_core_mark_used_skills = () ->
     if content.length > 0
       listing.className = 'skill'
 
-window.fate_core_update_stress = (opts) ->
+window.fate_core_update_active_stress = (opts) ->
   name = opts['fieldName']
   value = opts['fieldValue']
-  match = name.match(/(\w+)_stress_(\d\d)/)
-  return unless  match
-  stress = $(".dsf_#{name}").first()
-  if stress.text() == aisleten.characters.jeditablePlaceholder or stress.text() == ''
-    stress.text('_')
+  match = name.match(/(\w+)_stress_(\d\d)_active/)
+  return unless match
+  stress = $(".dsf_#{match[1]}_stress_#{match[2]}")
+  if value == "1"
+    stress.parent().addClass('active')
+    stress.parent().removeClass('inactive')
+  else
+    stress.parent().addClass('inactive')
+    stress.parent().removeClass('active')
 
 window.fate_core_update_skill = (opts) ->
   name = opts['fieldName']
