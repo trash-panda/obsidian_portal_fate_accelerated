@@ -94,7 +94,7 @@
       padding-left: 3px; }
   .ds_fate_core .basic_info .refresh {
     border: 2px solid black;
-    height: 72px;
+    height: 70px;
     background: lightgray; }
     .ds_fate_core .basic_info .refresh span.title {
       background: white;
@@ -105,10 +105,12 @@
       float: left;
       padding-right: 3px; }
     .ds_fate_core .basic_info .refresh span.dsf {
-      padding-left: 3px;
-      font-size: 2em;
+      font-size: 3em;
       width: 76px;
-      align: center; }
+      position: relative;
+      left: 29px;
+      bottom: 6px;
+      font-weight: bold; }
 .ds_fate_core .aspects {
   width: 720px; }
   .ds_fate_core .aspects .aspect {
@@ -153,33 +155,35 @@
       margin: 0px 3px; }
       .ds_fate_core table.skills ul li span {
         display: inline-block;
-        width: 84px; }
+        width: 84px;
+        padding-left: 2px; }
 .ds_fate_core .stress_container {
   width: 350px; }
-.ds_fate_core .stress table.stress {
+.ds_fate_core table.stress {
   margin-bottom: 5px; }
-.ds_fate_core .stress .group {
-  padding: 0px 5px;
-  margin: 5px 5px;
-  height: 20px;
-  width: 15px; }
-.ds_fate_core .stress .active {
-  border: 2px solid black;
-  color: black; }
-.ds_fate_core .stress .inactive {
-  border: 2px solid grey;
-  color: grey; }
-.ds_fate_core .stress td .group .label {
-  width: 5px;
-  font-weight: bold;
-  font-size: 1.5em;
-  position: relative;
-  top: -15px;
-  left: -15px; }
-.ds_fate_core .stress td .group span.dsf {
-  position: relative;
-  left: -3px;
-  top: -29px; }
+  .ds_fate_core table.stress .group {
+    padding: 0px 5px;
+    margin: 5px 5px;
+    height: 20px;
+    width: 15px; }
+  .ds_fate_core table.stress .active {
+    border: 2px solid black;
+    color: black; }
+  .ds_fate_core table.stress .inactive {
+    border: 2px solid darkgrey;
+    color: darkgrey; }
+  .ds_fate_core table.stress td .group .label {
+    width: 5px;
+    font-weight: bold;
+    font-size: 2em;
+    position: relative;
+    top: -20px;
+    left: -15px;
+    z-index: 1; }
+  .ds_fate_core table.stress td .group span.dsf {
+    position: relative;
+    left: -3px;
+    top: -38px; }
 .ds_fate_core .consequences {
   width: 350px;
   margin-top: 0px;
@@ -187,15 +191,31 @@
   .ds_fate_core .consequences .consequence {
     height: 20px;
     margin: 12px 0px;
-    border: 2px solid black; }
+    border: 2px solid black;
+    background: lightgray; }
     .ds_fate_core .consequences .consequence .label {
       position: relative;
       left: -10px;
-      top: -15px;
-      font-size: 1.5em;
-      font-weight: bold; }
-    .ds_fate_core .consequences .consequence span.dsf {
-      /*float: left;*/
+      top: -23px;
+      font-size: 2em;
+      font-weight: bold;
+      z-index: 1; }
+    .ds_fate_core .consequences .consequence span.title {
+      display: block;
+      padding-right: 3px;
+      text-align: right;
+      height: 20px;
+      width: 65px;
       position: relative;
-      left: 10px;
-      top: -28px; }
+      left: 0px;
+      top: -43px;
+      font-weight: bold;
+      background: white; }
+    .ds_fate_core .consequences .consequence span.dsf {
+      position: relative;
+      left: 72px;
+      top: -62px; }
+.ds_fate_core .credits {
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%; }

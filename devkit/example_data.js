@@ -3,6 +3,7 @@
 var dynamic_sheet_attrs = {
   "name" : "Jimbob",
   "player" : "<a href='http://www.obsidianportal.com/profile/crimsonknave'>Joseph</a>",
+  "description" : "This is my guy",
   "campaign" : "<a href='http://www.obsidianportal.com/campaign/dawn-of-a-red-sun'>Dawn of a Red Sun</a>",
   "concept" : "Country Boy",
   "trouble" : "Doesn't know when to stop",

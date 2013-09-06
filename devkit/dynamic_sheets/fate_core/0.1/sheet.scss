@@ -123,7 +123,7 @@
     }
     .refresh {
       border: 2px solid black;
-      height: 72px;
+      height: 70px;
       background: lightgray;
       span.title {
         background: white;
@@ -135,10 +135,12 @@
         padding-right: 3px;
       }
       span.dsf {
-        padding-left: 3px;
-        font-size: 2em;
+        font-size: 3em;
         width: 76px;
-        align: center;
+        position: relative;
+        left: 29px;
+        bottom: 6px;
+        font-weight: bold;
       }
     }
   }
@@ -198,6 +200,7 @@
         span {
           display: inline-block;
           width: 84px;
+          padding-left: 2px;
         }
       }
     }
@@ -205,10 +208,8 @@
   .stress_container {
     width: 350px;
   }
-  .stress {
-    table.stress {
-      margin-bottom: 5px;
-    }
+  table.stress {
+    margin-bottom: 5px;
     .group {
       padding: 0px 5px;
       margin: 5px 5px;
@@ -220,23 +221,24 @@
       color: black;
     }
     .inactive {
-      border: 2px solid grey;
-      color:grey;
+      border: 2px solid darkgrey;
+      color:darkgrey;
     }
     td {
       .group {
         .label {
           width: 5px;
           font-weight: bold;
-          font-size: 1.5em;
+          font-size: 2em;
           position: relative;
-          top: -15px;
+          top: -20px;
           left: -15px;
+          z-index:1;
         }
         span.dsf {
           position:relative;
           left: -3px;
-          top: -29px;
+          top: -38px;
         }
       }
     }
@@ -250,20 +252,38 @@
       height: 20px;
       margin: 12px 0px;
       border: 2px solid black;
+      background: lightgray;
       .label {
         position: relative;
         left: -10px;
-        top: -15px;
-        font-size: 1.5em;
+        top: -23px;
+        font-size: 2em;
         font-weight: bold;
+        z-index:1;
+      }
+      span.title {
+        display: block;
+        padding-right: 3px;
+        text-align: right;
+        height: 20px;
+        width: 65px;
+        position:relative;
+        left:0px;
+        top: -43px;
+        font-weight: bold;
+        background: white;
       }
       span.dsf {
-        /*float: left;*/
         position:relative;
-        left:10px;
-        top: -28px;
+        left: 72px;
+        top: -62px;
       }
     }
+  }
+  .credits {
+    margin-left: auto;
+    margin-right: auto;
+    width:45%;
   }
 }
 
