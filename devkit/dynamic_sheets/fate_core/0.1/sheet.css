@@ -214,7 +214,8 @@
     .ds_fate_core .consequences .consequence span.dsf {
       position: relative;
       left: 72px;
-      top: -62px; }
+      top: -62px;
+      z-index: 1; }
 .ds_fate_core .credits {
   margin-left: auto;
   margin-right: auto;
