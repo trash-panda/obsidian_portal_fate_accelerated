@@ -5,6 +5,13 @@
 .ds_fate_core.editable .activator {
   display: block; }
 
+.ds_fate_core form.jeditable_input {
+  z-index: 1; }
+  .ds_fate_core form.jeditable_input input {
+    z-index: 1; }
+  .ds_fate_core form.jeditable_input button {
+    z-index: 1;
+    position: relative; }
 .ds_fate_core .activator {
   display: none; }
 .ds_fate_core .sheet_boundary {
