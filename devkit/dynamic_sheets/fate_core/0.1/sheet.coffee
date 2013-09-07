@@ -45,7 +45,7 @@ window.fate_core_set_placeholder = () ->
 window.fate_core_mark_used_skills = () ->
   listings = $('.skill.inactive')
   for listing in listings
-    content = listing.children[0].innerText.trim()
+    content = listing.childNodes[1].innerHTML.trim()
     if content.length > 0
       listing.className = 'skill'
 

@@ -47,7 +47,7 @@
     _results = [];
     for (_i = 0, _len = listings.length; _i < _len; _i++) {
       listing = listings[_i];
-      content = listing.children[0].innerText.trim();
+      content = listing.childNodes[1].innerHTML.trim();
       if (content.length > 0) {
         _results.push(listing.className = 'skill');
       } else {
