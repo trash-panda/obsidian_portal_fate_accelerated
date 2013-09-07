@@ -11,7 +11,8 @@
     z-index: 1; }
   .ds_fate_core form.jeditable_input button {
     z-index: 1;
-    position: relative; }
+    position: relative;
+    width: 35px; }
 .ds_fate_core .activator {
   display: none; }
 .ds_fate_core .sheet_boundary {
