@@ -1,104 +1,294 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-  <title>DST Dev Kit</title>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
-  
-  <!-- This is where we do our magic. Take a look to get a better understanding of how to write javascript for your DST. -->
-  <script type="text/javascript" src="http://www.obsidianportal.com/assets/manifest-02b4fcde2b92220d5e08cd7d01a5e256.js"></script>
+  <head>
+    <title>DST Dev Kit</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
 
-  
-  <!-- Load the example data. Modify this file to make sample data for your chosen system. -->
-  <script type="text/javascript" src="example_data.js"></script>
-  
-  <!-- Load the CSS for the DST, replace with your own! -->
-  <link href="dynamic_sheets/minimal4e/0.1/sheet.css" media="screen" rel="stylesheet" type="text/css" />
-  
-  <!-- Load the JS for the DST, replace with your own! -->
-  <script type="text/javascript" src="dynamic_sheets/minimal4e/0.1/sheet.js"></script>
-  
-</head>
-<body>
-  <p>
+    <!-- This is where we do our magic. Take a look to get a better understanding of how to write javascript for your DST. -->
+    <script type="text/javascript" src="http://www.obsidianportal.com/assets/manifest-02b4fcde2b92220d5e08cd7d01a5e256.js"></script>
+
+
+    <!-- Load the example data. Modify this file to make sample data for your chosen system. -->
+    <script type="text/javascript" src="example_data.js"></script>
+
+    <!-- Load the CSS for the DST, replace with your own! -->
+    <link href="dynamic_sheets/fate_core/sheet.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <!-- Load the JS for the DST, replace with your own! -->
+    <script type="text/javascript" src="dynamic_sheets/fate_core/sheet.js"></script>
+
+  </head>
+  <body>
+    <p>
     Below is an example dynamic character sheet. Try clicking on the values in order to edit them. This is how users will interact with a dynamic sheet.
-  </p>
-  <p>
+    </p>
+    <p>
     If you want to make your own, make sure to <a href="http://help.obsidianportal.com/faqs/advanced/creating-a-dynamic-character-sheet-template-dst">read the tutorial</a> first. Then, just start editing the HTML in this file. Edit the sample data in <em>example_data.js</em> in order to create data that works with your chosen game system.
-  </p>
-  
-  <div class="dynamic_sheet_container">
-  
-    <!-- Every dynamic sheet will be surrounded by a div that has the class of "ds_DST_SLUG". In this example, the slug for my DST is 'minimal4e' -->
-    <div id="dynamic_sheet_999" class="dynamic_sheet ds_minimal4e editable">
-      <!-- This is inserted automatically. Ignore it... -->
-      <span style="display:none;" class="dst_slug">minimal4e</span>
-      <!-- 
-      Below is your HTML template.
-      Copy ONLY this section into the HTML Template textarea on Obsidian Portal. Do not copy any of the
-      surrounding HTML!
-      -->
-      <div class="basic_info">
-        <h3>Basic Info</h3>
-        <div class="name">
-          <span>Name:</span>
-          <span class="dsf dsf_name"></span>
-        </div>
-        <div class="player">
-          <span>Player:</span>
-          <span class="dsf dsf_player"></span>
-        </div>
-        <div class="campaign">
-          <span>Campaign:</span>
-          <span class="dsf dsf_campaign"></span>
-        </div>
-        <div class="level">
-          <span>Level:</span>
-          <span class="dsf dsf_level"></span>
-        </div>
-      </div>
+    </p>
 
-      <div class="ability_scores">
-        <h3>Ability Scores</h3>
-        <div class="ability_score_header">
-          <span>Ability</span>
-          <span>Score</span>
-          <span>Mod</span>
-          <span>Mod + 1/2 Level</span>
+    <div class="dynamic_sheet_container">
+
+      <!-- Every dynamic sheet will be surrounded by a div that has the class of "ds_DST_SLUG". In this example, the slug for my DST is 'example' -->
+      <div id="dynamic_sheet_999" class="dynamic_sheet ds_fate_core editable">
+        <!-- This is inserted automatically. Ignore it... -->
+        <span style="display:none;" class="dst_slug">fate_core</span>
+        <!-- 
+        Below is your HTML template.
+        Copy ONLY this section into the HTML Template textarea on Obsidian Portal. Do not copy any of the
+        surrounding HTML!
+        -->
+        <!--
+        You are reading the source of my DST, awesome.  I highly recommend looking at the github for it (https://github.com/crimsonknave/obsidian_portal_fate) instead of where ever you are reading it now.  I'm writing the javascript in coffeescript so that's probably going to be more readable and the css is in scss.  If you find any bugs or have any feature requests you can create an issue on the github page or send me a message on Obsidian Portal.
+        -->
+        <div class='sheet_boundary'>
+          <div class="game_info">
+            <div class="player">
+              <span>Player:</span>
+              <span class="dsf dsf_player"></span>
+            </div>
+            <div class="campaign">
+              <span>Campaign:</span>
+              <span class="dsf dsf_campaign"></span>
+            </div>
+          </div>
+          <div class="logo container">
+            <a href='http://www.faterpg.com' target='_blank'>
+              <img src='http://www.faterpg.com/wp-content/uploads/2013/06/Powered-by-Fate-Final-Dark-BG-150dpi-e1371061033555.png'>
+            </a>
+          </div>
+          <div class="basic_info container">
+            <div class='header right'>&nbsp; </div>
+            <div class="header left">ID</div>
+            <div class='right_box'>
+              <div class='refresh'>
+                <span class='title'>Refresh:</span>
+                <span class="dsf dsf_refresh"></span>
+              </div>
+            </div>
+            <div class='left_box'>
+              <div class="name">
+                <span class='title'>Name:</span>
+                <span class='dsf dsf_name'></span>
+              </div>
+              <div class="description">
+                <span class='title'>Description:</span>
+                <span class='dsf dsf_description_field'></span>
+              </div>
+            </div>
+          </div>
+          <div class='aspects_header container'>
+            <div class='header right'>&nbsp; </div>
+            <div class="header left">Aspects</div>
+          </div>
+          <div class="aspects container">
+            <div class="concept aspect">
+              <span class='title'>High Concept:</span>
+              <span class="dsf dsf_concept"></span>
+            </div>
+            <div class="trouble aspect">
+              <span class='title'>Trouble:</span>
+              <span class="dsf dsf_trouble"></span>
+            </div>
+            <div class="your_adventure aspect">
+              <span class='title'>Your Adventure:</span>
+              <span class="dsf dsf_your_adventure"></span>
+            </div>
+            <div class="crossing_paths aspect">
+              <span class='title'>Crossing Paths:</span>
+              <span class="dsf dsf_crossing_paths"></span>
+            </div>
+            <div class="crossing_paths_again aspect">
+              <span class='title'>Crossing Paths Again:</span>
+              <span class="dsf dsf_crossing_paths_again"></span>
+            </div>
+          </div>
+          <div class='skill_header container'>
+            <div class='header right'>&nbsp; </div>
+            <div class="header left">Skills</div>
+          </div>
+          <table class="skills container">
+            <tr class='skill fantastic'>
+              <td class='title'>Fantastic (+6):</td>
+              <td class='skill_holder'>
+                <ul> <li class="skill inactive"> <span class="skill_fantastic dsf dsf_skill_fantastic_00"></span> </li> <li class="skill inactive"> <span class="skill_fantastic dsf dsf_skill_fantastic_01"></span> </li> <li class="skill inactive"> <span class="skill_fantastic dsf dsf_skill_fantastic_02"></span> </li> <li class="skill inactive"> <span class="skill_fantastic dsf dsf_skill_fantastic_03"></span> </li> <li class="skill inactive"> <span class="skill_fantastic dsf dsf_skill_fantastic_04"></span> </li><li class="skill inactive"> <span class="skill_fantastic dsf dsf_skill_fantastic_04"></span> </li> </ul>
+              </td>
+            </tr>
+            <tr class='skill superb'>
+              <td class='title'>Superb (+5):</td>
+              <td class='skill_holder'>
+                <ul> <li class="skill inactive"> <span class="skill_superb dsf dsf_skill_superb_00"></span> </li> <li class="skill inactive"> <span class="skill_superb dsf dsf_skill_superb_01"></span> </li> <li class="skill inactive"> <span class="skill_superb dsf dsf_skill_superb_02"></span> </li> <li class="skill inactive"> <span class="skill_superb dsf dsf_skill_superb_03"></span> </li> <li class="skill inactive"> <span class="skill_superb dsf dsf_skill_superb_04"></span> </li><li class="skill inactive"> <span class="skill_superb dsf dsf_skill_superb_05"></span> </li> </ul>
+              </td>
+            </tr>
+            <tr class='skill great'>
+              <td class='title'>Great (+4):</td>
+              <td class='skill_holder'>
+                <ul> <li class="skill inactive"> <span class="skill_great dsf dsf_skill_great_00"></span> </li> <li class="skill inactive"> <span class="skill_great dsf dsf_skill_great_01"></span> </li> <li class="skill inactive"> <span class="skill_great dsf dsf_skill_great_02"></span> </li> <li class="skill inactive"> <span class="skill_great dsf dsf_skill_great_03"></span> </li> <li class="skill inactive"> <span class="skill_great dsf dsf_skill_great_04"></span> </li> <li class="skill inactive"> <span class="skill_great dsf dsf_skill_great_05"></span> </li></ul>
+              </td>
+            </tr>
+            <tr class='skill good'>
+              <td class='title'>Good (+3):</td>
+              <td class='skill_holder'>
+                <ul> <li class="skill inactive"> <span class="skill_good dsf dsf_skill_good_00"></span> </li> <li class="skill inactive"> <span class="skill_good dsf dsf_skill_good_01"></span> </li> <li class="skill inactive"> <span class="skill_good dsf dsf_skill_good_02"></span> </li> <li class="skill inactive"> <span class="skill_good dsf dsf_skill_good_03"></span> </li> <li class="skill inactive"> <span class="skill_good dsf dsf_skill_good_04"></span> </li><li class="skill inactive"> <span class="skill_good dsf dsf_skill_good_05"></span> </li> </ul>
+              </td>
+            </tr>
+            <tr class='skill fair'>
+              <td class='title'>Fair (+2):</td>
+              <td class='skill_holder'>
+                <ul> <li class="skill inactive"> <span class="skill_fair dsf dsf_skill_fair_00"></span> </li> <li class="skill inactive"> <span class="skill_fair dsf dsf_skill_fair_01"></span> </li> <li class="skill inactive"> <span class="skill_fair dsf dsf_skill_fair_02"></span> </li> <li class="skill inactive"> <span class="skill_fair dsf dsf_skill_fair_03"></span> </li> <li class="skill inactive"> <span class="skill_fair dsf dsf_skill_fair_04"></span> </li> <li class="skill inactive"> <span class="skill_fair dsf dsf_skill_fair_05"></span> </li></ul>
+              </td>
+            </tr>
+            <tr class='skill average'>
+              <td class='title'>Average (+1):</td>
+              <td class='skill_holder'>
+                <ul> <li class="skill inactive"> <span class="skill_average dsf dsf_skill_average_00"></span> </li> <li class="skill inactive"> <span class="skill_average dsf dsf_skill_average_01"></span> </li> <li class="skill inactive"> <span class="skill_average dsf dsf_skill_average_02"></span> </li> <li class="skill inactive"> <span class="skill_average dsf dsf_skill_average_03"></span> </li> <li class="skill inactive"> <span class="skill_average dsf dsf_skill_average_04"></span> </li> <li class="skill inactive"> <span class="skill_average dsf dsf_skill_average_05"></span> </li></ul>
+              </td>
+            </tr>
+          </table>
+          <div class='stunts container'>
+            <div class='header right'>&nbsp; </div>
+            <div class='header left'>Stunts</div>
+            <span class='dsf dsf_stunts'></span>
+          </div>
+          <div class='extras container'>
+            <div class='header right'>&nbsp; </div>
+            <div class='header left'>Extras</div>
+            <span class='dsf dsf_extras'></span>
+          </div>
+          <div class='hurtings'>
+            <div class="consequences container">
+              <div class='header right'>&nbsp; </div>
+              <div class='header left'>Consequences</div>
+              <div class="mild consequence">
+                <div class='label'>2</div>
+                <span class='title'>Mild</span>
+                <span class="dsf dsf_mild_consequence"></span>
+              </div>
+              <div class="moderate consequence">
+                <div class='label'>4</div>
+                <span class='title'>Moderate</span>
+                <span class="dsf dsf_moderate_consequence"></span>
+              </div>
+              <div class="severe consequence">
+                <div class='label'>6</div>
+                <span class='title'>Severe</span>
+                <span class="dsf dsf_severe_consequence"></span>
+              </div>
+            </div>
+            <div class='stress_container'>
+              <div class="physical stress container">
+                <div class='header right'>&nbsp; </div>
+                <div class='header left'>Physical Stress (Physique)</div>
+              </div>
+              <table class='physical stress'>
+                <tr>
+                  <td class='stress'>
+                    <div class='stress group'>
+                      <div class='label'>1</div>
+                      <span class='dsf dsf_physical_stress_01 checkbox'></span>
+                    </div>
+                    <div class='stress activator'>
+                      Active: <span class='stress_active dsf dsf_physical_stress_01_active checkbox'></span>
+                    </div>
+                  </td>
+                  <td class='stress'>
+                    <div class='stress group'>
+                      <div class='label'>2</div>
+                      <span class='dsf dsf_physical_stress_02 checkbox'></span>
+                    </div>
+                    <div class='stress activator'>
+                      Active: <span class='stress_active dsf dsf_physical_stress_02_active checkbox'></span>
+                    </div>
+                  </td>
+                  <td class='stress'>
+                    <div class='stress group'>
+                      <div class='label'>3</div>
+                      <span class='dsf dsf_physical_stress_03 checkbox'></span>
+                    </div>
+                    <div class='stress activator'>
+                      Active: <span class='stress_active dsf dsf_physical_stress_03_active checkbox'></span>
+                    </div>
+                  </td>
+                  <td class='stress'>
+                    <div class='stress group'>
+                      <div class='label'>4</div>
+                      <span class='dsf dsf_physical_stress_04 checkbox'></span>
+                    </div>
+                    <div class='stress activator'>
+                      Active: <span class='stress_active dsf dsf_physical_stress_04_active checkbox'></span>
+                    </div>
+                  </td>
+                  <td></td>
+                </tr>
+              </table>
+              <div class="mental stress container">
+                <div class='header right'>&nbsp; </div>
+                <div class='header left'>Mental Stress (Will)</div>
+              </div>
+              <table class='mental stress'>
+                <tr>
+                  <td class='stress'>
+                    <div class='stress group'>
+                      <div class='label'>1</div>
+                      <span class='dsf dsf_mental_stress_01 checkbox'></span>
+                    </div>
+                    <div class='stress activator'>
+                      Active: <span class='stress_active dsf dsf_mental_stress_01_active checkbox'></span>
+                    </div>
+                  </td>
+                  <td class='stress'>
+                    <div class='stress group'>
+                      <div class='label'>2</div>
+                      <span class='dsf dsf_mental_stress_02 checkbox'></span>
+                    </div>
+                    <div class='stress activator'>
+                      Active: <span class='stress_active dsf dsf_mental_stress_02_active checkbox'></span>
+                    </div>
+                  </td>
+                  <td class='stress'>
+                    <div class='stress group'>
+                      <div class='label'>3</div>
+                      <span class='dsf dsf_mental_stress_03 checkbox'></span>
+                    </div>
+                    <div class='stress activator'>
+                      Active: <span class='stress_active dsf dsf_mental_stress_03_active checkbox'></span>
+                    </div>
+                  </td>
+                  <td class='stress'>
+                    <div class='stress group'>
+                      <div class='label'>4</div>
+                      <span class='dsf dsf_mental_stress_04 checkbox'></span>
+                    </div>
+                    <div class='stress activator'>
+                      Active: <span class='stress_active dsf dsf_mental_stress_04_active checkbox'></span>
+                    </div>
+                  </td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class='bio'>
+            <div class="backstory container">
+              <div class='header right'>&nbsp; </div>
+              <div class='header left'>Backstory</div>
+            </div>
+            <span class='dsf dsf_bio'></span>
+          </div>
+          <div class='credits'>
+            Character by <span class='dsf dsf_player'></span>, Sheet by <span class='dsf dsf_dst_author'></span>
+          </div>
         </div>
-        <div class="ability_score strength">
-          <span class="ability_score_name">STR</span>
-          <span class="dsf ability_score_score dsf_str"></span>
-          <span class="dsf ability_score_modifier dsf_str_modifier"></span>
-          <span class="dsf ability_score_modifier_plus_half_level dsf_str_modifier_plus_half_level"></span>
-        </div>
-        <div class="ability_score dexterity">
-          <span class="ability_score_name">DEX</span>
-          <span class="dsf ability_score_score dsf_dex"></span>
-          <span class="dsf ability_score_modifier dsf_dex_modifier"></span>
-          <span class="dsf ability_score_modifier_plus_half_level dsf_dex_modifier_plus_half_level"></span>
-        </div>
-      </div>
-      
-      <!-- An example of how to use checkboxes -->
-      <div class="trained_skills">
-        <h3>Trained Skills</h3>
-        <ul>
-          <li><span class="dsf dsf_athletics_trained checkbox"></span>Athletics</li>
-          <li><span class="dsf dsf_religion_trained checkbox"></span>Religion</li>
-          <li><span class="dsf dsf_stealth_trained checkbox"></span>Stealth</li>
-        </ul>
-      </div> <!-- trained_skills -->
-      <!-- End HTML Template - Don't copy anything below here into the template! -->
-    </div> <!-- ds_minimal4e -->
-  </div> <!-- dynamic_sheet_container -->
-  <br/><br/>
-  
-  <button id="character-save-button">Save</button>
-  <br/>
-  <p>
+        <!-- End HTML Template - Don't copy anything below here into the template! -->
+      </div> <!-- ds_fate_core -->
+    </div> <!-- dynamic_sheet_container -->
+    <br/><br/>
+
+    <button id="character-save-button">Save</button>
+    <br/>
+    <p>
     Right here is a hidden &lt;div&gt; that holds the data values that will be saved to the server. Click the save button and then examine the DOM (using Firebug) to see what will be sent.
-  </p>
-  <div id="dynamic_sheet_values" style="display:none;"></div>
-</body>
+    </p>
+    <div id="dynamic_sheet_values" style="display:none;"></div>
+  </body>
 </html>
