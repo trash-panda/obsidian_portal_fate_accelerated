@@ -8,15 +8,6 @@ var dynamic_sheet_attrs = {
   "concept" : "Country Boy",
   "trouble" : "Doesn't know when to stop",
   "your_adventure" : "I can fix anything",
-  "crossing_paths" : "Helps the little man",
-  "crossing_paths_again" : "I can make friends with anyone",
-  //"skills" : { 
-    //"average" : [],
-    //"fair" : ['drive', 'notice', 'shoot' ],
-    //"good" : [],
-    //'great' : [],
-    //'superb' : ['crafts']
-  //},
   "skill_average_00" : 'drive',
   'skill_average_01' : 'shoot',
   "skill_great_00" : "deceive",
