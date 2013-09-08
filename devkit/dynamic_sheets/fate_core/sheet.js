@@ -5,7 +5,8 @@
   $ = jQuery;
 
   window.fate_core_dataPreLoad = function(options) {
-    return fate_core_set_placeholder();
+    fate_core_set_placeholder();
+    return fate_core_insert_avatar();
   };
 
   window.fate_core_dataPostLoad = function(options) {
@@ -19,6 +20,16 @@
   };
 
   window.fate_core_dataPreSave = function(options) {};
+
+  window.fate_core_insert_avatar = function() {
+    var avatar_html, image;
+    image = $('.character-avatar').first();
+    console.log(image);
+    avatar_html = image[0].innerHTML;
+    image = $('.image.container');
+    console.log(image);
+    return image.replaceWith("<div class='avatar container'>" + avatar_html + "</div>");
+  };
 
   window.fate_core_set_active_stress = function() {
     var activator, entry, group, stresses, _i, _len, _results;

@@ -11,5 +11,6 @@ var dynamic_sheet_attrs = {
   "skill_average_00" : 'drive',
   'skill_average_01' : 'shoot',
   "skill_great_00" : "deceive",
-  'mental_stress_03_active' : '1'
+  'mental_stress_03_active' : '1',
+  'refresh' : '3'
 };

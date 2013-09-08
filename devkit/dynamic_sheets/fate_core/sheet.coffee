@@ -12,6 +12,7 @@ $ = jQuery
 window.fate_core_dataPreLoad = (options) ->
   # Called just before the data is loaded.
   fate_core_set_placeholder()
+  fate_core_insert_avatar()
 
 window.fate_core_dataPostLoad = (options) ->
   # Called just after the data is loaded.
@@ -28,6 +29,14 @@ window.fate_core_dataPreSave = (options) ->
   # alert("dataPreSave")
 
 # You can define your own variables...just make sure to namespace them!
+
+window.fate_core_insert_avatar = () ->
+  image = $('.character-avatar').first()
+  console.log image
+  avatar_html = image[0].innerHTML
+  image = $('.image.container')
+  console.log image
+  image.replaceWith("<div class='avatar container'>#{avatar_html}</div>")
 
 window.fate_core_set_active_stress = () ->
   stresses = $('td.stress')

@@ -66,46 +66,58 @@
     float:right;
     width: 10%;
   }
-  .logo {
+  .avatar {
     float: right;
-    width: 215px;
-    height: 100px;
+    width: 257px;
+    height: 257px;
+    img {
+      float: right;
+    }
+  }
+  .image {
+    float: right;
+    width: 257px;
+    height: 257px;
     background: dimgray;
     margin-bottom: 4px;
     border-radius: 3px;
+    .logo {
+      margin-top: 75px;
+      margin-left: 15px;
+    }
     img {
       margin: 10px;
     }
   }
   .basic_info {
     width: 492px;
-    //height: 90px;
     height: auto;
     .header.left {
-      width: 394px;
+      width: 346px;
     }
     .header.right {
       width: 100px;
     }
     .left_box {
-      width: 402px;
-      height: 75px;
+      width: 363px;
+      height: 231px;
     }
     .right_box {
-      width: 85px;
+      width: 90px;
       height: 75px;
       float: right;
     }
     .name {
       border: 2px solid black;
-      height: 21px;
+      height: 30px;
       background: lightgray;
       margin-bottom: 3px;
+      font-size: 1.5em;
       span.title {
         background: white;
         text-align: right;
-        width: 105px;
-        height: 21px;
+        width: 85px;
+        height: 30px;
         font-weight: bold;
         float:left;
         padding-right: 3px;
@@ -116,13 +128,13 @@
     }
     .description {
       border: 2px solid black;
-      height: 42px;
+      height: 190px;
       background: lightgray;
       span.title {
         background: white;
         text-align: right;
-        width: 105px;
-        height: 42px;
+        width: 85px;
+          height: 190px;
         font-weight: bold;
         float:left;
         padding-right: 3px;
@@ -131,25 +143,26 @@
         padding-left: 3px;
       }
     }
-    .refresh {
+    .points_box {
       border: 2px solid black;
-      height: 70px;
+      height: 109px;
       background: lightgray;
+      margin-bottom: 5px;
       span.title {
         background: white;
         text-align: right;
-        width: 78px;
+        width: 83px;
         height: 21px;
         font-weight: bold;
         float:left;
         padding-right: 3px;
       }
       span.dsf {
-        font-size: 3em;
+        font-size: 6em;
         width: 76px;
         position: relative;
-        left: 29px;
-        bottom: 6px;
+        left: 20px;
+        bottom: 20px;
         font-weight: bold;
       }
     }

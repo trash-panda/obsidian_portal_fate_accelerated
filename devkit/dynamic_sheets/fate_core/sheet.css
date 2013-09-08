@@ -48,39 +48,49 @@
   background: -webkit-linear-gradient(135deg, transparent 7px, black 5px, black 100%);
   float: right;
   width: 10%; }
-.ds_fate_core .logo {
+.ds_fate_core .avatar {
   float: right;
-  width: 215px;
-  height: 100px;
+  width: 257px;
+  height: 257px; }
+  .ds_fate_core .avatar img {
+    float: right; }
+.ds_fate_core .image {
+  float: right;
+  width: 257px;
+  height: 257px;
   background: dimgray;
   margin-bottom: 4px;
   border-radius: 3px; }
-  .ds_fate_core .logo img {
+  .ds_fate_core .image .logo {
+    margin-top: 75px;
+    margin-left: 15px; }
+  .ds_fate_core .image img {
     margin: 10px; }
 .ds_fate_core .basic_info {
   width: 492px;
   height: auto; }
   .ds_fate_core .basic_info .header.left {
-    width: 394px; }
+    width: 346px; }
   .ds_fate_core .basic_info .header.right {
     width: 100px; }
   .ds_fate_core .basic_info .left_box {
-    width: 402px;
-    height: 75px; }
+    width: 363px;
+    height: 231px; }
   .ds_fate_core .basic_info .right_box {
-    width: 85px;
+    width: 90px;
     height: 75px;
     float: right; }
   .ds_fate_core .basic_info .name {
     border: 2px solid black;
-    height: 21px;
+    height: 30px;
     background: lightgray;
-    margin-bottom: 3px; }
+    margin-bottom: 3px;
+    font-size: 1.5em; }
     .ds_fate_core .basic_info .name span.title {
       background: white;
       text-align: right;
-      width: 105px;
-      height: 21px;
+      width: 85px;
+      height: 30px;
       font-weight: bold;
       float: left;
       padding-right: 3px; }
@@ -88,36 +98,37 @@
       padding-left: 3px; }
   .ds_fate_core .basic_info .description {
     border: 2px solid black;
-    height: 42px;
+    height: 190px;
     background: lightgray; }
     .ds_fate_core .basic_info .description span.title {
       background: white;
       text-align: right;
-      width: 105px;
-      height: 42px;
+      width: 85px;
+      height: 190px;
       font-weight: bold;
       float: left;
       padding-right: 3px; }
     .ds_fate_core .basic_info .description span.dsf {
       padding-left: 3px; }
-  .ds_fate_core .basic_info .refresh {
+  .ds_fate_core .basic_info .points_box {
     border: 2px solid black;
-    height: 70px;
-    background: lightgray; }
-    .ds_fate_core .basic_info .refresh span.title {
+    height: 109px;
+    background: lightgray;
+    margin-bottom: 5px; }
+    .ds_fate_core .basic_info .points_box span.title {
       background: white;
       text-align: right;
-      width: 78px;
+      width: 83px;
       height: 21px;
       font-weight: bold;
       float: left;
       padding-right: 3px; }
-    .ds_fate_core .basic_info .refresh span.dsf {
-      font-size: 3em;
+    .ds_fate_core .basic_info .points_box span.dsf {
+      font-size: 6em;
       width: 76px;
       position: relative;
-      left: 29px;
-      bottom: 6px;
+      left: 20px;
+      bottom: 20px;
       font-weight: bold; }
 .ds_fate_core .aspects {
   width: 720px; }
