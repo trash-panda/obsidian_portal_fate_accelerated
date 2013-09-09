@@ -54,18 +54,12 @@
   height: 257px; }
   .ds_fate_core .avatar img {
     float: right; }
-.ds_fate_core .image {
-  float: right;
-  width: 257px;
-  height: 257px;
-  background: dimgray;
-  margin-bottom: 4px;
-  border-radius: 3px; }
-  .ds_fate_core .image .logo {
-    margin-top: 75px;
-    margin-left: 15px; }
-  .ds_fate_core .image img {
-    margin: 10px; }
+  .ds_fate_core .avatar img.tall {
+    height: 256px;
+    width: auto; }
+  .ds_fate_core .avatar img.wide {
+    height: auto;
+    width: 256px; }
 .ds_fate_core .basic_info {
   width: 492px;
   height: auto; }

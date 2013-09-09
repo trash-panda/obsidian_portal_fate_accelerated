@@ -5,13 +5,13 @@
   $ = jQuery;
 
   window.fate_core_dataPreLoad = function(options) {
-    fate_core_set_placeholder();
-    return fate_core_insert_avatar();
+    return fate_core_set_placeholder();
   };
 
   window.fate_core_dataPostLoad = function(options) {
     fate_core_mark_used_skills();
-    return fate_core_set_active_stress();
+    fate_core_set_active_stress();
+    return fate_core_size_avatar();
   };
 
   window.fate_core_dataChange = function(options) {
@@ -21,14 +21,19 @@
 
   window.fate_core_dataPreSave = function(options) {};
 
-  window.fate_core_insert_avatar = function() {
-    var avatar_html, image;
-    image = $('.character-avatar').first();
-    console.log(image);
-    avatar_html = image[0].innerHTML;
-    image = $('.image.container');
-    console.log(image);
-    return image.replaceWith("<div class='avatar container'>" + avatar_html + "</div>");
+  window.fate_core_size_avatar = function() {
+    var avatar;
+    avatar = $('.dsf_avatar_image').children().first();
+    return avatar.load(function() {
+      var height, width;
+      height = avatar.height();
+      width = avatar.width();
+      if (height > width) {
+        return avatar.addClass('tall');
+      } else {
+        return avatar.addClass('wide');
+      }
+    });
   };
 
   window.fate_core_set_active_stress = function() {

@@ -73,20 +73,13 @@
     img {
       float: right;
     }
-  }
-  .image {
-    float: right;
-    width: 257px;
-    height: 257px;
-    background: dimgray;
-    margin-bottom: 4px;
-    border-radius: 3px;
-    .logo {
-      margin-top: 75px;
-      margin-left: 15px;
+    img.tall {
+      height: 256px;
+      width: auto;
     }
-    img {
-      margin: 10px;
+    img.wide {
+      height: auto;
+      width: 256px;
     }
   }
   .basic_info {
