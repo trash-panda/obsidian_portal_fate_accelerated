@@ -9,6 +9,7 @@
 
 }
 .ds_fate_core {
+  font-family: 'Montserrat', sans-serif;
   .description {
     form.jeditable_input {
       position: relative;
@@ -112,11 +113,11 @@
       width: 100px;
     }
     .left_box {
-      width: 363px;
+      width: 348px;
       height: 231px;
     }
     .right_box {
-      width: 90px;
+      width: 105px;
       height: 75px;
       float: right;
     }
@@ -129,14 +130,14 @@
       span.title {
         background: white;
         text-align: right;
-        width: 85px;
+        width: 98px;
         height: 30px;
         font-weight: bold;
         float:left;
-        padding-right: 3px;
+        padding-right: 5px;
       }
       span.dsf {
-        padding-left: 3px;
+        padding-left: 5px;
       }
     }
     .description {
@@ -146,14 +147,14 @@
       span.title {
         background: white;
         text-align: right;
-        width: 85px;
-          height: 190px;
+        width: 100px;
+        height: 190px;
         font-weight: bold;
         float:left;
         padding-right: 3px;
+        margin-right: 5px;
       }
       span.dsf {
-        padding-left: 3px;
       }
     }
     .points_box {
@@ -172,7 +173,7 @@
       span.title {
         background: white;
         text-align: right;
-        width: 83px;
+        width: 98px;
         height: 21px;
         font-weight: bold;
         float:left;
@@ -209,7 +210,7 @@
       span.title {
         background: white;
         text-align: right;
-        width: 140px;
+        width: 180px;
         font-weight: bold;
         float:left;
         padding-right: 3px;
@@ -239,7 +240,7 @@
       }
       td.title {
         font-weight: bold;
-        width:80px;
+        width:115px;
         text-align:right;
         padding-left:0px;
         padding-right:2px;
@@ -248,7 +249,7 @@
         padding-left:0px;
         height: 19px;
         position: relative;
-        top: 0px;
+        top: -3px;
         left: 0px;
         form.jeditable_input {
           height: 9px;
@@ -340,7 +341,7 @@
         padding-right: 3px;
         text-align: right;
         height: 20px;
-        width: 65px;
+        width: 85px;
         position:relative;
         left:0px;
         top: -43px;
@@ -349,7 +350,7 @@
       }
       span.dsf {
         position:relative;
-        left: 72px;
+        left: 85px;
         top: -62px;
         z-index: 1;
       }
