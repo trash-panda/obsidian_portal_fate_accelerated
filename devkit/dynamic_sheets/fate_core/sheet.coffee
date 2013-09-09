@@ -11,24 +11,33 @@ $ = jQuery
 
 window.fate_core_dataPreLoad = (options) ->
   # Called just before the data is loaded.
-  fate_core_set_placeholder()
 
 window.fate_core_dataPostLoad = (options) ->
   # Called just after the data is loaded.
   fate_core_mark_used_skills()
   fate_core_set_active_stress()
   fate_core_size_avatar()
+  fate_core_size_points()
 
 window.fate_core_dataChange = (options) ->
   # Called immediately after a data value is changed.
   fate_core_update_skill(options)
   fate_core_update_active_stress(options)
+  fate_core_size_points()
 
 window.fate_core_dataPreSave = (options) ->
   # Called just before the data is saved to the server.
   # alert("dataPreSave")
 
 # You can define your own variables...just make sure to namespace them!
+
+window.fate_core_size_points = () ->
+  points = $('.points_box').children('.dsf')
+  for point in points
+    if point.innerHTML == aisleten.characters.jeditablePlaceholder or point.innerHTML == ''
+      point.classList.add('placeholder')
+    else
+      point.classList.remove('placeholder')
 
 window.fate_core_size_avatar = () ->
   avatar = $('.dsf_avatar_image').children().first()
@@ -49,9 +58,6 @@ window.fate_core_set_active_stress = () ->
       group.classList.add('inactive')
     else
       group.classList.add('active')
-
-window.fate_core_set_placeholder = () ->
-  aisleten.characters.jeditablePlaceholder = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 
 window.fate_core_mark_used_skills = () ->
   listings = $('.skill.inactive')

@@ -9,15 +9,35 @@
 
 }
 .ds_fate_core {
+  .description {
+    form.jeditable_input {
+      position: relative;
+      top: -15px;
+      left: 5px;
+      input {
+        min-width: 200px !important;
+        height: 20px !important;
+      }
+    }
+  }
   form.jeditable_input {
     z-index: 1;
     input {
       z-index: 1;
+      min-width: 80px !important;
     }
     button {
       z-index: 1;
       position:relative;
       width: 35px;
+    }
+  }
+  .large_text {
+    form.jeditable_input {
+      input {
+        min-width: 600px !important;
+        height: 20px !important;
+      }
     }
   }
 
@@ -137,6 +157,14 @@
       }
     }
     .points_box {
+      form.jeditable_input {
+        position: relative;
+        top: 40px;
+        input {
+          width: 10px !important;
+          height: 20px !important;
+        }
+      }
       border: 2px solid black;
       height: 109px;
       background: lightgray;
@@ -158,6 +186,16 @@
         bottom: 20px;
         font-weight: bold;
       }
+      span.dsf.placeholder {
+        left: 5px;
+        font-size: 1em;
+        top: 20px;
+        font-weight: normal;
+        form.jeditable_input {
+          top: 10px;
+          position: relative;
+        }
+      }
     }
   }
 
@@ -167,6 +205,7 @@
       border: 2px solid black;
       margin: 3px 0px;
       background: lightgray;
+      height: 21px;
       span.title {
         background: white;
         text-align: right;
@@ -177,6 +216,11 @@
       }
       span.dsf {
         padding-left: 3px;
+        form.jeditable_input {
+          position: relative;
+          top: -22px;
+          left: 147px;
+        }
       }
     }
   }
@@ -184,6 +228,9 @@
     width: 720px;
     tr.skill {
       height: 30px;
+      position: relative;
+      top: 0px;
+      left: 0px;
       span {
         display: inline-block;
       }
@@ -199,6 +246,16 @@
       }
       td.skill_holder {
         padding-left:0px;
+        height: 19px;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        form.jeditable_input {
+          height: 9px;
+          position: relative;
+          top: 10px;
+          left: -1px;
+        }
       }
     }
     ul {
@@ -217,6 +274,7 @@
           display: inline-block;
           width: 84px;
           padding-left: 2px;
+          height: 19px;
         }
       }
     }

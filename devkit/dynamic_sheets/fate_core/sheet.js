@@ -4,22 +4,37 @@
 
   $ = jQuery;
 
-  window.fate_core_dataPreLoad = function(options) {
-    return fate_core_set_placeholder();
-  };
+  window.fate_core_dataPreLoad = function(options) {};
 
   window.fate_core_dataPostLoad = function(options) {
     fate_core_mark_used_skills();
     fate_core_set_active_stress();
-    return fate_core_size_avatar();
+    fate_core_size_avatar();
+    return fate_core_size_points();
   };
 
   window.fate_core_dataChange = function(options) {
     fate_core_update_skill(options);
-    return fate_core_update_active_stress(options);
+    fate_core_update_active_stress(options);
+    return fate_core_size_points();
   };
 
   window.fate_core_dataPreSave = function(options) {};
+
+  window.fate_core_size_points = function() {
+    var point, points, _i, _len, _results;
+    points = $('.points_box').children('.dsf');
+    _results = [];
+    for (_i = 0, _len = points.length; _i < _len; _i++) {
+      point = points[_i];
+      if (point.innerHTML === aisleten.characters.jeditablePlaceholder || point.innerHTML === '') {
+        _results.push(point.classList.add('placeholder'));
+      } else {
+        _results.push(point.classList.remove('placeholder'));
+      }
+    }
+    return _results;
+  };
 
   window.fate_core_size_avatar = function() {
     var avatar;
@@ -51,10 +66,6 @@
       }
     }
     return _results;
-  };
-
-  window.fate_core_set_placeholder = function() {
-    return aisleten.characters.jeditablePlaceholder = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
   };
 
   window.fate_core_mark_used_skills = function() {
