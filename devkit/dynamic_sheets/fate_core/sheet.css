@@ -4,6 +4,16 @@
  *****************************/
 .ds_fate_core.editable .activator {
   display: block; }
+.ds_fate_core.editable .stress_track.inactive {
+  display: block; }
+  .ds_fate_core.editable .stress_track.inactive table {
+    background: darkgrey; }
+  .ds_fate_core.editable .stress_track.inactive .activator {
+    background: darkgrey; }
+  .ds_fate_core.editable .stress_track.inactive .label {
+    color: white; }
+  .ds_fate_core.editable .stress_track.inactive .stress.group {
+    border: 2px solid white; }
 
 .ds_fate_core {
   font-family: 'Montserrat', sans-serif; }
@@ -214,6 +224,8 @@
           width: 84px;
           padding-left: 2px;
           height: 19px; }
+  .ds_fate_core .stress_track.inactive {
+    display: none; }
   .ds_fate_core .stress_container {
     width: 350px; }
   .ds_fate_core table.stress {

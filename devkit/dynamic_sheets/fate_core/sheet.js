@@ -8,7 +8,8 @@
 
   window.fate_core_dataPostLoad = function(options) {
     fate_core_mark_used_skills();
-    fate_core_set_active_stress();
+    fate_core_set_active_stress_boxes();
+    fate_core_set_active_stress_tracks();
     fate_core_size_avatar();
     return fate_core_size_points();
   };
@@ -16,6 +17,7 @@
   window.fate_core_dataChange = function(options) {
     fate_core_update_skill(options);
     fate_core_update_active_stress(options);
+    fate_core_update_active_stress_tracks(options);
     return fate_core_size_points();
   };
 
@@ -51,7 +53,25 @@
     });
   };
 
-  window.fate_core_set_active_stress = function() {
+  window.fate_core_set_active_stress_tracks = function() {
+    var activator, track, tracks, _i, _len, _results;
+    tracks = $('.stress_track');
+    _results = [];
+    for (_i = 0, _len = tracks.length; _i < _len; _i++) {
+      track = tracks[_i];
+      activator = track.children[1].children[0].children[0];
+      if (activator.value === '0') {
+        track.classList.add('inactive');
+        _results.push(track.classList.remove('active'));
+      } else {
+        track.classList.add('active');
+        _results.push(track.classList.remove('inactive'));
+      }
+    }
+    return _results;
+  };
+
+  window.fate_core_set_active_stress_boxes = function() {
     var activator, entry, group, stresses, _i, _len, _results;
     stresses = $('td.stress');
     _results = [];
@@ -82,6 +102,24 @@
       }
     }
     return _results;
+  };
+
+  window.fate_core_update_active_stress_tracks = function(opts) {
+    var match, name, track, value;
+    name = opts['fieldName'];
+    value = opts['fieldValue'];
+    match = name.match(/extra_(\d\d)_stress_active/);
+    if (!match) {
+      return;
+    }
+    track = $(".dsf_extra_" + match[1] + "_stress_active");
+    if (value === '0') {
+      track.parent().parent().addClass('inactive');
+      return track.parent().parent().removeClass('active');
+    } else {
+      track.parent().parent().addClass('active');
+      return track.parent().parent().removeClass('inactive');
+    }
   };
 
   window.fate_core_update_active_stress = function(opts) {

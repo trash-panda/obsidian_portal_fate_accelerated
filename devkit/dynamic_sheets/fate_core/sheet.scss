@@ -6,6 +6,21 @@
   .activator {
     display: block;
   }
+  .stress_track.inactive {
+    display: block;
+    table {
+      background: darkgrey;
+    }
+    .activator {
+      background: darkgrey;
+    }
+    .label {
+      color: white;
+    }
+    .stress.group {
+      border: 2px solid white;
+    }
+  }
 
 }
 .ds_fate_core {
@@ -279,6 +294,9 @@
         }
       }
     }
+  }
+  .stress_track.inactive {
+    display: none
   }
   .stress_container {
     width: 350px;

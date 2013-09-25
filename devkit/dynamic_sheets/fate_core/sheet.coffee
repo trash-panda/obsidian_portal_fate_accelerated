@@ -15,7 +15,8 @@ window.fate_core_dataPreLoad = (options) ->
 window.fate_core_dataPostLoad = (options) ->
   # Called just after the data is loaded.
   fate_core_mark_used_skills()
-  fate_core_set_active_stress()
+  fate_core_set_active_stress_boxes()
+  fate_core_set_active_stress_tracks()
   fate_core_size_avatar()
   fate_core_size_points()
 
@@ -23,6 +24,7 @@ window.fate_core_dataChange = (options) ->
   # Called immediately after a data value is changed.
   fate_core_update_skill(options)
   fate_core_update_active_stress(options)
+  fate_core_update_active_stress_tracks(options)
   fate_core_size_points()
 
 window.fate_core_dataPreSave = (options) ->
@@ -49,7 +51,18 @@ window.fate_core_size_avatar = () ->
     else
       avatar.addClass('wide')
 
-window.fate_core_set_active_stress = () ->
+window.fate_core_set_active_stress_tracks = () ->
+  tracks = $('.stress_track')
+  for track in tracks
+    activator = track.children[1].children[0].children[0]
+    if activator.value == '0'
+      track.classList.add('inactive')
+      track.classList.remove('active')
+    else
+      track.classList.add('active')
+      track.classList.remove('inactive')
+
+window.fate_core_set_active_stress_boxes = () ->
   stresses = $('td.stress')
   for entry in stresses
     group = entry.children[0]
@@ -65,6 +78,19 @@ window.fate_core_mark_used_skills = () ->
     content = listing.childNodes[1].innerHTML.trim()
     if content.length > 0
       listing.className = 'skill'
+
+window.fate_core_update_active_stress_tracks = (opts) ->
+  name = opts['fieldName']
+  value = opts['fieldValue']
+  match = name.match(/extra_(\d\d)_stress_active/)
+  return unless match
+  track = $(".dsf_extra_#{match[1]}_stress_active")
+  if value == '0'
+    track.parent().parent().addClass('inactive')
+    track.parent().parent().removeClass('active')
+  else
+    track.parent().parent().addClass('active')
+    track.parent().parent().removeClass('inactive')
 
 window.fate_core_update_active_stress = (opts) ->
   name = opts['fieldName']
