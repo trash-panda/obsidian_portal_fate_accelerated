@@ -4,6 +4,11 @@
  *****************************/
 .ds_fate_core.editable .activator {
   display: block; }
+.ds_fate_core.editable .consequence.inactive {
+  display: block;
+  border: 2px solid darkgrey; }
+  .ds_fate_core.editable .consequence.inactive .label {
+    color: darkgrey; }
 .ds_fate_core.editable .stress_track.inactive {
   display: block; }
   .ds_fate_core.editable .stress_track.inactive table {
@@ -66,11 +71,11 @@
     background: -webkit-linear-gradient(315deg, transparent 7px, black 5px, black 100%);
     padding-left: 10px;
     font-weight: bold;
-    width: 90%; }
+    width: 92%; }
   .ds_fate_core .header.right {
     background: -webkit-linear-gradient(135deg, transparent 7px, black 5px, black 100%);
     float: right;
-    width: 10%; }
+    width: 8%; }
   .ds_fate_core .avatar {
     float: right;
     width: 257px;
@@ -227,7 +232,7 @@
   .ds_fate_core .stress_track.inactive {
     display: none; }
   .ds_fate_core .stress_container {
-    width: 350px; }
+    width: 270px; }
   .ds_fate_core table.stress {
     margin-bottom: 5px; }
     .ds_fate_core table.stress .group {
@@ -254,9 +259,11 @@
       left: -3px;
       top: -38px; }
   .ds_fate_core .consequences {
-    width: 350px;
+    width: 430px;
     margin-top: 0px;
     float: right; }
+    .ds_fate_core .consequences .inactive {
+      display: none; }
     .ds_fate_core .consequences .consequence {
       height: 20px;
       margin: 12px 0px;
@@ -280,11 +287,23 @@
         top: -43px;
         font-weight: bold;
         background: white; }
-      .ds_fate_core .consequences .consequence span.dsf {
+      .ds_fate_core .consequences .consequence span.value {
         position: relative;
         left: 90px;
         top: -62px;
         z-index: 1; }
+      .ds_fate_core .consequences .consequence .activator {
+        position: relative;
+        top: -85px;
+        left: 352px;
+        width: 67px;
+        padding: 0px;
+        padding-left: 3px;
+        height: 20px; }
+        .ds_fate_core .consequences .consequence .activator input {
+          position: relative;
+          top: 66px;
+          left: -302px; }
   .ds_fate_core .credits {
     margin-left: auto;
     margin-right: auto;

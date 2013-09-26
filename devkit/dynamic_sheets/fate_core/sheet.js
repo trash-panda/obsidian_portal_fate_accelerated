@@ -10,18 +10,51 @@
     fate_core_mark_used_skills();
     fate_core_set_active_stress_boxes();
     fate_core_set_active_stress_tracks();
+    fate_core_set_active_consequences();
     fate_core_size_avatar();
-    return fate_core_size_points();
+    fate_core_size_points();
+    return fate_core_default_extra_consequences();
   };
 
   window.fate_core_dataChange = function(options) {
     fate_core_update_skill(options);
     fate_core_update_active_stress(options);
     fate_core_update_active_stress_tracks(options);
-    return fate_core_size_points();
+    fate_core_update_active_consequences(options);
+    fate_core_size_points();
+    return fate_core_default_extra_consequences();
   };
 
   window.fate_core_dataPreSave = function(options) {};
+
+  window.fate_core_default_extra_consequences = function() {
+    var consequence, consequences, label, title, _i, _len, _results;
+    consequences = $('.consequence');
+    _results = [];
+    for (_i = 0, _len = consequences.length; _i < _len; _i++) {
+      consequence = consequences[_i];
+      label = consequence.children[0];
+      title = consequence.children[1];
+      if (label.innerHTML === aisleten.characters.jeditablePlaceholder || label.innerHTML === '') {
+        if (consequence.classList.contains('mild')) {
+          label.innerHTML = '2';
+          _results.push(title.innerHTML = 'Mild');
+        } else if (consequence.classList.contains('moderate')) {
+          label.innerHTML = '4';
+          _results.push(title.innerHTML = 'Moderate');
+        } else if (consequence.classList.contains('severe')) {
+          label.innerHTML = '6';
+          _results.push(title.innerHTML = 'Severe');
+        } else {
+          label.innerHTML = '2';
+          _results.push(title.innerHTML = 'Extra');
+        }
+      } else {
+        _results.push(void 0);
+      }
+    }
+    return _results;
+  };
 
   window.fate_core_size_points = function() {
     var point, points, _i, _len, _results;
@@ -51,6 +84,29 @@
         return avatar.addClass('wide');
       }
     });
+  };
+
+  window.fate_core_set_active_consequences = function() {
+    var activator, consequence, consequences, on_value, _i, _len, _results;
+    consequences = $('.consequence');
+    _results = [];
+    for (_i = 0, _len = consequences.length; _i < _len; _i++) {
+      consequence = consequences[_i];
+      activator = consequence.children[3].children[0].children[0];
+      if (consequence.classList.contains('extra')) {
+        on_value = '1';
+      } else {
+        on_value = '0';
+      }
+      if (activator.value === on_value) {
+        consequence.classList.add('active');
+        _results.push(consequence.classList.remove('inactive'));
+      } else {
+        consequence.classList.add('inactive');
+        _results.push(consequence.classList.remove('active'));
+      }
+    }
+    return _results;
   };
 
   window.fate_core_set_active_stress_tracks = function() {
@@ -102,6 +158,30 @@
       }
     }
     return _results;
+  };
+
+  window.fate_core_update_active_consequences = function(opts) {
+    var consequence, container, match, name, on_value, value;
+    name = opts['fieldName'];
+    value = opts['fieldValue'];
+    match = name.match(/((\w+)(_\d\d)?)_consequence_activator/);
+    if (!match) {
+      return;
+    }
+    consequence = $(".dsf_" + match[1] + "_consequence_activator");
+    container = consequence.parent().parent()[0];
+    if (container.classList.contains('extra')) {
+      on_value = '1';
+    } else {
+      on_value = '0';
+    }
+    if (value === on_value) {
+      container.classList.add('active');
+      return container.classList.remove('inactive');
+    } else {
+      container.classList.add('inactive');
+      return container.classList.remove('active');
+    }
   };
 
   window.fate_core_update_active_stress_tracks = function(opts) {

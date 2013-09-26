@@ -6,6 +6,13 @@
   .activator {
     display: block;
   }
+  .consequence.inactive {
+    display: block;
+    border: 2px solid darkgrey;
+    .label {
+      color: darkgrey;
+    }
+  }
   .stress_track.inactive {
     display: block;
     table {
@@ -95,12 +102,12 @@
     background: -webkit-linear-gradient(315deg, transparent 7px, #000000 5px, #000000 100%);
     padding-left: 10px;
     font-weight: bold;
-    width: 90%;
+    width: 92%;
   }
   .header.right {
     background: -webkit-linear-gradient(135deg, transparent 7px, #000000 5px, #000000 100%);
     float:right;
-    width: 10%;
+    width: 8%;
   }
   .avatar {
     float: right;
@@ -299,7 +306,7 @@
     display: none
   }
   .stress_container {
-    width: 350px;
+    width: 270px;
   }
   table.stress {
     margin-bottom: 5px;
@@ -337,7 +344,10 @@
     }
   }
   .consequences {
-    width: 350px;
+    .inactive {
+      display: none;
+    }
+    width: 430px;
     margin-top: 0px;
 
     float:right;
@@ -366,11 +376,25 @@
         font-weight: bold;
         background: white;
       }
-      span.dsf {
+      span.value {
         position:relative;
         left: 90px;
         top: -62px;
         z-index: 1;
+      }
+      .activator {
+        position: relative;
+        top: -85px;
+        left: 352px;
+        width: 67px;
+        padding: 0px;
+        padding-left: 3px;
+        height: 20px;
+        input {
+          position: relative;
+          top: 66px;
+          left: -302px;
+        }
       }
     }
   }

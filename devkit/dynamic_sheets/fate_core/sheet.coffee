@@ -17,21 +17,44 @@ window.fate_core_dataPostLoad = (options) ->
   fate_core_mark_used_skills()
   fate_core_set_active_stress_boxes()
   fate_core_set_active_stress_tracks()
+  fate_core_set_active_consequences()
   fate_core_size_avatar()
   fate_core_size_points()
+  fate_core_default_extra_consequences()
 
 window.fate_core_dataChange = (options) ->
   # Called immediately after a data value is changed.
   fate_core_update_skill(options)
   fate_core_update_active_stress(options)
   fate_core_update_active_stress_tracks(options)
+  fate_core_update_active_consequences(options)
   fate_core_size_points()
+  fate_core_default_extra_consequences()
 
 window.fate_core_dataPreSave = (options) ->
   # Called just before the data is saved to the server.
   # alert("dataPreSave")
 
 # You can define your own variables...just make sure to namespace them!
+
+window.fate_core_default_extra_consequences = () ->
+  consequences = $('.consequence')
+  for consequence in consequences
+    label = consequence.children[0]
+    title = consequence.children[1]
+    if label.innerHTML == aisleten.characters.jeditablePlaceholder or label.innerHTML == ''
+      if consequence.classList.contains('mild')
+        label.innerHTML = '2'
+        title.innerHTML = 'Mild'
+      else if consequence.classList.contains('moderate')
+        label.innerHTML = '4'
+        title.innerHTML = 'Moderate'
+      else if consequence.classList.contains('severe')
+        label.innerHTML = '6'
+        title.innerHTML = 'Severe'
+      else
+        label.innerHTML = '2'
+        title.innerHTML = 'Extra'
 
 window.fate_core_size_points = () ->
   points = $('.points_box').children('.dsf')
@@ -50,6 +73,22 @@ window.fate_core_size_avatar = () ->
       avatar.addClass('tall')
     else
       avatar.addClass('wide')
+
+window.fate_core_set_active_consequences = () ->
+  consequences = $('.consequence')
+  for consequence in consequences
+    activator = consequence.children[3].children[0].children[0]
+    # We default the main consequences to on for existing chars
+    if consequence.classList.contains('extra')
+      on_value = '1'
+    else
+      on_value = '0'
+    if activator.value == on_value
+      consequence.classList.add('active')
+      consequence.classList.remove('inactive')
+    else
+      consequence.classList.add('inactive')
+      consequence.classList.remove('active')
 
 window.fate_core_set_active_stress_tracks = () ->
   tracks = $('.stress_track')
@@ -78,6 +117,24 @@ window.fate_core_mark_used_skills = () ->
     content = listing.childNodes[1].innerHTML.trim()
     if content.length > 0
       listing.className = 'skill'
+
+window.fate_core_update_active_consequences = (opts) ->
+  name = opts['fieldName']
+  value = opts['fieldValue']
+  match = name.match(/((\w+)(_\d\d)?)_consequence_activator/)
+  return unless match
+  consequence = $(".dsf_#{match[1]}_consequence_activator")
+  container = consequence.parent().parent()[0]
+  if container.classList.contains('extra')
+    on_value = '1'
+  else
+    on_value = '0'
+  if value == on_value
+    container.classList.add('active')
+    container.classList.remove('inactive')
+  else
+    container.classList.add('inactive')
+    container.classList.remove('active')
 
 window.fate_core_update_active_stress_tracks = (opts) ->
   name = opts['fieldName']
