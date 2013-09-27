@@ -107,7 +107,7 @@
       height: 30px;
       background: lightgray;
       margin-bottom: 3px;
-      font-size: 1.5em; }
+      white-space: nowrap; }
       .ds_fate_core .basic_info .name span.title {
         background: white;
         text-align: right;
@@ -117,11 +117,13 @@
         float: left;
         padding-right: 5px; }
       .ds_fate_core .basic_info .name span.dsf {
-        padding-left: 5px; }
+        padding-left: 5px;
+        height: 30px; }
     .ds_fate_core .basic_info .description {
       border: 2px solid black;
       height: 190px;
-      background: lightgray; }
+      background: lightgray;
+      overflow: hidden; }
       .ds_fate_core .basic_info .description span.title {
         background: white;
         text-align: right;

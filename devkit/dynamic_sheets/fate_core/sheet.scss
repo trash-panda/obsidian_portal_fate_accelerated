@@ -148,7 +148,7 @@
       height: 30px;
       background: lightgray;
       margin-bottom: 3px;
-      font-size: 1.5em;
+      white-space: nowrap;
       span.title {
         background: white;
         text-align: right;
@@ -160,12 +160,14 @@
       }
       span.dsf {
         padding-left: 5px;
+        height: 30px;
       }
     }
     .description {
       border: 2px solid black;
       height: 190px;
       background: lightgray;
+      overflow: hidden;
       span.title {
         background: white;
         text-align: right;

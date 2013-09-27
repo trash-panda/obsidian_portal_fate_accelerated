@@ -13,7 +13,8 @@
     fate_core_set_active_consequences();
     fate_core_size_avatar();
     fate_core_size_points();
-    return fate_core_default_extra_consequences();
+    fate_core_default_extra_consequences();
+    return fate_core_resize_name();
   };
 
   window.fate_core_dataChange = function(options) {
@@ -26,6 +27,19 @@
   };
 
   window.fate_core_dataPreSave = function(options) {};
+
+  window.fate_core_resize_name = function() {
+    var name, size, _results;
+    name = $('.dsf_name')[0];
+    size = 22;
+    name.style.fontSize = "" + size + "px";
+    _results = [];
+    while (name.offsetWidth > 235) {
+      size--;
+      _results.push(name.style.fontSize = "" + size + "px");
+    }
+    return _results;
+  };
 
   window.fate_core_default_extra_consequences = function() {
     var consequence, consequences, label, title, _i, _len, _results;

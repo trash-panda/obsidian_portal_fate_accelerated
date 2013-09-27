@@ -21,6 +21,7 @@ window.fate_core_dataPostLoad = (options) ->
   fate_core_size_avatar()
   fate_core_size_points()
   fate_core_default_extra_consequences()
+  fate_core_resize_name()
 
 window.fate_core_dataChange = (options) ->
   # Called immediately after a data value is changed.
@@ -36,6 +37,14 @@ window.fate_core_dataPreSave = (options) ->
   # alert("dataPreSave")
 
 # You can define your own variables...just make sure to namespace them!
+
+window.fate_core_resize_name = () ->
+  name = $('.dsf_name')[0]
+  size = 22
+  name.style.fontSize = "#{size}px"
+  while name.offsetWidth > 235
+    size--
+    name.style.fontSize = "#{size}px"
 
 window.fate_core_default_extra_consequences = () ->
   consequences = $('.consequence')
