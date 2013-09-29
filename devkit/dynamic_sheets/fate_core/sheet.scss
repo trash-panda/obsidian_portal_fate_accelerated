@@ -80,41 +80,40 @@
   .container {
     margin: 5px;
   }
+  span.header.content {
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    padding-bottom: 4px;
+    height: 17px;
+  }
+  span.header.left {
+    background: url(http://i.minus.com/ibq961ZORqAdvB.png);
+    display: inline-block;
+    width: 21px;
+  }
+  span.header.right {
+    background: url(http://i.minus.com/ibs4Wqi27GD4q3.png);
+    float: none;
+    display: inline-block;
+    width: 21px;
+  }
+
   .header{
     background: black;
     margin-bottom: 5px;
   }
-  tr.header {
-    background:none;
+  .id_header.content {
+    width: 414px;
   }
-  td.header {
-    width: 100%;
+  .full_width_header.content {
+    width: 676px;
   }
-  td.header.left {
-    float:none;
-    color: white;
-    background: -webkit-linear-gradient(315deg, transparent 7px, #000000 5px, #000000 100%);
-    padding-left: 10px;
-    font-weight: bold;
-    width: 90%;
+  .stress_header {
+    width: 218px;
   }
-  td.header.right {
-    background: -webkit-linear-gradient(135deg, transparent 7px, #000000 5px, #000000 100%);
-    float:none;
-    width: 10%;
-  }
-  .header.left {
-    float:none;
-    color: white;
-    background: -webkit-linear-gradient(315deg, transparent 7px, #000000 5px, #000000 100%);
-    padding-left: 10px;
-    font-weight: bold;
-    width: 92%;
-  }
-  .header.right {
-    background: -webkit-linear-gradient(135deg, transparent 7px, #000000 5px, #000000 100%);
-    float:right;
-    width: 8%;
+  .consequences_header {
+    width: 388px;
   }
   .avatar {
     float: right;
@@ -135,12 +134,6 @@
   .basic_info {
     width: 492px;
     height: auto;
-    .header.left {
-      width: 346px;
-    }
-    .header.right {
-      width: 100px;
-    }
     .left_box {
       width: 348px;
       height: 231px;
@@ -240,7 +233,7 @@
   }
 
   .aspects {
-    width: 720px;
+    width: 718px;
     .grey {
       margin-left: 185px;
     }

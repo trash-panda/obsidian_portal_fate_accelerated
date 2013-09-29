@@ -51,35 +51,32 @@
     width: 728px; }
   .ds_fate_core .container {
     margin: 5px; }
+  .ds_fate_core span.header.content {
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    padding-bottom: 4px;
+    height: 17px; }
+  .ds_fate_core span.header.left {
+    background: url(http://i.minus.com/ibq961ZORqAdvB.png);
+    display: inline-block;
+    width: 21px; }
+  .ds_fate_core span.header.right {
+    background: url(http://i.minus.com/ibs4Wqi27GD4q3.png);
+    float: none;
+    display: inline-block;
+    width: 21px; }
   .ds_fate_core .header {
     background: black;
     margin-bottom: 5px; }
-  .ds_fate_core tr.header {
-    background: none; }
-  .ds_fate_core td.header {
-    width: 100%; }
-  .ds_fate_core td.header.left {
-    float: none;
-    color: white;
-    background: -webkit-linear-gradient(315deg, transparent 7px, black 5px, black 100%);
-    padding-left: 10px;
-    font-weight: bold;
-    width: 90%; }
-  .ds_fate_core td.header.right {
-    background: -webkit-linear-gradient(135deg, transparent 7px, black 5px, black 100%);
-    float: none;
-    width: 10%; }
-  .ds_fate_core .header.left {
-    float: none;
-    color: white;
-    background: -webkit-linear-gradient(315deg, transparent 7px, black 5px, black 100%);
-    padding-left: 10px;
-    font-weight: bold;
-    width: 92%; }
-  .ds_fate_core .header.right {
-    background: -webkit-linear-gradient(135deg, transparent 7px, black 5px, black 100%);
-    float: right;
-    width: 8%; }
+  .ds_fate_core .id_header.content {
+    width: 414px; }
+  .ds_fate_core .full_width_header.content {
+    width: 676px; }
+  .ds_fate_core .stress_header {
+    width: 218px; }
+  .ds_fate_core .consequences_header {
+    width: 388px; }
   .ds_fate_core .avatar {
     float: right;
     width: 257px;
@@ -95,10 +92,6 @@
   .ds_fate_core .basic_info {
     width: 492px;
     height: auto; }
-    .ds_fate_core .basic_info .header.left {
-      width: 346px; }
-    .ds_fate_core .basic_info .header.right {
-      width: 100px; }
     .ds_fate_core .basic_info .left_box {
       width: 348px;
       height: 231px; }
@@ -179,7 +172,7 @@
           top: 10px;
           position: relative; }
   .ds_fate_core .aspects {
-    width: 720px; }
+    width: 718px; }
     .ds_fate_core .aspects .grey {
       margin-left: 185px; }
     .ds_fate_core .aspects .aspect {
