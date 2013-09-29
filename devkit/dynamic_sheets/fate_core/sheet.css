@@ -11,10 +11,6 @@
     color: darkgrey; }
 .ds_fate_core.editable .stress_track.inactive {
   display: block; }
-  .ds_fate_core.editable .stress_track.inactive table {
-    background: darkgrey; }
-  .ds_fate_core.editable .stress_track.inactive .activator {
-    background: darkgrey; }
   .ds_fate_core.editable .stress_track.inactive .label {
     color: white; }
   .ds_fate_core.editable .stress_track.inactive .stress.group {
@@ -22,6 +18,11 @@
 
 .ds_fate_core {
   font-family: 'Montserrat', sans-serif; }
+  .ds_fate_core .grey {
+    background: rgba(50, 50, 50, 0.25); }
+  .ds_fate_core .game_info {
+    padding-left: 5px;
+    padding-top: 5px; }
   .ds_fate_core .description form.jeditable_input {
     position: relative;
     top: -15px;
@@ -44,6 +45,7 @@
   .ds_fate_core .activator {
     display: none; }
   .ds_fate_core .sheet_boundary {
+    background: url(http://fc06.deviantart.net/fs11/i/2006/220/d/2/Grungy_paper_v_6___or_sumtin___by_bashcorpo.jpg);
     width: 728px; }
   .ds_fate_core .container {
     margin: 5px; }
@@ -105,11 +107,12 @@
     .ds_fate_core .basic_info .name {
       border: 2px solid black;
       height: 30px;
-      background: lightgray;
       margin-bottom: 3px;
       white-space: nowrap; }
+      .ds_fate_core .basic_info .name .grey {
+        margin-left: 101px;
+        height: 100%; }
       .ds_fate_core .basic_info .name span.title {
-        background: white;
         text-align: right;
         width: 98px;
         height: 30px;
@@ -122,22 +125,29 @@
     .ds_fate_core .basic_info .description {
       border: 2px solid black;
       height: 190px;
-      background: lightgray;
-      overflow: hidden; }
-      .ds_fate_core .basic_info .description span.title {
-        background: white;
+      overflow: hidden;
+      /*span.title {*/ }
+      .ds_fate_core .basic_info .description .see-through {
         text-align: right;
-        width: 100px;
+        width: 97px;
         height: 190px;
         font-weight: bold;
         float: left;
-        padding-right: 3px;
-        margin-right: 5px; }
+        padding-right: 4px;
+        margin-right: 0px; }
+      .ds_fate_core .basic_info .description .grey {
+        height: 100%;
+        width: 239px;
+        float: left;
+        padding-left: 4px; }
     .ds_fate_core .basic_info .points_box {
       border: 2px solid black;
       height: 109px;
-      background: lightgray;
       margin-bottom: 5px; }
+      .ds_fate_core .basic_info .points_box .grey {
+        height: 91px;
+        position: relative;
+        top: 20px; }
       .ds_fate_core .basic_info .points_box form.jeditable_input {
         position: relative;
         top: 40px; }
@@ -145,7 +155,6 @@
           width: 10px !important;
           height: 20px !important; }
       .ds_fate_core .basic_info .points_box span.title {
-        background: white;
         text-align: right;
         width: 98px;
         height: 21px;
@@ -157,7 +166,7 @@
         width: 76px;
         position: relative;
         left: 20px;
-        bottom: 20px;
+        bottom: 40px;
         font-weight: bold; }
       .ds_fate_core .basic_info .points_box span.dsf.placeholder {
         left: 5px;
@@ -169,13 +178,13 @@
           position: relative; }
   .ds_fate_core .aspects {
     width: 720px; }
+    .ds_fate_core .aspects .grey {
+      margin-left: 185px; }
     .ds_fate_core .aspects .aspect {
       border: 2px solid black;
       margin: 3px 0px;
-      background: lightgray;
       height: 21px; }
       .ds_fate_core .aspects .aspect span.title {
-        background: white;
         text-align: right;
         width: 180px;
         font-weight: bold;
@@ -264,13 +273,17 @@
     width: 430px;
     margin-top: 0px;
     float: right; }
+    .ds_fate_core .consequences .grey {
+      margin-left: 90px;
+      position: relative;
+      top: -63px;
+      height: 100%; }
     .ds_fate_core .consequences .inactive {
       display: none; }
     .ds_fate_core .consequences .consequence {
       height: 20px;
       margin: 12px 0px;
-      border: 2px solid black;
-      background: lightgray; }
+      border: 2px solid black; }
       .ds_fate_core .consequences .consequence .label {
         position: relative;
         left: -10px;
@@ -287,13 +300,10 @@
         position: relative;
         left: 0px;
         top: -43px;
-        font-weight: bold;
-        background: white; }
+        font-weight: bold; }
       .ds_fate_core .consequences .consequence span.value {
-        position: relative;
-        left: 90px;
-        top: -62px;
-        z-index: 1; }
+        z-index: 1;
+        padding-left: 3px; }
       .ds_fate_core .consequences .consequence .activator {
         position: relative;
         top: -85px;

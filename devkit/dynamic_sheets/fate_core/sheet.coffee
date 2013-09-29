@@ -39,12 +39,14 @@ window.fate_core_dataPreSave = (options) ->
 # You can define your own variables...just make sure to namespace them!
 
 window.fate_core_resize_name = () ->
-  name = $('.dsf_name')[0]
-  size = 22
-  name.style.fontSize = "#{size}px"
-  while name.offsetWidth > 235
-    size--
+  setTimeout ( ->
+    name = $('.dsf_name')[0]
+    size = 22
     name.style.fontSize = "#{size}px"
+    while name.offsetWidth > 235
+      size--
+      name.style.fontSize = "#{size}px"
+  ), 500
 
 window.fate_core_default_extra_consequences = () ->
   consequences = $('.consequence')

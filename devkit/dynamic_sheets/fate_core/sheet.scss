@@ -16,10 +16,8 @@
   .stress_track.inactive {
     display: block;
     table {
-      background: darkgrey;
     }
     .activator {
-      background: darkgrey;
     }
     .label {
       color: white;
@@ -31,6 +29,13 @@
 
 }
 .ds_fate_core {
+  .grey {
+    background: rgba(50,50,50,0.25);
+  }
+  .game_info {
+    padding-left: 5px;
+    padding-top: 5px;
+  }
   font-family: 'Montserrat', sans-serif;
   .description {
     form.jeditable_input {
@@ -68,6 +73,7 @@
     display: none;
   }
   .sheet_boundary {
+    background: url(http://fc06.deviantart.net/fs11/i/2006/220/d/2/Grungy_paper_v_6___or_sumtin___by_bashcorpo.jpg);
     width: 728px;
   }
   .container {
@@ -144,13 +150,15 @@
       float: right;
     }
     .name {
+      .grey {
+        margin-left: 101px;
+        height: 100%;
+      }
       border: 2px solid black;
       height: 30px;
-      background: lightgray;
       margin-bottom: 3px;
       white-space: nowrap;
       span.title {
-        background: white;
         text-align: right;
         width: 98px;
         height: 30px;
@@ -166,22 +174,30 @@
     .description {
       border: 2px solid black;
       height: 190px;
-      background: lightgray;
       overflow: hidden;
-      span.title {
-        background: white;
+      /*span.title {*/
+      .see-through {
         text-align: right;
-        width: 100px;
+        width: 97px;
         height: 190px;
         font-weight: bold;
         float:left;
-        padding-right: 3px;
-        margin-right: 5px;
+        padding-right: 4px;
+        margin-right: 0px;
       }
-      span.dsf {
+      .grey {
+        height: 100%;
+        width: 239px;
+        float: left;
+        padding-left: 4px;
       }
     }
     .points_box {
+      .grey {
+        height: 91px;
+        position: relative;
+        top: 20px;
+      }
       form.jeditable_input {
         position: relative;
         top: 40px;
@@ -192,10 +208,8 @@
       }
       border: 2px solid black;
       height: 109px;
-      background: lightgray;
       margin-bottom: 5px;
       span.title {
-        background: white;
         text-align: right;
         width: 98px;
         height: 21px;
@@ -208,7 +222,7 @@
         width: 76px;
         position: relative;
         left: 20px;
-        bottom: 20px;
+        bottom: 40px;
         font-weight: bold;
       }
       span.dsf.placeholder {
@@ -226,13 +240,14 @@
 
   .aspects {
     width: 720px;
+    .grey {
+      margin-left: 185px;
+    }
     .aspect {
       border: 2px solid black;
       margin: 3px 0px;
-      background: lightgray;
       height: 21px;
       span.title {
-        background: white;
         text-align: right;
         width: 180px;
         font-weight: bold;
@@ -346,6 +361,12 @@
     }
   }
   .consequences {
+    .grey {
+      margin-left: 90px;
+      position:relative;
+      top: -63px;
+      height: 100%
+    }
     .inactive {
       display: none;
     }
@@ -357,7 +378,6 @@
       height: 20px;
       margin: 12px 0px;
       border: 2px solid black;
-      background: lightgray;
       .label {
         position: relative;
         left: -10px;
@@ -376,13 +396,10 @@
         left:0px;
         top: -43px;
         font-weight: bold;
-        background: white;
       }
       span.value {
-        position:relative;
-        left: 90px;
-        top: -62px;
         z-index: 1;
+        padding-left: 3px;
       }
       .activator {
         position: relative;
