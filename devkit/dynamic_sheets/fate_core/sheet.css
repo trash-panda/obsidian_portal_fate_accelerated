@@ -273,6 +273,8 @@
     border-bottom: 1px solid black; }
   .ds_fate_core table.stunts .last_row td {
     border: none; }
+  .ds_fate_core .hurtings {
+    margin-bottom: 20px; }
   .ds_fate_core .consequences {
     width: 420px;
     margin-top: 0px;
