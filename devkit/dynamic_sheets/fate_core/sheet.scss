@@ -3,6 +3,12 @@
  * Copy and paste this directly into the CSS textarea on obsidianportal.com
  *****************************/
 .ds_fate_core.editable {
+  table.stunts {
+    tr.inactive {
+      color: darkgrey;
+      display: table-row;
+    }
+  }
   .activator {
     display: block;
   }
@@ -352,6 +358,19 @@
           left: -3px;
           top: -38px;
         }
+      }
+    }
+  }
+  table.stunts {
+    tr.inactive {
+      display: none;
+    }
+    td {
+      border-bottom: 1px solid black;
+    }
+    .last_row {
+      td {
+        border: none;
       }
     }
   }

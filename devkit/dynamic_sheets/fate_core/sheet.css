@@ -2,6 +2,9 @@
  * This is the CSS for the DST.
  * Copy and paste this directly into the CSS textarea on obsidianportal.com
  *****************************/
+.ds_fate_core.editable table.stunts tr.inactive {
+  color: darkgrey;
+  display: table-row; }
 .ds_fate_core.editable .activator {
   display: block; }
 .ds_fate_core.editable .consequence.inactive {
@@ -264,6 +267,12 @@
       position: relative;
       left: -3px;
       top: -38px; }
+  .ds_fate_core table.stunts tr.inactive {
+    display: none; }
+  .ds_fate_core table.stunts td {
+    border-bottom: 1px solid black; }
+  .ds_fate_core table.stunts .last_row td {
+    border: none; }
   .ds_fate_core .consequences {
     width: 420px;
     margin-top: 0px;

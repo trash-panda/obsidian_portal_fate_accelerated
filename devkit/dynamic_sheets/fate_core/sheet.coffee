@@ -18,10 +18,12 @@ window.fate_core_dataPostLoad = (options) ->
   fate_core_set_active_stress_boxes()
   fate_core_set_active_stress_tracks()
   fate_core_set_active_consequences()
+  fate_core_set_active_stunts()
   fate_core_size_avatar()
   fate_core_size_points()
   fate_core_default_extra_consequences()
   fate_core_default_skill_names()
+  fate_core_hide_last_table_row()
   fate_core_resize_name()
 
 window.fate_core_dataChange = (options) ->
@@ -30,6 +32,7 @@ window.fate_core_dataChange = (options) ->
   fate_core_update_active_stress(options)
   fate_core_update_active_stress_tracks(options)
   fate_core_update_active_consequences(options)
+  fate_core_update_active_stunts(options)
   fate_core_size_points()
   fate_core_default_extra_consequences()
   fate_core_default_skill_names()
@@ -39,6 +42,9 @@ window.fate_core_dataPreSave = (options) ->
   # alert("dataPreSave")
 
 # You can define your own variables...just make sure to namespace them!
+
+window.fate_core_hide_last_table_row = () ->
+  $('table.stunts tr:visible:last').addClass('last_row')
 
 window.fate_core_resize_name = () ->
   setTimeout ( ->
@@ -104,6 +110,20 @@ window.fate_core_size_avatar = () ->
     else
       avatar.addClass('wide')
 
+window.fate_core_set_active_stunts = () ->
+  stunts = $('table.stunts').children().children()
+  console.log stunts
+  for stunt in stunts
+    console.log stunt
+    activator = stunt.children[2].children[0].children[0].children[0]
+    console.log activator
+    if activator.value == '1'
+      stunt.classList.add('active')
+      stunt.classList.remove('inactive')
+    else
+      stunt.classList.add('inactive')
+      stunt.classList.remove('active')
+
 window.fate_core_set_active_consequences = () ->
   consequences = $('.consequence')
   for consequence in consequences
@@ -147,6 +167,26 @@ window.fate_core_mark_used_skills = () ->
     content = listing.childNodes[1].innerHTML.trim()
     if content.length > 0
       listing.className = 'skill'
+
+window.fate_core_update_active_stunts = (opts) ->
+  console.log 'updating stunts'
+  name = opts['fieldName']
+  console.log name
+  value = opts['fieldValue']
+  console.log value
+  match = name.match(/stunt_(\d\d)_active/)
+  console.log match
+  return unless match
+  stunt = $(".dsf_stunt_#{match[1]}_active")
+  console.log stunt
+  row = stunt.parent().parent().parent()[0]
+  console.log row
+  if value == '1'
+    row.classList.add('active')
+    row.classList.remove('inactive')
+  else
+    row.classList.add('inactive')
+    row.classList.remove('active')
 
 window.fate_core_update_active_consequences = (opts) ->
   name = opts['fieldName']

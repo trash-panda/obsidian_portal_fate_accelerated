@@ -11,10 +11,12 @@
     fate_core_set_active_stress_boxes();
     fate_core_set_active_stress_tracks();
     fate_core_set_active_consequences();
+    fate_core_set_active_stunts();
     fate_core_size_avatar();
     fate_core_size_points();
     fate_core_default_extra_consequences();
     fate_core_default_skill_names();
+    fate_core_hide_last_table_row();
     return fate_core_resize_name();
   };
 
@@ -23,12 +25,17 @@
     fate_core_update_active_stress(options);
     fate_core_update_active_stress_tracks(options);
     fate_core_update_active_consequences(options);
+    fate_core_update_active_stunts(options);
     fate_core_size_points();
     fate_core_default_extra_consequences();
     return fate_core_default_skill_names();
   };
 
   window.fate_core_dataPreSave = function(options) {};
+
+  window.fate_core_hide_last_table_row = function() {
+    return $('table.stunts tr:visible:last').addClass('last_row');
+  };
 
   window.fate_core_resize_name = function() {
     return setTimeout((function() {
@@ -133,6 +140,27 @@
     });
   };
 
+  window.fate_core_set_active_stunts = function() {
+    var activator, stunt, stunts, _i, _len, _results;
+    stunts = $('table.stunts').children().children();
+    console.log(stunts);
+    _results = [];
+    for (_i = 0, _len = stunts.length; _i < _len; _i++) {
+      stunt = stunts[_i];
+      console.log(stunt);
+      activator = stunt.children[2].children[0].children[0].children[0];
+      console.log(activator);
+      if (activator.value === '1') {
+        stunt.classList.add('active');
+        _results.push(stunt.classList.remove('inactive'));
+      } else {
+        stunt.classList.add('inactive');
+        _results.push(stunt.classList.remove('active'));
+      }
+    }
+    return _results;
+  };
+
   window.fate_core_set_active_consequences = function() {
     var activator, consequence, consequences, on_value, _i, _len, _results;
     consequences = $('.consequence');
@@ -205,6 +233,31 @@
       }
     }
     return _results;
+  };
+
+  window.fate_core_update_active_stunts = function(opts) {
+    var match, name, row, stunt, value;
+    console.log('updating stunts');
+    name = opts['fieldName'];
+    console.log(name);
+    value = opts['fieldValue'];
+    console.log(value);
+    match = name.match(/stunt_(\d\d)_active/);
+    console.log(match);
+    if (!match) {
+      return;
+    }
+    stunt = $(".dsf_stunt_" + match[1] + "_active");
+    console.log(stunt);
+    row = stunt.parent().parent().parent()[0];
+    console.log(row);
+    if (value === '1') {
+      row.classList.add('active');
+      return row.classList.remove('inactive');
+    } else {
+      row.classList.add('inactive');
+      return row.classList.remove('active');
+    }
   };
 
   window.fate_core_update_active_consequences = function(opts) {
