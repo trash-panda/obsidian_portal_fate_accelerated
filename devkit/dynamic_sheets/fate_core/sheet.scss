@@ -38,11 +38,9 @@
     padding-top: 5px;
   }
   font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
   .description {
     form.jeditable_input {
-      position: relative;
-      top: -15px;
-      left: 5px;
       input {
         min-width: 200px !important;
         height: 20px !important;
@@ -91,12 +89,14 @@
     background: url(http://i.minus.com/ibq961ZORqAdvB.png);
     display: inline-block;
     width: 21px;
+    height: 21px;
   }
   span.header.right {
     background: url(http://i.minus.com/ibs4Wqi27GD4q3.png);
     float: none;
     display: inline-block;
     width: 21px;
+    height: 21px;
   }
 
   .header{
@@ -110,10 +110,10 @@
     width: 676px;
   }
   .stress_header {
-    width: 218px;
+    width: 238px;
   }
   .consequences_header {
-    width: 388px;
+    width: 378px;
   }
   .avatar {
     float: right;
@@ -236,6 +236,7 @@
     width: 718px;
     .grey {
       margin-left: 185px;
+      height: 21px;
     }
     .aspect {
       border: 2px solid black;
@@ -252,8 +253,7 @@
         padding-left: 3px;
         form.jeditable_input {
           position: relative;
-          top: -22px;
-          left: 147px;
+          top: -23px;
         }
       }
     }
@@ -317,7 +317,7 @@
     display: none
   }
   .stress_container {
-    width: 270px;
+    width: 290px;
   }
   table.stress {
     margin-bottom: 5px;
@@ -359,13 +359,14 @@
     .grey {
       margin-left: 90px;
       position:relative;
-      top: -63px;
-      height: 100%
+      top: -62px;
+      height: 100%;
+      overflow: hidden;
     }
     .inactive {
       display: none;
     }
-    width: 430px;
+    width: 420px;
     margin-top: 0px;
 
     float:right;
@@ -396,18 +397,25 @@
         z-index: 1;
         padding-left: 3px;
       }
+      form.jeditable_input {
+        position: relative;
+        top: -24px;
+        input {
+          height: 16px !important;
+        }
+      }
       .activator {
         position: relative;
-        top: -85px;
-        left: 352px;
+        top: -82px;
+        left: 341px;
         width: 67px;
         padding: 0px;
         padding-left: 3px;
         height: 20px;
         input {
           position: relative;
-          top: 66px;
-          left: -302px;
+          top: 63px;
+          left: -291px;
         }
       }
     }

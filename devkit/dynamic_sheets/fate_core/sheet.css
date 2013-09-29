@@ -19,19 +19,16 @@
     border: 2px solid white; }
 
 .ds_fate_core {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px; }
   .ds_fate_core .grey {
     background: rgba(50, 50, 50, 0.25); }
   .ds_fate_core .game_info {
     padding-left: 5px;
     padding-top: 5px; }
-  .ds_fate_core .description form.jeditable_input {
-    position: relative;
-    top: -15px;
-    left: 5px; }
-    .ds_fate_core .description form.jeditable_input input {
-      min-width: 200px !important;
-      height: 20px !important; }
+  .ds_fate_core .description form.jeditable_input input {
+    min-width: 200px !important;
+    height: 20px !important; }
   .ds_fate_core form.jeditable_input {
     z-index: 1; }
     .ds_fate_core form.jeditable_input input {
@@ -60,12 +57,14 @@
   .ds_fate_core span.header.left {
     background: url(http://i.minus.com/ibq961ZORqAdvB.png);
     display: inline-block;
-    width: 21px; }
+    width: 21px;
+    height: 21px; }
   .ds_fate_core span.header.right {
     background: url(http://i.minus.com/ibs4Wqi27GD4q3.png);
     float: none;
     display: inline-block;
-    width: 21px; }
+    width: 21px;
+    height: 21px; }
   .ds_fate_core .header {
     background: black;
     margin-bottom: 5px; }
@@ -74,9 +73,9 @@
   .ds_fate_core .full_width_header.content {
     width: 676px; }
   .ds_fate_core .stress_header {
-    width: 218px; }
+    width: 238px; }
   .ds_fate_core .consequences_header {
-    width: 388px; }
+    width: 378px; }
   .ds_fate_core .avatar {
     float: right;
     width: 257px;
@@ -174,7 +173,8 @@
   .ds_fate_core .aspects {
     width: 718px; }
     .ds_fate_core .aspects .grey {
-      margin-left: 185px; }
+      margin-left: 185px;
+      height: 21px; }
     .ds_fate_core .aspects .aspect {
       border: 2px solid black;
       margin: 3px 0px;
@@ -189,8 +189,7 @@
         padding-left: 3px; }
         .ds_fate_core .aspects .aspect span.dsf form.jeditable_input {
           position: relative;
-          top: -22px;
-          left: 147px; }
+          top: -23px; }
   .ds_fate_core table.skills {
     width: 720px; }
     .ds_fate_core table.skills tr.skill {
@@ -238,7 +237,7 @@
   .ds_fate_core .stress_track.inactive {
     display: none; }
   .ds_fate_core .stress_container {
-    width: 270px; }
+    width: 290px; }
   .ds_fate_core table.stress {
     margin-bottom: 5px;
     padding-left: 5px; }
@@ -266,14 +265,15 @@
       left: -3px;
       top: -38px; }
   .ds_fate_core .consequences {
-    width: 430px;
+    width: 420px;
     margin-top: 0px;
     float: right; }
     .ds_fate_core .consequences .grey {
       margin-left: 90px;
       position: relative;
-      top: -63px;
-      height: 100%; }
+      top: -62px;
+      height: 100%;
+      overflow: hidden; }
     .ds_fate_core .consequences .inactive {
       display: none; }
     .ds_fate_core .consequences .consequence {
@@ -300,18 +300,23 @@
       .ds_fate_core .consequences .consequence span.value {
         z-index: 1;
         padding-left: 3px; }
+      .ds_fate_core .consequences .consequence form.jeditable_input {
+        position: relative;
+        top: -24px; }
+        .ds_fate_core .consequences .consequence form.jeditable_input input {
+          height: 16px !important; }
       .ds_fate_core .consequences .consequence .activator {
         position: relative;
-        top: -85px;
-        left: 352px;
+        top: -82px;
+        left: 341px;
         width: 67px;
         padding: 0px;
         padding-left: 3px;
         height: 20px; }
         .ds_fate_core .consequences .consequence .activator input {
           position: relative;
-          top: 66px;
-          left: -302px; }
+          top: 63px;
+          left: -291px; }
   .ds_fate_core .credits {
     margin-left: auto;
     margin-right: auto;
