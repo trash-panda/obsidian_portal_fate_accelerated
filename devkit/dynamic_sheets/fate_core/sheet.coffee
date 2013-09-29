@@ -21,6 +21,7 @@ window.fate_core_dataPostLoad = (options) ->
   fate_core_size_avatar()
   fate_core_size_points()
   fate_core_default_extra_consequences()
+  fate_core_default_skill_names()
   fate_core_resize_name()
 
 window.fate_core_dataChange = (options) ->
@@ -31,6 +32,7 @@ window.fate_core_dataChange = (options) ->
   fate_core_update_active_consequences(options)
   fate_core_size_points()
   fate_core_default_extra_consequences()
+  fate_core_default_skill_names()
 
 window.fate_core_dataPreSave = (options) ->
   # Called just before the data is saved to the server.
@@ -46,7 +48,24 @@ window.fate_core_resize_name = () ->
     while name.offsetWidth > 235
       size--
       name.style.fontSize = "#{size}px"
-  ), 500
+  ), 1000
+
+window.fate_core_default_skill_names = () ->
+  skills = $('.skill_name')
+  for skill in skills
+    if skill.innerHTML == aisleten.characters.jeditablePlaceholder or skill.innerHTML == ''
+      if skill.classList.contains('dsf_skill_1_label')
+        skill.innerHTML = 'Average (+1)'
+      else if skill.classList.contains('dsf_skill_2_label')
+        skill.innerHTML = 'Fair (+2)'
+      else if skill.classList.contains('dsf_skill_3_label')
+        skill.innerHTML = 'Good (+3)'
+      else if skill.classList.contains('dsf_skill_4_label')
+        skill.innerHTML = 'Great (+4)'
+      else if skill.classList.contains('dsf_skill_5_label')
+        skill.innerHTML = 'Superb (+5)'
+      else if skill.classList.contains('dsf_skill_6_label')
+        skill.innerHTML = 'Fantastic (+6)'
 
 window.fate_core_default_extra_consequences = () ->
   consequences = $('.consequence')
@@ -68,7 +87,7 @@ window.fate_core_default_extra_consequences = () ->
         title.innerHTML = 'Extra'
 
 window.fate_core_size_points = () ->
-  points = $('.points_box').children('.dsf')
+  points = $('.points_box').children('.grey').children('.dsf')
   for point in points
     if point.innerHTML == aisleten.characters.jeditablePlaceholder or point.innerHTML == ''
       point.classList.add('placeholder')

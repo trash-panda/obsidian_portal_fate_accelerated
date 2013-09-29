@@ -14,6 +14,7 @@
     fate_core_size_avatar();
     fate_core_size_points();
     fate_core_default_extra_consequences();
+    fate_core_default_skill_names();
     return fate_core_resize_name();
   };
 
@@ -23,7 +24,8 @@
     fate_core_update_active_stress_tracks(options);
     fate_core_update_active_consequences(options);
     fate_core_size_points();
-    return fate_core_default_extra_consequences();
+    fate_core_default_extra_consequences();
+    return fate_core_default_skill_names();
   };
 
   window.fate_core_dataPreSave = function(options) {};
@@ -40,7 +42,36 @@
         _results.push(name.style.fontSize = "" + size + "px");
       }
       return _results;
-    }), 500);
+    }), 1000);
+  };
+
+  window.fate_core_default_skill_names = function() {
+    var skill, skills, _i, _len, _results;
+    skills = $('.skill_name');
+    _results = [];
+    for (_i = 0, _len = skills.length; _i < _len; _i++) {
+      skill = skills[_i];
+      if (skill.innerHTML === aisleten.characters.jeditablePlaceholder || skill.innerHTML === '') {
+        if (skill.classList.contains('dsf_skill_1_label')) {
+          _results.push(skill.innerHTML = 'Average (+1)');
+        } else if (skill.classList.contains('dsf_skill_2_label')) {
+          _results.push(skill.innerHTML = 'Fair (+2)');
+        } else if (skill.classList.contains('dsf_skill_3_label')) {
+          _results.push(skill.innerHTML = 'Good (+3)');
+        } else if (skill.classList.contains('dsf_skill_4_label')) {
+          _results.push(skill.innerHTML = 'Great (+4)');
+        } else if (skill.classList.contains('dsf_skill_5_label')) {
+          _results.push(skill.innerHTML = 'Superb (+5)');
+        } else if (skill.classList.contains('dsf_skill_6_label')) {
+          _results.push(skill.innerHTML = 'Fantastic (+6)');
+        } else {
+          _results.push(void 0);
+        }
+      } else {
+        _results.push(void 0);
+      }
+    }
+    return _results;
   };
 
   window.fate_core_default_extra_consequences = function() {
@@ -74,7 +105,7 @@
 
   window.fate_core_size_points = function() {
     var point, points, _i, _len, _results;
-    points = $('.points_box').children('.dsf');
+    points = $('.points_box').children('.grey').children('.dsf');
     _results = [];
     for (_i = 0, _len = points.length; _i < _len; _i++) {
       point = points[_i];
