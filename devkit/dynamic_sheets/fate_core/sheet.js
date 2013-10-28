@@ -143,13 +143,10 @@
   window.fate_core_set_active_stunts = function() {
     var activator, stunt, stunts, _i, _len, _results;
     stunts = $('table.stunts').children().children();
-    console.log(stunts);
     _results = [];
     for (_i = 0, _len = stunts.length; _i < _len; _i++) {
       stunt = stunts[_i];
-      console.log(stunt);
       activator = stunt.children[2].children[0].children[0].children[0];
-      console.log(activator);
       if (activator.value === '1') {
         stunt.classList.add('active');
         _results.push(stunt.classList.remove('inactive'));

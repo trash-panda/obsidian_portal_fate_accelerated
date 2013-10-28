@@ -112,11 +112,8 @@ window.fate_core_size_avatar = () ->
 
 window.fate_core_set_active_stunts = () ->
   stunts = $('table.stunts').children().children()
-  console.log stunts
   for stunt in stunts
-    console.log stunt
     activator = stunt.children[2].children[0].children[0].children[0]
-    console.log activator
     if activator.value == '1'
       stunt.classList.add('active')
       stunt.classList.remove('inactive')

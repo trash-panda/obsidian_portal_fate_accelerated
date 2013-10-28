@@ -10,13 +10,13 @@
 .ds_fate_core.editable .consequence.inactive {
   display: block;
   border: 2px solid darkgrey; }
-  .ds_fate_core.editable .consequence.inactive .label {
+  .ds_fate_core.editable .consequence.inactive .sheet_label {
     color: darkgrey; }
 .ds_fate_core.editable .stress_track.inactive {
   display: block; }
   .ds_fate_core.editable .stress_track.inactive .activator {
     padding-left: 10px; }
-  .ds_fate_core.editable .stress_track.inactive .label {
+  .ds_fate_core.editable .stress_track.inactive .sheet_label {
     color: white; }
   .ds_fate_core.editable .stress_track.inactive .stress.group {
     border: 2px solid white; }
@@ -24,6 +24,10 @@
 .ds_fate_core {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px; }
+  .ds_fate_core table {
+    background: none; }
+    .ds_fate_core table tr:nth-of-type(even) {
+      background: none; }
   .ds_fate_core .grey {
     background: rgba(50, 50, 50, 0.25); }
   .ds_fate_core .game_info {
@@ -47,7 +51,7 @@
   .ds_fate_core .activator {
     display: none; }
   .ds_fate_core .sheet_boundary {
-    background: url(http://fc06.deviantart.net/fs11/i/2006/220/d/2/Grungy_paper_v_6___or_sumtin___by_bashcorpo.jpg);
+    background: url(https://fc06.deviantart.net/fs11/i/2006/220/d/2/Grungy_paper_v_6___or_sumtin___by_bashcorpo.jpg);
     width: 728px; }
   .ds_fate_core .container {
     margin: 5px; }
@@ -58,12 +62,12 @@
     padding-bottom: 4px;
     height: 17px; }
   .ds_fate_core span.header.left {
-    background: url(http://i.minus.com/ibq961ZORqAdvB.png);
+    background: url(https://i.minus.com/ibq961ZORqAdvB.png);
     display: inline-block;
     width: 21px;
     height: 21px; }
   .ds_fate_core span.header.right {
-    background: url(http://i.minus.com/ibs4Wqi27GD4q3.png);
+    background: url(https://i.minus.com/ibs4Wqi27GD4q3.png);
     float: none;
     display: inline-block;
     width: 21px;
@@ -109,7 +113,7 @@
       .ds_fate_core .basic_info .name .grey {
         margin-left: 101px;
         height: 100%; }
-      .ds_fate_core .basic_info .name span.title {
+      .ds_fate_core .basic_info .name span.sheet_title {
         text-align: right;
         width: 98px;
         height: 30px;
@@ -122,8 +126,7 @@
     .ds_fate_core .basic_info .description {
       border: 2px solid black;
       height: 190px;
-      overflow: hidden;
-      /*span.title {*/ }
+      overflow: hidden; }
       .ds_fate_core .basic_info .description .see-through {
         text-align: right;
         width: 97px;
@@ -151,7 +154,7 @@
         .ds_fate_core .basic_info .points_box form.jeditable_input input {
           width: 10px !important;
           height: 20px !important; }
-      .ds_fate_core .basic_info .points_box span.title {
+      .ds_fate_core .basic_info .points_box span.sheet_title {
         text-align: right;
         width: 98px;
         height: 21px;
@@ -182,7 +185,7 @@
       border: 2px solid black;
       margin: 3px 0px;
       height: 21px; }
-      .ds_fate_core .aspects .aspect span.title {
+      .ds_fate_core .aspects .aspect span.sheet_title {
         text-align: right;
         width: 180px;
         font-weight: bold;
@@ -204,9 +207,9 @@
         display: inline-block; }
       .ds_fate_core table.skills tr.skill .skill_holder {
         display: inline-block; }
-      .ds_fate_core table.skills tr.skill td.title {
+      .ds_fate_core table.skills tr.skill td.sheet_title {
         font-weight: bold;
-        width: 115px;
+        width: 110px;
         text-align: right;
         padding-left: 0px;
         padding-right: 2px; }
@@ -236,7 +239,8 @@
           display: inline-block;
           width: 84px;
           padding-left: 2px;
-          height: 19px; }
+          height: 19px;
+          font-size: 13px; }
   .ds_fate_core .stress_track.inactive {
     display: none; }
   .ds_fate_core .stress_container {
@@ -245,28 +249,28 @@
     margin-bottom: 5px;
     padding-left: 5px; }
     .ds_fate_core table.stress .group {
-      padding: 0px 5px;
+      padding: 0px;
       margin: 5px 5px;
       height: 20px;
-      width: 15px; }
+      width: 20px; }
     .ds_fate_core table.stress .active {
       border: 2px solid black;
       color: black; }
     .ds_fate_core table.stress .inactive {
       border: 2px solid darkgrey;
       color: darkgrey; }
-    .ds_fate_core table.stress td .group .label {
+    .ds_fate_core table.stress td .group .sheet_label {
       width: 5px;
       font-weight: bold;
       font-size: 2em;
       position: relative;
-      top: -20px;
-      left: -15px;
+      top: -10px;
+      left: -10px;
       z-index: 1; }
     .ds_fate_core table.stress td .group span.dsf {
       position: relative;
-      left: -3px;
-      top: -38px; }
+      left: 4px;
+      top: -11px; }
   .ds_fate_core table.stunts tr.inactive {
     display: none; }
   .ds_fate_core table.stunts td {
@@ -291,14 +295,14 @@
       height: 20px;
       margin: 12px 0px;
       border: 2px solid black; }
-      .ds_fate_core .consequences .consequence .label {
+      .ds_fate_core .consequences .consequence .sheet_label {
         position: relative;
         left: -10px;
         top: -23px;
         font-size: 2em;
         font-weight: bold;
         z-index: 1; }
-      .ds_fate_core .consequences .consequence span.title {
+      .ds_fate_core .consequences .consequence span.sheet_title {
         display: block;
         padding-right: 3px;
         text-align: right;
