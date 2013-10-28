@@ -59,6 +59,15 @@
       }
     }
   }
+  .aspects {
+    form.jeditable_input {
+      input {
+        min-width: 485px !important;
+        max-width: 485px !important;
+        height: 20px !important;
+      }
+    }
+  }
   form.jeditable_input {
     z-index: 1;
     input {

@@ -36,6 +36,10 @@
   .ds_fate_core .description form.jeditable_input input {
     min-width: 200px !important;
     height: 20px !important; }
+  .ds_fate_core .aspects form.jeditable_input input {
+    min-width: 485px !important;
+    max-width: 485px !important;
+    height: 20px !important; }
   .ds_fate_core form.jeditable_input {
     z-index: 1; }
     .ds_fate_core form.jeditable_input input {
