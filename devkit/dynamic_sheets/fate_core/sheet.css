@@ -7,6 +7,11 @@
   display: table-row; }
 .ds_fate_core.editable .activator {
   display: block; }
+.ds_fate_core.editable .aspect.inactive {
+  display: block;
+  border: 2px solid darkgrey; }
+  .ds_fate_core.editable .aspect.inactive .sheet_title {
+    color: darkgrey; }
 .ds_fate_core.editable .consequence.inactive {
   display: block;
   border: 2px solid darkgrey; }
@@ -36,10 +41,18 @@
   .ds_fate_core .description form.jeditable_input input {
     min-width: 200px !important;
     height: 20px !important; }
-  .ds_fate_core .aspects form.jeditable_input input {
-    min-width: 485px !important;
-    max-width: 485px !important;
-    height: 20px !important; }
+  .ds_fate_core .aspects .sheet_title form.jeditable_input {
+    height: 14px; }
+    .ds_fate_core .aspects .sheet_title form.jeditable_input input {
+      min-width: 170px !important;
+      max-width: 170px !important;
+      height: 20px !important; }
+  .ds_fate_core .aspects .grey form.jeditable_input {
+    height: 14px; }
+    .ds_fate_core .aspects .grey form.jeditable_input input {
+      min-width: 485px !important;
+      max-width: 485px !important;
+      height: 20px !important; }
   .ds_fate_core form.jeditable_input {
     z-index: 1; }
     .ds_fate_core form.jeditable_input input {
@@ -182,9 +195,12 @@
           position: relative; }
   .ds_fate_core .aspects {
     width: 718px; }
+    .ds_fate_core .aspects .inactive {
+      display: none; }
     .ds_fate_core .aspects .grey {
       margin-left: 185px;
-      height: 21px; }
+      height: 21px;
+      overflow: hidden; }
     .ds_fate_core .aspects .aspect {
       border: 2px solid black;
       margin: 3px 0px;
@@ -200,6 +216,18 @@
         .ds_fate_core .aspects .aspect span.dsf form.jeditable_input {
           position: relative;
           top: -23px; }
+      .ds_fate_core .aspects .aspect .activator {
+        position: relative;
+        top: -22px;
+        left: 636px;
+        width: 67px;
+        padding: 0px;
+        padding-left: 3px;
+        height: 20px; }
+        .ds_fate_core .aspects .aspect .activator input {
+          position: relative;
+          top: 3px;
+          left: -581px; }
   .ds_fate_core table.skills {
     width: 720px; }
     .ds_fate_core table.skills tr.skill {

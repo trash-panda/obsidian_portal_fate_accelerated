@@ -12,6 +12,13 @@
   .activator {
     display: block;
   }
+  .aspect.inactive {
+    display: block;
+    border: 2px solid darkgrey;
+    .sheet_title {
+      color: darkgrey;
+    }
+  }
   .consequence.inactive {
     display: block;
     border: 2px solid darkgrey;
@@ -60,11 +67,24 @@
     }
   }
   .aspects {
-    form.jeditable_input {
-      input {
-        min-width: 485px !important;
-        max-width: 485px !important;
-        height: 20px !important;
+    .sheet_title {
+      form.jeditable_input {
+        height: 14px;
+        input {
+          min-width: 170px !important;
+          max-width: 170px !important;
+          height: 20px !important;
+        }
+      }
+    }
+    .grey {
+      form.jeditable_input {
+        height: 14px;
+        input {
+          min-width: 485px !important;
+          max-width: 485px !important;
+          height: 20px !important;
+        }
       }
     }
   }
@@ -253,10 +273,14 @@
   }
 
   .aspects {
+    .inactive {
+      display: none
+    }
     width: 718px;
     .grey {
       margin-left: 185px;
       height: 21px;
+      overflow: hidden;
     }
     .aspect {
       border: 2px solid black;
@@ -274,6 +298,20 @@
         form.jeditable_input {
           position: relative;
           top: -23px;
+        }
+      }
+      .activator {
+        position: relative;
+        top: -22px;
+        left: 636px;
+        width: 67px;
+        padding: 0px;
+        padding-left: 3px;
+        height: 20px;
+        input {
+          position: relative;
+          top: 3px;
+          left: -581px;
         }
       }
     }

@@ -19,10 +19,12 @@ window.fate_core_dataPostLoad = (options) ->
   fate_core_set_active_stress_tracks()
   fate_core_set_active_consequences()
   fate_core_set_active_stunts()
+  fate_core_set_active_aspects()
   fate_core_size_avatar()
   fate_core_size_points()
   fate_core_default_extra_consequences()
   fate_core_default_skill_names()
+  fate_core_default_aspect_names()
   fate_core_hide_last_table_row()
   fate_core_resize_name()
 
@@ -33,9 +35,11 @@ window.fate_core_dataChange = (options) ->
   fate_core_update_active_stress_tracks(options)
   fate_core_update_active_consequences(options)
   fate_core_update_active_stunts(options)
+  fate_core_set_active_aspects()
   fate_core_size_points()
   fate_core_default_extra_consequences()
   fate_core_default_skill_names()
+  fate_core_default_aspect_names()
 
 window.fate_core_dataPreSave = (options) ->
   # Called just before the data is saved to the server.
@@ -56,6 +60,22 @@ window.fate_core_resize_name = () ->
       name.style.fontSize = "#{size}px"
   ), 1000
 
+window.fate_core_default_aspect_names = () ->
+  console.log 'default aspect names'
+  aspects = $('.aspect_name')
+  for aspect in aspects
+    if aspect.innerHTML == aisleten.characters.jeditablePlaceholder or aspect.innerHTML == ''
+      if aspect.classList.contains('dsf_concept_label')
+        aspect.innerHTML = 'High Concept'
+      else if aspect.classList.contains('dsf_trouble_label')
+        aspect.innerHTML = 'Trouble'
+      else if aspect.classList.contains('dsf_your_adventure_label')
+        aspect.innerHTML = 'Your Adventure'
+      else if aspect.classList.contains('dsf_crossing_paths_label')
+        aspect.innerHTML = 'Crossing Paths'
+      else if aspect.classList.contains('dsf_crossing_paths_again_label')
+        aspect.innerHTML = 'Crossing Paths Again'
+      
 window.fate_core_default_skill_names = () ->
   skills = $('.skill_name')
   for skill in skills
@@ -120,6 +140,25 @@ window.fate_core_set_active_stunts = () ->
     else
       stunt.classList.add('inactive')
       stunt.classList.remove('active')
+
+window.fate_core_set_active_aspects = () ->
+  console.log 'set active aspects'
+  aspects = $('.aspect')
+  console.log aspects
+  for aspect in aspects
+    console.log aspect
+    activator = aspect.children[2].children[0].children[0]
+    if aspect.classList.contains('extra')
+      on_value = '1'
+    else
+      on_value = '0'
+    console.log on_value
+    if activator.value == on_value
+      aspect.classList.add('active')
+      aspect.classList.remove('inactive')
+    else
+      aspect.classList.add('inactive')
+      aspect.classList.remove('active')
 
 window.fate_core_set_active_consequences = () ->
   consequences = $('.consequence')

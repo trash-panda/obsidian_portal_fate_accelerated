@@ -12,10 +12,12 @@
     fate_core_set_active_stress_tracks();
     fate_core_set_active_consequences();
     fate_core_set_active_stunts();
+    fate_core_set_active_aspects();
     fate_core_size_avatar();
     fate_core_size_points();
     fate_core_default_extra_consequences();
     fate_core_default_skill_names();
+    fate_core_default_aspect_names();
     fate_core_hide_last_table_row();
     return fate_core_resize_name();
   };
@@ -26,9 +28,11 @@
     fate_core_update_active_stress_tracks(options);
     fate_core_update_active_consequences(options);
     fate_core_update_active_stunts(options);
+    fate_core_set_active_aspects();
     fate_core_size_points();
     fate_core_default_extra_consequences();
-    return fate_core_default_skill_names();
+    fate_core_default_skill_names();
+    return fate_core_default_aspect_names();
   };
 
   window.fate_core_dataPreSave = function(options) {};
@@ -50,6 +54,34 @@
       }
       return _results;
     }), 1000);
+  };
+
+  window.fate_core_default_aspect_names = function() {
+    var aspect, aspects, _i, _len, _results;
+    console.log('default aspect names');
+    aspects = $('.aspect_name');
+    _results = [];
+    for (_i = 0, _len = aspects.length; _i < _len; _i++) {
+      aspect = aspects[_i];
+      if (aspect.innerHTML === aisleten.characters.jeditablePlaceholder || aspect.innerHTML === '') {
+        if (aspect.classList.contains('dsf_concept_label')) {
+          _results.push(aspect.innerHTML = 'High Concept');
+        } else if (aspect.classList.contains('dsf_trouble_label')) {
+          _results.push(aspect.innerHTML = 'Trouble');
+        } else if (aspect.classList.contains('dsf_your_adventure_label')) {
+          _results.push(aspect.innerHTML = 'Your Adventure');
+        } else if (aspect.classList.contains('dsf_crossing_paths_label')) {
+          _results.push(aspect.innerHTML = 'Crossing Paths');
+        } else if (aspect.classList.contains('dsf_crossing_paths_again_label')) {
+          _results.push(aspect.innerHTML = 'Crossing Paths Again');
+        } else {
+          _results.push(void 0);
+        }
+      } else {
+        _results.push(void 0);
+      }
+    }
+    return _results;
   };
 
   window.fate_core_default_skill_names = function() {
@@ -153,6 +185,33 @@
       } else {
         stunt.classList.add('inactive');
         _results.push(stunt.classList.remove('active'));
+      }
+    }
+    return _results;
+  };
+
+  window.fate_core_set_active_aspects = function() {
+    var activator, aspect, aspects, on_value, _i, _len, _results;
+    console.log('set active aspects');
+    aspects = $('.aspect');
+    console.log(aspects);
+    _results = [];
+    for (_i = 0, _len = aspects.length; _i < _len; _i++) {
+      aspect = aspects[_i];
+      console.log(aspect);
+      activator = aspect.children[2].children[0].children[0];
+      if (aspect.classList.contains('extra')) {
+        on_value = '1';
+      } else {
+        on_value = '0';
+      }
+      console.log(on_value);
+      if (activator.value === on_value) {
+        aspect.classList.add('active');
+        _results.push(aspect.classList.remove('inactive'));
+      } else {
+        aspect.classList.add('inactive');
+        _results.push(aspect.classList.remove('active'));
       }
     }
     return _results;
