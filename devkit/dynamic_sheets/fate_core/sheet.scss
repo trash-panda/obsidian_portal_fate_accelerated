@@ -7,6 +7,9 @@
     tr.inactive {
       color: darkgrey;
       display: table-row;
+      td {
+        color: darkgrey;
+      }
     }
   }
   .activator {
@@ -361,7 +364,7 @@
       li {
         display:inline;
         border: 2px solid black;
-        margin:0px 3px;
+        margin:0px 2px;
         span {
           display: inline-block;
           width: 84px;

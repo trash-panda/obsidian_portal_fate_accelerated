@@ -5,6 +5,8 @@
 .ds_fate_core.editable table.stunts tr.inactive {
   color: darkgrey;
   display: table-row; }
+  .ds_fate_core.editable table.stunts tr.inactive td {
+    color: darkgrey; }
 .ds_fate_core.editable .activator {
   display: block; }
 .ds_fate_core.editable .aspect.inactive {
@@ -266,7 +268,7 @@
       .ds_fate_core table.skills ul li {
         display: inline;
         border: 2px solid black;
-        margin: 0px 3px; }
+        margin: 0px 2px; }
         .ds_fate_core table.skills ul li span {
           display: inline-block;
           width: 84px;

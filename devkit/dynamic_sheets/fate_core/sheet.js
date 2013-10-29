@@ -58,22 +58,22 @@
 
   window.fate_core_default_aspect_names = function() {
     var aspect, aspects, _i, _len, _results;
-    console.log('default aspect names');
     aspects = $('.aspect_name');
     _results = [];
     for (_i = 0, _len = aspects.length; _i < _len; _i++) {
       aspect = aspects[_i];
-      if (aspect.innerHTML === aisleten.characters.jeditablePlaceholder || aspect.innerHTML === '') {
-        if (aspect.classList.contains('dsf_concept_label')) {
-          _results.push(aspect.innerHTML = 'High Concept');
-        } else if (aspect.classList.contains('dsf_trouble_label')) {
-          _results.push(aspect.innerHTML = 'Trouble');
-        } else if (aspect.classList.contains('dsf_your_adventure_label')) {
-          _results.push(aspect.innerHTML = 'Your Adventure');
-        } else if (aspect.classList.contains('dsf_crossing_paths_label')) {
-          _results.push(aspect.innerHTML = 'Crossing Paths');
-        } else if (aspect.classList.contains('dsf_crossing_paths_again_label')) {
-          _results.push(aspect.innerHTML = 'Crossing Paths Again');
+      aspect = $(aspect);
+      if (aspect.text() === aisleten.characters.jeditablePlaceholder || aspect.text() === '') {
+        if (aspect.hasClass('dsf_concept_label')) {
+          _results.push(aspect.text('High Concept'));
+        } else if (aspect.hasClass('dsf_trouble_label')) {
+          _results.push(aspect.text('Trouble'));
+        } else if (aspect.hasClass('dsf_your_adventure_label')) {
+          _results.push(aspect.text('Your Adventure'));
+        } else if (aspect.hasClass('dsf_crossing_paths_label')) {
+          _results.push(aspect.text('Crossing Paths'));
+        } else if (aspect.hasClass('dsf_crossing_paths_again_label')) {
+          _results.push(aspect.text('Crossing Paths Again'));
         } else {
           _results.push(void 0);
         }
@@ -90,19 +90,20 @@
     _results = [];
     for (_i = 0, _len = skills.length; _i < _len; _i++) {
       skill = skills[_i];
-      if (skill.innerHTML === aisleten.characters.jeditablePlaceholder || skill.innerHTML === '') {
-        if (skill.classList.contains('dsf_skill_1_label')) {
-          _results.push(skill.innerHTML = 'Average (+1)');
-        } else if (skill.classList.contains('dsf_skill_2_label')) {
-          _results.push(skill.innerHTML = 'Fair (+2)');
-        } else if (skill.classList.contains('dsf_skill_3_label')) {
-          _results.push(skill.innerHTML = 'Good (+3)');
-        } else if (skill.classList.contains('dsf_skill_4_label')) {
-          _results.push(skill.innerHTML = 'Great (+4)');
-        } else if (skill.classList.contains('dsf_skill_5_label')) {
-          _results.push(skill.innerHTML = 'Superb (+5)');
-        } else if (skill.classList.contains('dsf_skill_6_label')) {
-          _results.push(skill.innerHTML = 'Fantastic (+6)');
+      skill = $(skill);
+      if (skill.text() === aisleten.characters.jeditablePlaceholder || skill.text() === '') {
+        if (skill.hasClass('dsf_skill_1_label')) {
+          _results.push(skill.text('Average (+1)'));
+        } else if (skill.hasClass('dsf_skill_2_label')) {
+          _results.push(skill.text('Fair (+2)'));
+        } else if (skill.hasClass('dsf_skill_3_label')) {
+          _results.push(skill.text('Good (+3)'));
+        } else if (skill.hasClass('dsf_skill_4_label')) {
+          _results.push(skill.text('Great (+4)'));
+        } else if (skill.hasClass('dsf_skill_5_label')) {
+          _results.push(skill.text('Superb (+5)'));
+        } else if (skill.hasClass('dsf_skill_6_label')) {
+          _results.push(skill.text('Fantastic (+6)'));
         } else {
           _results.push(void 0);
         }
@@ -119,21 +120,22 @@
     _results = [];
     for (_i = 0, _len = consequences.length; _i < _len; _i++) {
       consequence = consequences[_i];
-      label = consequence.children[0];
-      title = consequence.children[1];
-      if (label.innerHTML === aisleten.characters.jeditablePlaceholder || label.innerHTML === '') {
-        if (consequence.classList.contains('mild')) {
-          label.innerHTML = '2';
-          _results.push(title.innerHTML = 'Mild');
-        } else if (consequence.classList.contains('moderate')) {
-          label.innerHTML = '4';
-          _results.push(title.innerHTML = 'Moderate');
-        } else if (consequence.classList.contains('severe')) {
-          label.innerHTML = '6';
-          _results.push(title.innerHTML = 'Severe');
+      consequence = $(consequence);
+      label = consequence.children('.sheet_label');
+      title = consequence.children('.sheet_title');
+      if (label.text() === aisleten.characters.jeditablePlaceholder || label.text() === '' || title.text() === aisleten.characters.jeditablePlaceholder || title.text() === '') {
+        if (consequence.hasClass('mild')) {
+          label.text('2');
+          _results.push(title.text('Mild'));
+        } else if (consequence.hasClass('moderate')) {
+          label.text('4');
+          _results.push(title.text('Moderate'));
+        } else if (consequence.hasClass('severe')) {
+          label.text('6');
+          _results.push(title.text('Severe'));
         } else {
-          label.innerHTML = '2';
-          _results.push(title.innerHTML = 'Extra');
+          label.text('2');
+          _results.push(title.text('Extra'));
         }
       } else {
         _results.push(void 0);
@@ -148,10 +150,11 @@
     _results = [];
     for (_i = 0, _len = points.length; _i < _len; _i++) {
       point = points[_i];
-      if (point.innerHTML === aisleten.characters.jeditablePlaceholder || point.innerHTML === '') {
-        _results.push(point.classList.add('placeholder'));
+      point = $(point);
+      if (point.text() === aisleten.characters.jeditablePlaceholder || point.text() === '') {
+        _results.push(point.addClass('placeholder'));
       } else {
-        _results.push(point.classList.remove('placeholder'));
+        _results.push(point.removeClass('placeholder'));
       }
     }
     return _results;
@@ -178,13 +181,14 @@
     _results = [];
     for (_i = 0, _len = stunts.length; _i < _len; _i++) {
       stunt = stunts[_i];
-      activator = stunt.children[2].children[0].children[0].children[0];
-      if (activator.value === '1') {
-        stunt.classList.add('active');
-        _results.push(stunt.classList.remove('inactive'));
+      stunt = $(stunt);
+      activator = stunt.children().children('.activator').children('span').children('input');
+      if (activator.val() === '1') {
+        stunt.addClass('active');
+        _results.push(stunt.removeClass('inactive'));
       } else {
-        stunt.classList.add('inactive');
-        _results.push(stunt.classList.remove('active'));
+        stunt.addClass('inactive');
+        _results.push(stunt.removeClass('active'));
       }
     }
     return _results;
@@ -192,26 +196,23 @@
 
   window.fate_core_set_active_aspects = function() {
     var activator, aspect, aspects, on_value, _i, _len, _results;
-    console.log('set active aspects');
     aspects = $('.aspect');
-    console.log(aspects);
     _results = [];
     for (_i = 0, _len = aspects.length; _i < _len; _i++) {
       aspect = aspects[_i];
-      console.log(aspect);
-      activator = aspect.children[2].children[0].children[0];
-      if (aspect.classList.contains('extra')) {
+      aspect = $(aspect);
+      activator = aspect.children('.activator').children('span').children('input');
+      if (aspect.hasClass('extra')) {
         on_value = '1';
       } else {
         on_value = '0';
       }
-      console.log(on_value);
-      if (activator.value === on_value) {
-        aspect.classList.add('active');
-        _results.push(aspect.classList.remove('inactive'));
+      if (activator.val() === on_value) {
+        aspect.addClass('active');
+        _results.push(aspect.removeClass('inactive'));
       } else {
-        aspect.classList.add('inactive');
-        _results.push(aspect.classList.remove('active'));
+        aspect.addClass('inactive');
+        _results.push(aspect.removeClass('active'));
       }
     }
     return _results;
@@ -223,18 +224,19 @@
     _results = [];
     for (_i = 0, _len = consequences.length; _i < _len; _i++) {
       consequence = consequences[_i];
-      activator = consequence.children[3].children[0].children[0];
-      if (consequence.classList.contains('extra')) {
+      consequence = $(consequence);
+      activator = consequence.children('.activator').children('span').children('input');
+      if (consequence.hasClass('extra')) {
         on_value = '1';
       } else {
         on_value = '0';
       }
-      if (activator.value === on_value) {
-        consequence.classList.add('active');
-        _results.push(consequence.classList.remove('inactive'));
+      if (activator.val() === on_value) {
+        consequence.addClass('active');
+        _results.push(consequence.removeClass('inactive'));
       } else {
-        consequence.classList.add('inactive');
-        _results.push(consequence.classList.remove('active'));
+        consequence.addClass('inactive');
+        _results.push(consequence.removeClass('active'));
       }
     }
     return _results;
@@ -246,46 +248,48 @@
     _results = [];
     for (_i = 0, _len = tracks.length; _i < _len; _i++) {
       track = tracks[_i];
-      activator = track.children[1].children[0].children[0];
-      if (activator.value === '0') {
-        track.classList.add('inactive');
-        _results.push(track.classList.remove('active'));
+      track = $(track);
+      activator = track.children('.activator').children('.dsf').children('input');
+      if (activator.val() === '0') {
+        track.addClass('inactive');
+        _results.push(track.removeClass('active'));
       } else {
-        track.classList.add('active');
-        _results.push(track.classList.remove('inactive'));
+        track.addClass('active');
+        _results.push(track.removeClass('inactive'));
       }
     }
     return _results;
   };
 
   window.fate_core_set_active_stress_boxes = function() {
-    var activator, entry, group, stresses, _i, _len, _results;
+    var stresses;
     stresses = $('td.stress');
-    _results = [];
-    for (_i = 0, _len = stresses.length; _i < _len; _i++) {
-      entry = stresses[_i];
-      group = entry.children[0];
-      activator = entry.children[1].children[0].children[0];
-      if (activator.value === '0') {
-        _results.push(group.classList.add('inactive'));
+    return stresses.each(function(index, entry) {
+      var activator, group;
+      entry = $(entry);
+      group = entry.children('.group');
+      activator = entry.children('.activator').children('.dsf').children('input');
+      if (activator.val() === '0') {
+        return group.addClass('inactive');
       } else {
-        _results.push(group.classList.add('active'));
+        return group.addClass('active');
       }
-    }
-    return _results;
+    });
   };
 
   window.fate_core_mark_used_skills = function() {
-    var content, listing, listings, _i, _len, _results;
-    listings = $('.skill.inactive');
+    var listing, listings, _i, _len, _results;
+    listings = $('li.skill');
     _results = [];
     for (_i = 0, _len = listings.length; _i < _len; _i++) {
       listing = listings[_i];
-      content = listing.childNodes[1].innerHTML.trim();
-      if (content.length > 0) {
-        _results.push(listing.className = 'skill');
+      listing = $(listing);
+      if (listing.text().trim().length > 0) {
+        listing.removeClass('inactive');
+        _results.push(listing.addClass('active'));
       } else {
-        _results.push(void 0);
+        listing.removeClass('active');
+        _results.push(listing.addClass('inactive'));
       }
     }
     return _results;
@@ -293,26 +297,20 @@
 
   window.fate_core_update_active_stunts = function(opts) {
     var match, name, row, stunt, value;
-    console.log('updating stunts');
     name = opts['fieldName'];
-    console.log(name);
     value = opts['fieldValue'];
-    console.log(value);
     match = name.match(/stunt_(\d\d)_active/);
-    console.log(match);
     if (!match) {
       return;
     }
     stunt = $(".dsf_stunt_" + match[1] + "_active");
-    console.log(stunt);
-    row = stunt.parent().parent().parent()[0];
-    console.log(row);
+    row = stunt.parent().parent().parent();
     if (value === '1') {
-      row.classList.add('active');
-      return row.classList.remove('inactive');
+      row.addClass('active');
+      return row.removeClass('inactive');
     } else {
-      row.classList.add('inactive');
-      return row.classList.remove('active');
+      row.addClass('inactive');
+      return row.removeClass('active');
     }
   };
 
@@ -325,18 +323,18 @@
       return;
     }
     consequence = $(".dsf_" + match[1] + "_consequence_activator");
-    container = consequence.parent().parent()[0];
-    if (container.classList.contains('extra')) {
+    container = consequence.parent().parent();
+    if (container.hasClass('extra')) {
       on_value = '1';
     } else {
       on_value = '0';
     }
     if (value === on_value) {
-      container.classList.add('active');
-      return container.classList.remove('inactive');
+      container.addClass('active');
+      return container.removeClass('inactive');
     } else {
-      container.classList.add('inactive');
-      return container.classList.remove('active');
+      container.addClass('inactive');
+      return container.removeClass('active');
     }
   };
 

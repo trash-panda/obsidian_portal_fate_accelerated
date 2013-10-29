@@ -61,64 +61,67 @@ window.fate_core_resize_name = () ->
   ), 1000
 
 window.fate_core_default_aspect_names = () ->
-  console.log 'default aspect names'
   aspects = $('.aspect_name')
   for aspect in aspects
-    if aspect.innerHTML == aisleten.characters.jeditablePlaceholder or aspect.innerHTML == ''
-      if aspect.classList.contains('dsf_concept_label')
-        aspect.innerHTML = 'High Concept'
-      else if aspect.classList.contains('dsf_trouble_label')
-        aspect.innerHTML = 'Trouble'
-      else if aspect.classList.contains('dsf_your_adventure_label')
-        aspect.innerHTML = 'Your Adventure'
-      else if aspect.classList.contains('dsf_crossing_paths_label')
-        aspect.innerHTML = 'Crossing Paths'
-      else if aspect.classList.contains('dsf_crossing_paths_again_label')
-        aspect.innerHTML = 'Crossing Paths Again'
+    aspect = $(aspect)
+    if aspect.text() == aisleten.characters.jeditablePlaceholder or aspect.text() == ''
+      if aspect.hasClass('dsf_concept_label')
+        aspect.text('High Concept')
+      else if aspect.hasClass('dsf_trouble_label')
+        aspect.text('Trouble')
+      else if aspect.hasClass('dsf_your_adventure_label')
+        aspect.text('Your Adventure')
+      else if aspect.hasClass('dsf_crossing_paths_label')
+        aspect.text('Crossing Paths')
+      else if aspect.hasClass('dsf_crossing_paths_again_label')
+        aspect.text('Crossing Paths Again')
       
 window.fate_core_default_skill_names = () ->
   skills = $('.skill_name')
   for skill in skills
-    if skill.innerHTML == aisleten.characters.jeditablePlaceholder or skill.innerHTML == ''
-      if skill.classList.contains('dsf_skill_1_label')
-        skill.innerHTML = 'Average (+1)'
-      else if skill.classList.contains('dsf_skill_2_label')
-        skill.innerHTML = 'Fair (+2)'
-      else if skill.classList.contains('dsf_skill_3_label')
-        skill.innerHTML = 'Good (+3)'
-      else if skill.classList.contains('dsf_skill_4_label')
-        skill.innerHTML = 'Great (+4)'
-      else if skill.classList.contains('dsf_skill_5_label')
-        skill.innerHTML = 'Superb (+5)'
-      else if skill.classList.contains('dsf_skill_6_label')
-        skill.innerHTML = 'Fantastic (+6)'
+    skill = $(skill)
+    if skill.text() == aisleten.characters.jeditablePlaceholder or skill.text() == ''
+      if skill.hasClass('dsf_skill_1_label')
+        skill.text('Average (+1)')
+      else if skill.hasClass('dsf_skill_2_label')
+        skill.text('Fair (+2)')
+      else if skill.hasClass('dsf_skill_3_label')
+        skill.text('Good (+3)')
+      else if skill.hasClass('dsf_skill_4_label')
+        skill.text('Great (+4)')
+      else if skill.hasClass('dsf_skill_5_label')
+        skill.text('Superb (+5)')
+      else if skill.hasClass('dsf_skill_6_label')
+        skill.text('Fantastic (+6)')
 
 window.fate_core_default_extra_consequences = () ->
   consequences = $('.consequence')
   for consequence in consequences
-    label = consequence.children[0]
-    title = consequence.children[1]
-    if label.innerHTML == aisleten.characters.jeditablePlaceholder or label.innerHTML == ''
-      if consequence.classList.contains('mild')
-        label.innerHTML = '2'
-        title.innerHTML = 'Mild'
-      else if consequence.classList.contains('moderate')
-        label.innerHTML = '4'
-        title.innerHTML = 'Moderate'
-      else if consequence.classList.contains('severe')
-        label.innerHTML = '6'
-        title.innerHTML = 'Severe'
+    consequence = $(consequence)
+    label = consequence.children('.sheet_label')
+    title = consequence.children('.sheet_title')
+    if label.text() == aisleten.characters.jeditablePlaceholder or label.text() == '' or title.text() == aisleten.characters.jeditablePlaceholder or title.text() == ''
+      if consequence.hasClass('mild')
+        label.text('2')
+        title.text('Mild')
+      else if consequence.hasClass('moderate')
+        label.text('4')
+        title.text('Moderate')
+      else if consequence.hasClass('severe')
+        label.text('6')
+        title.text('Severe')
       else
-        label.innerHTML = '2'
-        title.innerHTML = 'Extra'
+        label.text('2')
+        title.text('Extra')
 
 window.fate_core_size_points = () ->
   points = $('.points_box').children('.grey').children('.dsf')
   for point in points
-    if point.innerHTML == aisleten.characters.jeditablePlaceholder or point.innerHTML == ''
-      point.classList.add('placeholder')
+    point = $(point)
+    if point.text() == aisleten.characters.jeditablePlaceholder or point.text() == ''
+      point.addClass('placeholder')
     else
-      point.classList.remove('placeholder')
+      point.removeClass('placeholder')
 
 window.fate_core_size_avatar = () ->
   avatar = $('.dsf_avatar_image').children().first()
@@ -133,96 +136,95 @@ window.fate_core_size_avatar = () ->
 window.fate_core_set_active_stunts = () ->
   stunts = $('table.stunts').children().children()
   for stunt in stunts
-    activator = stunt.children[2].children[0].children[0].children[0]
-    if activator.value == '1'
-      stunt.classList.add('active')
-      stunt.classList.remove('inactive')
+    stunt = $(stunt)
+    activator = stunt.children().children('.activator').children('span').children('input')
+    if activator.val() == '1'
+      stunt.addClass('active')
+      stunt.removeClass('inactive')
     else
-      stunt.classList.add('inactive')
-      stunt.classList.remove('active')
+      stunt.addClass('inactive')
+      stunt.removeClass('active')
 
 window.fate_core_set_active_aspects = () ->
-  console.log 'set active aspects'
   aspects = $('.aspect')
-  console.log aspects
   for aspect in aspects
-    console.log aspect
-    activator = aspect.children[2].children[0].children[0]
-    if aspect.classList.contains('extra')
+    aspect = $(aspect)
+    activator = aspect.children('.activator').children('span').children('input')
+    if aspect.hasClass('extra')
       on_value = '1'
     else
       on_value = '0'
-    console.log on_value
-    if activator.value == on_value
-      aspect.classList.add('active')
-      aspect.classList.remove('inactive')
+    if activator.val() == on_value
+      aspect.addClass('active')
+      aspect.removeClass('inactive')
     else
-      aspect.classList.add('inactive')
-      aspect.classList.remove('active')
+      aspect.addClass('inactive')
+      aspect.removeClass('active')
 
 window.fate_core_set_active_consequences = () ->
   consequences = $('.consequence')
   for consequence in consequences
-    activator = consequence.children[3].children[0].children[0]
+    consequence = $(consequence)
+    activator = consequence.children('.activator').children('span').children('input')
     # We default the main consequences to on for existing chars
-    if consequence.classList.contains('extra')
+    if consequence.hasClass('extra')
       on_value = '1'
     else
       on_value = '0'
-    if activator.value == on_value
-      consequence.classList.add('active')
-      consequence.classList.remove('inactive')
+    if activator.val() == on_value
+      consequence.addClass('active')
+      consequence.removeClass('inactive')
     else
-      consequence.classList.add('inactive')
-      consequence.classList.remove('active')
+      consequence.addClass('inactive')
+      consequence.removeClass('active')
 
 window.fate_core_set_active_stress_tracks = () ->
   tracks = $('.stress_track')
   for track in tracks
-    activator = track.children[1].children[0].children[0]
-    if activator.value == '0'
-      track.classList.add('inactive')
-      track.classList.remove('active')
+    track = $(track)
+    activator = track.children('.activator').children('.dsf').children('input')
+    if activator.val() == '0'
+      track.addClass('inactive')
+      track.removeClass('active')
     else
-      track.classList.add('active')
-      track.classList.remove('inactive')
+      track.addClass('active')
+      track.removeClass('inactive')
 
 window.fate_core_set_active_stress_boxes = () ->
   stresses = $('td.stress')
-  for entry in stresses
-    group = entry.children[0]
-    activator = entry.children[1].children[0].children[0]
-    if activator.value == '0'
-      group.classList.add('inactive')
+  stresses.each (index, entry) ->
+    entry = $(entry)
+    group = entry.children('.group')
+    activator = entry.children('.activator').children('.dsf').children('input')
+    if activator.val() == '0'
+      group.addClass('inactive')
     else
-      group.classList.add('active')
+      group.addClass('active')
 
 window.fate_core_mark_used_skills = () ->
-  listings = $('.skill.inactive')
+  listings = $('li.skill')
   for listing in listings
-    content = listing.childNodes[1].innerHTML.trim()
-    if content.length > 0
-      listing.className = 'skill'
+    listing = $(listing)
+    if listing.text().trim().length > 0
+      listing.removeClass('inactive')
+      listing.addClass('active')
+    else
+      listing.removeClass('active')
+      listing.addClass('inactive')
 
 window.fate_core_update_active_stunts = (opts) ->
-  console.log 'updating stunts'
   name = opts['fieldName']
-  console.log name
   value = opts['fieldValue']
-  console.log value
   match = name.match(/stunt_(\d\d)_active/)
-  console.log match
   return unless match
   stunt = $(".dsf_stunt_#{match[1]}_active")
-  console.log stunt
-  row = stunt.parent().parent().parent()[0]
-  console.log row
+  row = stunt.parent().parent().parent()
   if value == '1'
-    row.classList.add('active')
-    row.classList.remove('inactive')
+    row.addClass('active')
+    row.removeClass('inactive')
   else
-    row.classList.add('inactive')
-    row.classList.remove('active')
+    row.addClass('inactive')
+    row.removeClass('active')
 
 window.fate_core_update_active_consequences = (opts) ->
   name = opts['fieldName']
@@ -230,17 +232,17 @@ window.fate_core_update_active_consequences = (opts) ->
   match = name.match(/((\w+)(_\d\d)?)_consequence_activator/)
   return unless match
   consequence = $(".dsf_#{match[1]}_consequence_activator")
-  container = consequence.parent().parent()[0]
-  if container.classList.contains('extra')
+  container = consequence.parent().parent()
+  if container.hasClass('extra')
     on_value = '1'
   else
     on_value = '0'
   if value == on_value
-    container.classList.add('active')
-    container.classList.remove('inactive')
+    container.addClass('active')
+    container.removeClass('inactive')
   else
-    container.classList.add('inactive')
-    container.classList.remove('active')
+    container.addClass('inactive')
+    container.removeClass('active')
 
 window.fate_core_update_active_stress_tracks = (opts) ->
   name = opts['fieldName']
