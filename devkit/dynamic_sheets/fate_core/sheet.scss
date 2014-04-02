@@ -64,7 +64,15 @@
     padding-left: 5px;
     padding-top: 5px;
   }
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
+  table {
+    tr {
+      td {
+        font-family: 'Montserrat', sans-serif !important;
+      }
+    }
+  }
+
   font-size: 14px;
   .description {
     form.jeditable_input {
@@ -121,7 +129,7 @@
     display: none;
   }
   .sheet_boundary {
-    background: url(https://fc06.deviantart.net/fs11/i/2006/220/d/2/Grungy_paper_v_6___or_sumtin___by_bashcorpo.jpg);
+    background: white;
   }
   .container {
     margin: 5px;

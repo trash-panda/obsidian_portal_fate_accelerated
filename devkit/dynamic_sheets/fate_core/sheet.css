@@ -29,7 +29,7 @@
     border: 2px solid white; }
 
 .ds_fate_core {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   font-size: 14px; }
   .ds_fate_core table {
     background: none; }
@@ -40,6 +40,8 @@
   .ds_fate_core .game_info {
     padding-left: 5px;
     padding-top: 5px; }
+  .ds_fate_core table tr td {
+    font-family: 'Montserrat', sans-serif !important; }
   .ds_fate_core .description form.jeditable_input input {
     min-width: 200px !important;
     height: 20px !important; }
@@ -70,7 +72,7 @@
   .ds_fate_core .activator {
     display: none; }
   .ds_fate_core .sheet_boundary {
-    background: url(https://fc06.deviantart.net/fs11/i/2006/220/d/2/Grungy_paper_v_6___or_sumtin___by_bashcorpo.jpg); }
+    background: white; }
   .ds_fate_core .container {
     margin: 5px; }
   .ds_fate_core span.header.content {
