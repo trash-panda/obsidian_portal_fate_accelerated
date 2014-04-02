@@ -327,7 +327,9 @@
   .ds_fate_core .hurtings {
     margin-bottom: 20px; }
   .ds_fate_core .consequences {
-    width: 420px;
+    width: -moz-calc(100% - 300px);
+    width: -webkit-calc(100% - 300px);
+    width: calc(100% - 300px);
     margin-top: 0px;
     float: right; }
     .ds_fate_core .consequences .grey {
@@ -382,7 +384,7 @@
   .ds_fate_core .credits {
     margin-left: auto;
     margin-right: auto;
-    width: 45%;
+    width: 50%;
     font-size: 75%; }
   .ds_fate_core .backstory_container {
     padding-left: 4px; }

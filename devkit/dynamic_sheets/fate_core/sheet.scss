@@ -455,7 +455,7 @@
     .inactive {
       display: none;
     }
-    width: 420px;
+    @include width_calc('100% - 300px');
     margin-top: 0px;
 
     float:right;
@@ -512,7 +512,7 @@
   .credits {
     margin-left: auto;
     margin-right: auto;
-    width:45%;
+    width:50%;
     font-size: 75%;
   }
   .backstory_container {
