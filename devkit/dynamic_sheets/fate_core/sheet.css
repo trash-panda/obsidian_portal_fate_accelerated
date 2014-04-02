@@ -3,10 +3,10 @@
  * Copy and paste this directly into the CSS textarea on obsidianportal.com
  *****************************/
 .ds_fate_core.editable table.stunts tr.inactive {
-  color: darkgrey;
+  color: darkgrey !important;
   display: table-row; }
   .ds_fate_core.editable table.stunts tr.inactive td {
-    color: darkgrey; }
+    color: darkgrey !important; }
 .ds_fate_core.editable .activator {
   display: block; }
 .ds_fate_core.editable .aspect.inactive {
@@ -20,7 +20,8 @@
   .ds_fate_core.editable .consequence.inactive .sheet_label {
     color: darkgrey; }
 .ds_fate_core.editable .stress_track.inactive {
-  display: block; }
+  display: block;
+  background: lightgrey; }
   .ds_fate_core.editable .stress_track.inactive .activator {
     padding-left: 10px; }
   .ds_fate_core.editable .stress_track.inactive .sheet_label {
@@ -44,31 +45,34 @@
     font-family: 'Montserrat', sans-serif !important; }
   .ds_fate_core .description form.jeditable_input input {
     min-width: 200px !important;
-    height: 20px !important; }
-  .ds_fate_core .aspects .sheet_title form.jeditable_input {
-    height: 14px; }
-    .ds_fate_core .aspects .sheet_title form.jeditable_input input {
-      min-width: 170px !important;
-      max-width: 170px !important;
-      height: 20px !important; }
+    padding: 0px; }
+  .ds_fate_core .aspects .sheet_title form.jeditable_input input {
+    min-width: 170px !important;
+    max-width: 170px !important;
+    padding: 0px; }
   .ds_fate_core .aspects .grey form.jeditable_input {
     height: 14px; }
     .ds_fate_core .aspects .grey form.jeditable_input input {
       min-width: 485px !important;
       max-width: 485px !important;
-      height: 20px !important; }
+      padding: 0px; }
   .ds_fate_core form.jeditable_input {
     z-index: 1; }
     .ds_fate_core form.jeditable_input input {
       z-index: 1;
-      min-width: 80px !important; }
+      min-width: 80px !important;
+      padding: 0px;
+      height: 20px !important; }
     .ds_fate_core form.jeditable_input button {
       z-index: 1;
-      position: relative;
-      width: 35px; }
+      position: absolute;
+      background: grey;
+      margin: 3px;
+      padding: 0px 5px;
+      height: 18px; }
   .ds_fate_core .large_text form.jeditable_input input {
     min-width: 600px !important;
-    height: 20px !important; }
+    padding: 0px; }
   .ds_fate_core .activator {
     display: none; }
   .ds_fate_core .sheet_boundary {
@@ -188,7 +192,7 @@
         top: 40px; }
         .ds_fate_core .basic_info .points_box form.jeditable_input input {
           width: 10px !important;
-          height: 20px !important; }
+          padding: 0px; }
       .ds_fate_core .basic_info .points_box span.sheet_title {
         text-align: right;
         width: 98px;
@@ -231,7 +235,8 @@
       padding-left: 3px; }
       .ds_fate_core .aspects .aspect span.dsf form.jeditable_input {
         position: relative;
-        top: -23px; }
+        top: -1px;
+        height: 0px; }
     .ds_fate_core .aspects .aspect .activator {
       position: relative;
       top: -22px;
@@ -267,26 +272,33 @@
       top: -3px;
       left: 0px; }
       .ds_fate_core table.skills tr.skill td.skill_holder form.jeditable_input {
-        height: 9px;
-        position: relative;
-        top: 10px;
-        left: -1px; }
+        height: 0px;
+        position: absolute;
+        left: 3px; }
+        .ds_fate_core table.skills tr.skill td.skill_holder form.jeditable_input input {
+          min-width: 105px !important;
+          height: 16px !important; }
   .ds_fate_core table.skills ul {
     display: inline;
     list-style: none;
     margin-left: 0px;
-    margin-right: 0px; }
+    margin-right: 0px;
+    font-size: 0px; }
     .ds_fate_core table.skills ul li.inactive {
       border: 2px solid grey; }
+    .ds_fate_core table.skills ul li.active {
+      position: relative;
+      top: -4px; }
     .ds_fate_core table.skills ul li {
-      display: inline;
+      display: inline-block;
       border: 2px solid black;
-      margin: 0px 2px; }
+      margin: 0px 2px;
+      width: -moz-calc((100% - 66px)/6);
+      width: -webkit-calc((100% - 66px)/6);
+      width: calc((100% - 66px)/6); }
       .ds_fate_core table.skills ul li span {
         display: inline-block;
-        width: -moz-calc((100% - 94px)/6);
-        width: -webkit-calc((100% - 94px)/6);
-        width: calc((100% - 94px)/6);
+        position: relative;
         padding-left: 2px;
         height: 19px;
         font-size: 13px; }
@@ -370,7 +382,7 @@
         position: relative;
         top: -24px; }
         .ds_fate_core .consequences .consequence form.jeditable_input input {
-          height: 16px !important; }
+          padding: 0px; }
       .ds_fate_core .consequences .consequence .activator {
         position: relative;
         top: -82px;
