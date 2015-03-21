@@ -117,13 +117,19 @@
   .ds_fate_core .basic_info {
     width: 492px;
     height: auto; }
+    .ds_fate_core .basic_info .main_boxes {
+      margin: 1px;
+      height: 231px;
+      width: 455px; }
     .ds_fate_core .basic_info .left_box {
       width: 348px;
-      height: 231px; }
+      height: 231px;
+      float: left; }
     .ds_fate_core .basic_info .right_box {
       width: 105px;
-      height: 75px;
-      float: right; }
+      height: 231px;
+      float: left;
+      margin-left: 2px; }
     .ds_fate_core .basic_info .name {
       border: 2px solid black;
       height: 30px;

@@ -178,14 +178,21 @@
   .basic_info {
     width: 492px;
     height: auto;
+    .main_boxes {
+      margin: 1px;
+      height: 231px;
+      width: 455px;
+    }
     .left_box {
       width: 348px;
       height: 231px;
+      float: left;
     }
     .right_box {
       width: 105px;
-      height: 75px;
-      float: right;
+      height: 231px;
+      float: left;
+      margin-left: 2px;
     }
     .name {
       .grey {
