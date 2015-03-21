@@ -2,13 +2,18 @@
  * This is the CSS for the DST.
  * Copy and paste this directly into the CSS textarea on obsidianportal.com
  *****************************/
+@mixin width_calc($expression) {
+  width: -moz-calc(#{$expression});
+  width: -webkit-calc(#{$expression});
+  width: calc(#{$expression});
+}
 .ds_fate_core.editable {
   table.stunts {
     tr.inactive {
-      color: darkgrey;
+      color: darkgrey !important;
       display: table-row;
       td {
-        color: darkgrey;
+        color: darkgrey !important;
       }
     }
   }
@@ -31,6 +36,7 @@
   }
   .stress_track.inactive {
     display: block;
+    background: lightgrey;
     table {
     }
     .activator {
@@ -59,24 +65,31 @@
     padding-left: 5px;
     padding-top: 5px;
   }
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
+  table {
+    tr {
+      td {
+        font-family: 'Montserrat', sans-serif !important;
+      }
+    }
+  }
+
   font-size: 14px;
   .description {
     form.jeditable_input {
       input {
         min-width: 200px !important;
-        height: 20px !important;
+        padding: 0px;
       }
     }
   }
   .aspects {
     .sheet_title {
       form.jeditable_input {
-        height: 14px;
         input {
           min-width: 170px !important;
           max-width: 170px !important;
-          height: 20px !important;
+          padding: 0px;
         }
       }
     }
@@ -86,7 +99,7 @@
         input {
           min-width: 485px !important;
           max-width: 485px !important;
-          height: 20px !important;
+          padding: 0px;
         }
       }
     }
@@ -96,18 +109,23 @@
     input {
       z-index: 1;
       min-width: 80px !important;
+      padding: 0px;
+      height: 20px !important;
     }
     button {
       z-index: 1;
-      position:relative;
-      width: 35px;
+      position: absolute;
+      background: grey;
+      margin: 3px;
+      padding: 0px 5px;
+      height: 18px;
     }
   }
   .large_text {
     form.jeditable_input {
       input {
         min-width: 600px !important;
-        height: 20px !important;
+        padding: 0px;
       }
     }
   }
@@ -116,8 +134,7 @@
     display: none;
   }
   .sheet_boundary {
-    background: url(https://fc06.deviantart.net/fs11/i/2006/220/d/2/Grungy_paper_v_6___or_sumtin___by_bashcorpo.jpg);
-    width: 728px;
+    background: white;
   }
   .container {
     margin: 5px;
@@ -128,15 +145,16 @@
     display: inline-block;
     padding-bottom: 4px;
     height: 17px;
+    @include width_calc('100% - 42px');
   }
   span.header.left {
-    background: url(https://i.minus.com/ibq961ZORqAdvB.png);
+    background: url(https://db4sgowjqfwig.cloudfront.net/assets/313072/ibq961ZORqAdvB.png);
     display: inline-block;
     width: 21px;
     height: 21px;
   }
   span.header.right {
-    background: url(https://i.minus.com/ibs4Wqi27GD4q3.png);
+    background: url(https://db4sgowjqfwig.cloudfront.net/assets/313070/ibs4Wqi27GD4q3.png);
     float: none;
     display: inline-block;
     width: 21px;
@@ -176,15 +194,16 @@
     }
   }
   .basic_info {
-    width: 492px;
+    @include width_calc('100% - 272px');
     height: auto;
     .main_boxes {
       margin: 1px;
       height: 231px;
       width: 455px;
+      margin-bottom: 5px;
     }
     .left_box {
-      width: 348px;
+      @include width_calc('100% - 107px');
       height: 231px;
       float: left;
     }
@@ -231,7 +250,7 @@
       }
       .grey {
         height: 100%;
-        width: 239px;
+        @include width_calc('100% - 105px');
         float: left;
         padding-left: 4px;
       }
@@ -247,7 +266,7 @@
         top: 40px;
         input {
           width: 10px !important;
-          height: 20px !important;
+          padding: 0px;
         }
       }
       border: 2px solid black;
@@ -286,7 +305,6 @@
     .inactive {
       display: none
     }
-    width: 718px;
     .grey {
       margin-left: 185px;
       height: 21px;
@@ -307,7 +325,8 @@
         padding-left: 3px;
         form.jeditable_input {
           position: relative;
-          top: -23px;
+          top: -1px;
+          height: 0px;
         }
       }
       .activator {
@@ -327,7 +346,6 @@
     }
   }
   table.skills {
-    width: 720px;
     tr.skill {
       height: 30px;
       position: relative;
@@ -338,6 +356,7 @@
       }
       .skill_holder {
         display: inline-block;
+        width: 100%;
       }
       td.sheet_title {
         font-weight: bold;
@@ -353,10 +372,13 @@
         top: -3px;
         left: 0px;
         form.jeditable_input {
-          height: 9px;
-          position: relative;
-          top: 10px;
-          left: -1px;
+          height: 0px;
+          position: absolute;
+          left: 3px;
+          input {
+            min-width: 105px !important;
+            height: 16px !important;
+          }
         }
       }
     }
@@ -365,16 +387,22 @@
       list-style: none;
       margin-left: 0px;
       margin-right: 0px;
+      font-size: 0px;
       li.inactive {
         border: 2px solid grey;
       }
+      li.active {
+        position: relative;
+        top: -4px;
+      }
       li {
-        display:inline;
+        display:inline-block;
         border: 2px solid black;
         margin:0px 2px;
+        @include width_calc('(100% - 66px)/6');
         span {
           display: inline-block;
-          width: 84px;
+          position: relative;
           padding-left: 2px;
           height: 19px;
           font-size: 13px;
@@ -451,7 +479,7 @@
     .inactive {
       display: none;
     }
-    width: 420px;
+    @include width_calc('100% - 300px');
     margin-top: 0px;
 
     float:right;
@@ -486,7 +514,7 @@
         position: relative;
         top: -24px;
         input {
-          height: 16px !important;
+          padding: 0px;
         }
       }
       .activator {
@@ -508,7 +536,7 @@
   .credits {
     margin-left: auto;
     margin-right: auto;
-    width:45%;
+    width:50%;
     font-size: 75%;
   }
   .backstory_container {
