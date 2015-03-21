@@ -340,12 +340,17 @@
     border: none; }
   .ds_fate_core .hurtings {
     margin-bottom: 20px; }
-  .ds_fate_core .consequences {
+  .ds_fate_core .negative_aspects {
     width: -moz-calc(100% - 300px);
     width: -webkit-calc(100% - 300px);
     width: calc(100% - 300px);
     margin-top: 0px;
     float: right; }
+  .ds_fate_core .conditions {
+    margin-top: 0px; }
+  .ds_fate_core .consequences {
+    margin-top: 0px;
+    display: none; }
     .ds_fate_core .consequences .grey {
       margin-left: 90px;
       position: relative;

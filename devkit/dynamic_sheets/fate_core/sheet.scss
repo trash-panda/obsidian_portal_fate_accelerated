@@ -467,7 +467,17 @@
   .hurtings {
     margin-bottom: 20px;
   }
+  .negative_aspects {
+    @include width_calc('100% - 300px');
+    margin-top: 0px;
+    float:right;
+  }
+  .conditions {
+    margin-top: 0px;
+  }
   .consequences {
+    margin-top: 0px;
+    display: none;
     .grey {
       margin-left: 90px;
       position:relative;
@@ -478,10 +488,6 @@
     .inactive {
       display: none;
     }
-    @include width_calc('100% - 300px');
-    margin-top: 0px;
-
-    float:right;
     .consequence {
       height: 20px;
       margin: 12px 0px;
