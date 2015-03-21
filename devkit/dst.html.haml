@@ -22,15 +22,18 @@
     %span.dsf.dsf_extras
   .hurtings
     .negative_aspects
+      .condition.activator
+        Replace Consequences with Conditions:
+        %span.conditions_active.dsf.dsf_conditions_active.checkbox
       = Haml::Engine.new(File.read('devkit/consequences.html.haml')).render
       = Haml::Engine.new(File.read('devkit/conditions.html.haml')).render
     = Haml::Engine.new(File.read('devkit/stress.html.haml')).render
-    .bio
-      .backstory.container
-        %span.header.left  
-        %span.header.full_width_header.content BACKSTORY
-        %span.header.right  
-      %span.dsf.dsf_bio
+  .bio
+    .backstory.container
+      %span.header.left  
+      %span.header.full_width_header.content BACKSTORY
+      %span.header.right  
+    %span.dsf.dsf_bio
     .credits
       Character by
       = succeed "," do

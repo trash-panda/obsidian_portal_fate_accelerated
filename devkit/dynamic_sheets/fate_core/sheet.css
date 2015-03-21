@@ -5,6 +5,9 @@
 .ds_fate_core.editable .activator {
   display: block; }
 
+.hidden {
+  display: none; }
+
 .ds_fate_core table {
   background: none; }
   .ds_fate_core table tr:nth-of-type(even) {
@@ -21,6 +24,7 @@
 .ds_fate_core .container {
   margin: 5px; }
 .ds_fate_core .hurtings {
+  overflow: hidden;
   margin-bottom: 20px; }
 .ds_fate_core .negative_aspects {
   width: -moz-calc(100% - 300px);
@@ -203,8 +207,9 @@
     margin-bottom: 5px;
     padding-left: 5px; }
     .ds_fate_core .conditions table.conditions .group {
+      float: left;
       padding: 0px;
-      margin: 5px 5px;
+      margin: 5px 2px;
       height: 20px;
       width: 20px; }
     .ds_fate_core .conditions table.conditions .active {
@@ -216,6 +221,9 @@
     .ds_fate_core .conditions table.conditions td {
       padding-bottom: 0px;
       padding-top: 5px; }
+      .ds_fate_core .conditions table.conditions td span.dsf.condition_label {
+        float: left;
+        padding-top: 10px; }
       .ds_fate_core .conditions table.conditions td .group .sheet_label {
         width: 5px;
         font-weight: bold;
@@ -232,8 +240,7 @@
 .ds_fate_core .consequences_header {
   width: 378px; }
 .ds_fate_core .consequences {
-  margin-top: 0px;
-  display: none; }
+  margin-top: 0px; }
   .ds_fate_core .consequences .grey {
     margin-left: 90px;
     position: relative;
@@ -377,8 +384,7 @@
 .ds_fate_core .stress_track.inactive {
   display: none; }
 .ds_fate_core .stress_container {
-  width: 290px;
-  height: 192px; }
+  width: 290px; }
 .ds_fate_core table.stress {
   margin-bottom: 5px;
   padding-left: 5px; }

@@ -13,6 +13,10 @@
   }
 }
 
+.hidden {
+  display: none
+}
+
 .ds_fate_core {
   table {
     background: none;
@@ -38,6 +42,7 @@
     margin: 5px;
   }
   .hurtings {
+    overflow: hidden;
     margin-bottom: 20px;
   }
   .negative_aspects {

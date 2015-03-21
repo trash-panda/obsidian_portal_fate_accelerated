@@ -1,12 +1,3 @@
-
- #This is the javascript specific to the minimal4e DST
- # In this example, we're using some javascript to update the ability modifiers when someone changes their
- # level or their ability score.
- #
- # The key is to use the callback functions to catch the right events.
- # Read the top comments in characters.js to get a better idea of how the callbacks work.
- #
- # Copy and paste this directly into the javascript textarea on obsidianportal.com
 $ = jQuery
 
 window.fate_core_dataPreLoad = (options) ->
@@ -15,6 +6,8 @@ window.fate_core_dataPreLoad = (options) ->
 window.fate_core_dataPostLoad = (options) ->
   # Called just after the data is loaded.
   fate_core_mark_used_skills()
+  fate_core_set_conditions_or_consequences()
+  fate_core_set_active_conditions()
   fate_core_set_active_stress_boxes()
   fate_core_set_active_stress_tracks()
   fate_core_set_active_consequences()
@@ -31,6 +24,8 @@ window.fate_core_dataPostLoad = (options) ->
 window.fate_core_dataChange = (options) ->
   # Called immediately after a data value is changed.
   fate_core_update_skill(options)
+  fate_core_update_condition(options)
+  fate_core_activate_conditions_or_consequences(options)
   fate_core_update_active_stress(options)
   fate_core_update_active_stress_tracks(options)
   fate_core_update_active_consequences(options)
@@ -76,6 +71,19 @@ window.fate_core_default_aspect_names = () ->
       else if aspect.hasClass('dsf_crossing_paths_again_label')
         aspect.text('Crossing Paths Again')
       
+window.fate_core_set_active_conditions = () ->
+  conditions = $('td.conditions')
+  for condition in conditions
+    condition = $(condition)
+    group = $(condition.children()[0])
+    label = $(condition.children()[1])
+    if label.text() == aisleten.characters.jeditablePlaceholder or label.text() == ''
+      group.addClass('inactive')
+      group.removeClass('active')
+    else
+      group.addClass('active')
+      group.removeClass('inactive')
+
 window.fate_core_default_skill_names = () ->
   skills = $('.skill_name')
   for skill in skills
@@ -178,6 +186,17 @@ window.fate_core_set_active_consequences = () ->
       consequence.addClass('inactive')
       consequence.removeClass('active')
 
+window.fate_core_set_conditions_or_consequences = () ->
+  toggle = $('.dsf_conditions_active').children('input')
+  consequences = $('.consequences.container')
+  conditions = $('.conditions.container')
+  if toggle.val() == '0'
+    consequences.removeClass('hidden')
+    conditions.addClass('hidden')
+  else
+    conditions.removeClass('hidden')
+    consequences.addClass('hidden')
+
 window.fate_core_set_active_stress_tracks = () ->
   tracks = $('.stress_track')
   for track in tracks
@@ -269,6 +288,28 @@ window.fate_core_update_active_stress = (opts) ->
   else
     stress.parent().addClass('inactive')
     stress.parent().removeClass('active')
+
+window.fate_core_activate_conditions_or_consequences = (opts) ->
+  name = opts['fieldName']
+  value = opts['fieldValue']
+  match = name.match(/conditions_active/)
+  return unless match
+  fate_core_set_conditions_or_consequences()
+
+
+window.fate_core_update_condition = (opts) ->
+  name = opts['fieldName']
+  value = opts['fieldValue']
+  match = name.match(/(\w+)_condition_(\d\d)_label/)
+  return unless match
+  label = $(".dsf_#{name}").first()
+  group = label.parent().children().first()
+  if label.text() == aisleten.characters.jeditablePlaceholder or label.text() == ''
+    group.addClass('inactive')
+    group.removeClass('active')
+  else
+    group.addClass('active')
+    group.removeClass('inactive')
 
 window.fate_core_update_skill = (opts) ->
   name = opts['fieldName']
