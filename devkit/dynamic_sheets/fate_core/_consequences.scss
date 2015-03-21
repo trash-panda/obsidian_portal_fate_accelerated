@@ -1,0 +1,77 @@
+.ds_fate_core {
+  .consequences_header {
+    width: 378px;
+  }
+  .consequences {
+    margin-top: 0px;
+    display: none;
+    .grey {
+      margin-left: 90px;
+      position:relative;
+      top: -62px;
+      height: 100%;
+      overflow: hidden;
+    }
+    .inactive {
+      display: none;
+    }
+    .consequence {
+      height: 20px;
+      margin: 12px 0px;
+      border: 2px solid black;
+      .sheet_label {
+        position: relative;
+        left: -10px;
+        top: -23px;
+        font-size: 2em;
+        font-weight: bold;
+        z-index: 1;
+      }
+      span.sheet_title {
+        display: block;
+        padding-right: 3px;
+        text-align: right;
+        height: 20px;
+        width: 85px;
+        position:relative;
+        left:0px;
+        top: -43px;
+        font-weight: bold;
+      }
+      span.value {
+        z-index: 1;
+        padding-left: 3px;
+      }
+      form.jeditable_input {
+        position: relative;
+        top: -24px;
+        input {
+          padding: 0px;
+        }
+      }
+      .activator {
+        position: relative;
+        top: -82px;
+        left: 341px;
+        width: 67px;
+        padding: 0px;
+        padding-left: 3px;
+        height: 20px;
+        input {
+          position: relative;
+          top: 63px;
+          left: -291px;
+        }
+      }
+    }
+  }
+}
+.ds_fate_core.editable {
+  .consequence.inactive {
+    display: block;
+    border: 2px solid darkgrey;
+    .sheet_label {
+      color: darkgrey;
+    }
+  }
+}

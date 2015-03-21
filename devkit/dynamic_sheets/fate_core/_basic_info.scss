@@ -1,0 +1,114 @@
+.ds_fate_core {
+  .basic_info {
+    @include width_calc('100% - 272px');
+    height: auto;
+    .main_boxes {
+      margin: 1px;
+      height: 231px;
+      margin-bottom: 5px;
+    }
+    .left_box {
+      @include width_calc('100% - 107px');
+      height: 231px;
+      float: left;
+    }
+    .right_box {
+      width: 105px;
+      height: 231px;
+      float: left;
+      margin-left: 2px;
+    }
+    .name {
+      .grey {
+        margin-left: 101px;
+        height: 100%;
+      }
+      border: 2px solid black;
+      height: 30px;
+      margin-bottom: 3px;
+      white-space: nowrap;
+      span.sheet_title {
+        text-align: right;
+        width: 98px;
+        height: 30px;
+        font-weight: bold;
+        float:left;
+        padding-right: 5px;
+      }
+      span.dsf {
+        padding-left: 5px;
+        height: 30px;
+      }
+    }
+    .description {
+      form.jeditable_input {
+        input {
+          min-width: 200px !important;
+          padding: 0px;
+        }
+      }
+      border: 2px solid black;
+      height: 190px;
+      overflow: hidden;
+      .see-through {
+        text-align: right;
+        width: 97px;
+        height: 190px;
+        font-weight: bold;
+        float:left;
+        padding-right: 4px;
+        margin-right: 0px;
+      }
+      .grey {
+        height: 100%;
+        @include width_calc('100% - 105px');
+        float: left;
+        padding-left: 4px;
+      }
+    }
+    .points_box {
+      .grey {
+        height: 91px;
+        position: relative;
+        top: 20px;
+      }
+      form.jeditable_input {
+        position: relative;
+        top: 40px;
+        input {
+          width: 10px !important;
+          padding: 0px;
+        }
+      }
+      border: 2px solid black;
+      height: 109px;
+      margin-bottom: 5px;
+      span.sheet_title {
+        text-align: right;
+        width: 98px;
+        height: 21px;
+        font-weight: bold;
+        float:left;
+        padding-right: 3px;
+      }
+      span.dsf {
+        font-size: 6em;
+        width: 76px;
+        position: relative;
+        left: 20px;
+        bottom: 40px;
+        font-weight: bold;
+      }
+      span.dsf.placeholder {
+        left: 5px;
+        font-size: 1em;
+        top: 20px;
+        font-weight: normal;
+        form.jeditable_input {
+          top: 10px;
+          position: relative;
+        }
+      }
+    }
+  }
+}

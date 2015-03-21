@@ -1,0 +1,75 @@
+.ds_fate_core {
+  .aspects {
+    .sheet_title {
+      form.jeditable_input {
+        input {
+          min-width: 170px !important;
+          max-width: 170px !important;
+          padding: 0px;
+        }
+      }
+    }
+    .grey {
+      form.jeditable_input {
+        height: 14px;
+        input {
+          min-width: 485px !important;
+          max-width: 485px !important;
+          padding: 0px;
+        }
+      }
+    }
+    .inactive {
+      display: none
+    }
+    .grey {
+      margin-left: 185px;
+      height: 21px;
+      overflow: hidden;
+    }
+    .aspect {
+      border: 2px solid black;
+      margin: 3px 0px;
+      height: 21px;
+      span.sheet_title {
+        text-align: right;
+        width: 180px;
+        font-weight: bold;
+        float:left;
+        padding-right: 3px;
+      }
+      span.dsf {
+        padding-left: 3px;
+        form.jeditable_input {
+          position: relative;
+          top: -1px;
+          height: 0px;
+        }
+      }
+      .activator {
+        position: relative;
+        top: -22px;
+        left: 636px;
+        width: 67px;
+        padding: 0px;
+        padding-left: 3px;
+        height: 20px;
+        input {
+          position: relative;
+          top: 3px;
+          left: -581px;
+        }
+      }
+    }
+  }
+}
+
+.ds_fate_core.editable {
+  .aspect.inactive {
+    display: block;
+    border: 2px solid darkgrey;
+    .sheet_title {
+      color: darkgrey;
+    }
+  }
+}

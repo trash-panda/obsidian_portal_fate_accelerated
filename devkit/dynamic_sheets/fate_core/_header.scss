@@ -1,0 +1,34 @@
+.ds_fate_core {
+  span.header.content {
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    padding-bottom: 4px;
+    height: 17px;
+    @include width_calc('100% - 42px');
+  }
+  span.header.left {
+    background: url(https://db4sgowjqfwig.cloudfront.net/assets/313072/ibq961ZORqAdvB.png);
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+  }
+  span.header.right {
+    background: url(https://db4sgowjqfwig.cloudfront.net/assets/313070/ibs4Wqi27GD4q3.png);
+    float: none;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+  }
+
+  .header{
+    background: black;
+    margin-bottom: 5px;
+  }
+  .id_header.content {
+    width: 414px;
+  }
+  .full_width_header.content {
+    width: 676px;
+  }
+}

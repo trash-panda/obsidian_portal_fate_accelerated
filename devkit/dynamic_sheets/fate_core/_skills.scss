@@ -1,0 +1,67 @@
+.ds_fate_core {
+  table.skills {
+    tr.skill {
+      height: 30px;
+      position: relative;
+      top: 0px;
+      left: 0px;
+      span {
+        display: inline-block;
+      }
+      .skill_holder {
+        display: inline-block;
+        width: 100%;
+      }
+      td.sheet_title {
+        font-weight: bold;
+        width:110px;
+        text-align:right;
+        padding-left:0px;
+        padding-right:2px;
+      }
+      td.skill_holder {
+        padding-left:0px;
+        height: 19px;
+        position: relative;
+        top: -3px;
+        left: 0px;
+        form.jeditable_input {
+          height: 0px;
+          position: absolute;
+          left: 3px;
+          input {
+            min-width: 105px !important;
+            height: 16px !important;
+          }
+        }
+      }
+    }
+    ul {
+      display:inline;
+      list-style: none;
+      margin-left: 0px;
+      margin-right: 0px;
+      font-size: 0px;
+      li.inactive {
+        border: 2px solid grey;
+      }
+      li.active {
+        position: relative;
+        top: -4px;
+      }
+      li {
+        display:inline-block;
+        border: 2px solid black;
+        margin:0px 2px;
+        @include width_calc('(100% - 66px)/6');
+        span {
+          display: inline-block;
+          position: relative;
+          padding-left: 2px;
+          height: 19px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

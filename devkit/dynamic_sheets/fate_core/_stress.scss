@@ -1,0 +1,65 @@
+.ds_fate_core {
+  .stress_header {
+    width: 238px;
+  }
+  .stress_track.inactive {
+    display: none
+  }
+  .stress_container {
+    width: 290px;
+    height: 192px;
+  }
+  table.stress {
+    margin-bottom: 5px;
+    padding-left: 5px;
+    .group {
+      padding: 0px;
+      margin: 5px 5px;
+      height: 20px;
+      width: 20px;
+    }
+    .active {
+      border: 2px solid black;
+      color: black;
+    }
+    .inactive {
+      border: 2px solid darkgrey;
+      color:darkgrey;
+    }
+    td {
+      .group {
+        .sheet_label {
+          width: 5px;
+          font-weight: bold;
+          font-size: 2em;
+          position: relative;
+          top: -10px;
+          left: -10px;
+          z-index:1;
+        }
+        span.dsf {
+          position:relative;
+          left: 4px;
+          top: -11px;
+        }
+      }
+    }
+  }
+}
+.ds_fate_core.editable {
+  .stress_track.inactive {
+    display: block;
+    background: lightgrey;
+    table {
+    }
+    .activator {
+      padding-left: 10px;
+    }
+    .sheet_label {
+      color: white;
+    }
+    .stress.group {
+      border: 2px solid white;
+    }
+  }
+}

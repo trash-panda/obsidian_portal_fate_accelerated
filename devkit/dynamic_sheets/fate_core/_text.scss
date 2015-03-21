@@ -1,0 +1,37 @@
+.ds_fate_core {
+  font-family: 'Montserrat', sans-serif !important;
+  table {
+    tr {
+      td {
+        font-family: 'Montserrat', sans-serif !important;
+      }
+    }
+  }
+
+  font-size: 14px;
+  form.jeditable_input {
+    z-index: 1;
+    input {
+      z-index: 1;
+      min-width: 80px !important;
+      padding: 0px;
+      height: 20px !important;
+    }
+    button {
+      z-index: 1;
+      position: absolute;
+      background: grey;
+      margin: 3px;
+      padding: 0px 5px;
+      height: 18px;
+    }
+  }
+  .large_text {
+    form.jeditable_input {
+      input {
+        min-width: 600px !important;
+        padding: 0px;
+      }
+    }
+  }
+}
