@@ -1,0 +1,43 @@
+!!!
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title DST Dev Kit
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js", :type => "text/javascript"}
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js", :type => "text/javascript"}
+    / This is where we do our magic. Take a look to get a better understanding of how to write javascript for your DST.
+    %script{:src => "http://www.obsidianportal.com/assets/manifest-02b4fcde2b92220d5e08cd7d01a5e256.js", :type => "text/javascript"}
+    / Load the example data. Modify this file to make sample data for your chosen system.
+    %script{:src => "example_data.js", :type => "text/javascript"}
+    / Load the CSS for the DST, replace with your own!
+    %link{:href => "dynamic_sheets/fate_core/sheet.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    / Load the JS for the DST, replace with your own!
+    %script{:src => "dynamic_sheets/fate_core/sheet.js", :type => "text/javascript"}
+  %body
+    %p
+      Below is an example dynamic character sheet. Try clicking on the values in order to edit them. This is how users will interact with a dynamic sheet.
+    %p
+      If you want to make your own, make sure to
+      %a{:href => "http://help.obsidianportal.com/faqs/advanced/creating-a-dynamic-character-sheet-template-dst"} read the tutorial
+      first. Then, just start editing the HTML in this file. Edit the sample data in
+      %em example_data.js
+      in order to create data that works with your chosen game system.
+    .dynamic_sheet_container
+      / Every dynamic sheet will be surrounded by a div that has the class of "ds_DST_SLUG". In this example, the slug for my DST is 'example'
+      #dynamic_sheet_999.dynamic_sheet.ds_fate_core.editable
+        / This is inserted automatically. Ignore it...
+        %span.dst_slug{:style => "display:none;"} fate_core
+        /
+          Below is your HTML template.
+          Copy ONLY this section into the HTML Template textarea on Obsidian Portal. Do not copy any of the
+          surrounding HTML!
+        = Haml::Engine.new(File.read('devkit/dst.html.haml')).render
+        / ds_fate_core
+      / dynamic_sheet_container
+      %br/
+      %br/
+      %button#character-save-button Save
+      %br/
+      %p
+        Right here is a hidden &lt;div&gt; that holds the data values that will be saved to the server. Click the save button and then examine the DOM (using Firebug) to see what will be sent.
+      #dynamic_sheet_values{:style => "display:none;"}

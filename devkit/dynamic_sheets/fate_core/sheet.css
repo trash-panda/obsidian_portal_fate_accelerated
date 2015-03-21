@@ -130,7 +130,6 @@
     .ds_fate_core .basic_info .main_boxes {
       margin: 1px;
       height: 231px;
-      width: 455px; }
       margin-bottom: 5px; }
     .ds_fate_core .basic_info .left_box {
       width: -moz-calc(100% - 107px);

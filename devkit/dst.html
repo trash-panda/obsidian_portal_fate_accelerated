@@ -1,0 +1,861 @@
+<!--
+  You are reading the source of my DST, awesome.  I highly recommend looking at the github for it (https://github.com/crimsonknave/obsidian_portal_fate) instead of where ever you are reading it now.  I'm writing the javascript in coffeescript so that's probably going to be more readable and the css is in scss.  If you find any bugs or have any feature requests you can create an issue on the github page or send me a message on Obsidian Portal.  Anything in master should be for the latest accepted version, branches will be in progress or not yet accepted submissions.
+-->
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<div class='sheet_boundary'>
+  <div class='game_info'>
+    <div class='player'>
+      <span>Player</span>
+      <span class='dsf dsf_player'></span>
+    </div>
+    <div class='campaign'>
+      <span>Campaign</span>
+      <span class='dsf dsf_campaign'></span>
+    </div>
+  </div>
+  <div class='avatar container'>
+    <span class='dsf dsf_avatar_image readonly'></span>
+  </div>
+  <div class='basic_info container'>
+    <div class='header_container'>
+      <span class='header left'> </span>
+      <span class='header id_header content'>ID</span>
+      <span class='header right'> </span>
+    </div>
+    <div class='main_boxes'>
+      <div class='left_box'>
+        <div class='name'>
+          <span class='sheet_title'>Name</span>
+          <div class='grey'>
+            <span class='dsf dsf_name'></span>
+          </div>
+        </div>
+        <div class='description'>
+          <div class='see-through'>
+            <span class='sheet_title'>Description</span>
+          </div>
+          <div class='grey'>
+            <span class='dsf dsf_description_field'></span>
+          </div>
+        </div>
+      </div>
+      <div class='right_box'>
+        <div class='refresh points_box'>
+          <span class='sheet_title'>Refresh</span>
+          <div class='grey'>
+            <span class='dsf dsf_refresh'></span>
+          </div>
+        </div>
+        <div class='fate_points points_box'>
+          <span class='sheet_title'>Fate Points</span>
+          <div class='grey'>
+            <span class='dsf dsf_fate_points'></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='aspects_header container'>
+    <span class='header left'> </span>
+    <span class='header content full_width_header'>ASPECTS</span>
+    <span class='header right'> </span>
+  </div>
+  <div class='aspects container'>
+    <div class='concept aspect'>
+      <span class='sheet_title aspect_name dsf dsf_concept_label'></span>
+      <div class='grey'>
+        <span class='dsf dsf_concept'></span>
+      </div>
+      <div class='activator'>
+        Disable:
+        <span class='activator dsf dsf_concept_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='trouble aspect'>
+      <span class='sheet_title aspect_name dsf dsf_trouble_label'></span>
+      <div class='grey'>
+        <span class='dsf dsf_trouble'></span>
+      </div>
+      <div class='activator'>
+        Disable:
+        <span class='activator dsf dsf_trouble_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='your_adventure aspect'>
+      <span class='sheet_title aspect_name dsf dsf_your_adventure_label'></span>
+      <div class='grey'>
+        <span class='dsf dsf_your_adventure'></span>
+      </div>
+      <div class='activator'>
+        Disable:
+        <span class='activator dsf dsf_your_adventure_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='crossing_paths aspect'>
+      <span class='sheet_title aspect_name dsf dsf_crossing_paths_label'></span>
+      <div class='grey'>
+        <span class='dsf dsf_crossing_paths'></span>
+      </div>
+      <div class='activator'>
+        Disable:
+        <span class='activator dsf dsf_crossing_paths_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='crossing_paths_again aspect'>
+      <span class='sheet_title aspect_name dsf dsf_crossing_paths_again_label'></span>
+      <div class='grey'>
+        <span class='dsf dsf_crossing_paths_again'></span>
+      </div>
+      <div class='activator'>
+        Disable:
+        <span class='activator dsf dsf_crossing_paths_again_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='aspect_06 aspect extra'>
+      <span class='sheet_title dsf dsf_aspect_06_title'></span>
+      <div class='grey'>
+        <span class='dsf dsf_aspect_06'></span>
+      </div>
+      <div class='activator'>
+        Enable:
+        <span class='activator dsf dsf_aspect_06_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='aspect_07 aspect extra'>
+      <span class='sheet_title dsf dsf_aspect_07_title'></span>
+      <div class='grey'>
+        <span class='dsf dsf_aspect_07'></span>
+      </div>
+      <div class='activator'>
+        Enable:
+        <span class='activator dsf dsf_aspect_07_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='aspect_08 aspect extra'>
+      <span class='sheet_title dsf dsf_aspect_08_title'></span>
+      <div class='grey'>
+        <span class='dsf dsf_aspect_08'></span>
+      </div>
+      <div class='activator'>
+        Enable:
+        <span class='activator dsf dsf_aspect_08_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='aspect_09 aspect extra'>
+      <span class='sheet_title dsf dsf_aspect_09_title'></span>
+      <div class='grey'>
+        <span class='dsf dsf_aspect_09'></span>
+      </div>
+      <div class='activator'>
+        Enable:
+        <span class='activator dsf dsf_aspect_09_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='aspect_10 aspect extra'>
+      <span class='sheet_title dsf dsf_aspect_10_title'></span>
+      <div class='grey'>
+        <span class='dsf dsf_aspect_10'></span>
+      </div>
+      <div class='activator'>
+        Enable:
+        <span class='activator dsf dsf_aspect_10_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='aspect_11 aspect extra'>
+      <span class='sheet_title dsf dsf_aspect_11_title'></span>
+      <div class='grey'>
+        <span class='dsf dsf_aspect_11'></span>
+      </div>
+      <div class='activator'>
+        Enable:
+        <span class='activator dsf dsf_aspect_11_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='aspect_12 aspect extra'>
+      <span class='sheet_title dsf dsf_aspect_12_title'></span>
+      <div class='grey'>
+        <span class='dsf dsf_aspect_12'></span>
+      </div>
+      <div class='activator'>
+        Enable:
+        <span class='activator dsf dsf_aspect_12_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='aspect_13 aspect extra'>
+      <span class='sheet_title dsf dsf_aspect_13_title'></span>
+      <div class='grey'>
+        <span class='dsf dsf_aspect_13'></span>
+      </div>
+      <div class='activator'>
+        Enable:
+        <span class='activator dsf dsf_aspect_13_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='aspect_14 aspect extra'>
+      <span class='sheet_title dsf dsf_aspect_14_title'></span>
+      <div class='grey'>
+        <span class='dsf dsf_aspect_14'></span>
+      </div>
+      <div class='activator'>
+        Enable:
+        <span class='activator dsf dsf_aspect_14_activator checkbox'></span>
+      </div>
+    </div>
+    <div class='aspect_15 aspect extra'>
+      <span class='sheet_title dsf dsf_aspect_15_title'></span>
+      <div class='grey'>
+        <span class='dsf dsf_aspect_15'></span>
+      </div>
+      <div class='activator'>
+        Enable:
+        <span class='activator dsf dsf_aspect_15_activator checkbox'></span>
+      </div>
+    </div>
+  </div>
+  <div class='skill_header container'>
+    <span class='header left'> </span>
+    <span class='header content full_width_header'>SKILLS</span>
+    <span class='header right'> </span>
+  </div>
+  <table class='skills container'>
+    <tr class='skill fantastic'>
+      <td class='sheet_title'>
+        <span class='skill_name dsf dsf_skill_6_label'></span>
+      </td>
+      <td class='skill_holder'>
+        <ul>
+          <li class='skill inactive'>
+            <span class='skill_fantastic dsf dsf_skill_fantastic_00'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_fantastic dsf dsf_skill_fantastic_01'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_fantastic dsf dsf_skill_fantastic_02'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_fantastic dsf dsf_skill_fantastic_03'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_fantastic dsf dsf_skill_fantastic_04'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_fantastic dsf dsf_skill_fantastic_05'></span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr class='skill superb'>
+      <td class='sheet_title'>
+        <span class='skill_name dsf dsf_skill_5_label'></span>
+      </td>
+      <td class='skill_holder'>
+        <ul>
+          <li class='skill inactive'>
+            <span class='skill_superb dsf dsf_skill_superb_00'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_superb dsf dsf_skill_superb_01'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_superb dsf dsf_skill_superb_02'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_superb dsf dsf_skill_superb_03'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_superb dsf dsf_skill_superb_04'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_superb dsf dsf_skill_superb_05'></span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr class='skill great'>
+      <td class='sheet_title'>
+        <span class='skill_name dsf dsf_skill_4_label'></span>
+      </td>
+      <td class='skill_holder'>
+        <ul>
+          <li class='skill inactive'>
+            <span class='skill_great dsf dsf_skill_great_00'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_great dsf dsf_skill_great_01'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_great dsf dsf_skill_great_02'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_great dsf dsf_skill_great_03'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_great dsf dsf_skill_great_04'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_great dsf dsf_skill_great_05'></span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr class='skill good'>
+      <td class='sheet_title'>
+        <span class='skill_name dsf dsf_skill_3_label'></span>
+      </td>
+      <td class='skill_holder'>
+        <ul>
+          <li class='skill inactive'>
+            <span class='skill_good dsf dsf_skill_good_00'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_good dsf dsf_skill_good_01'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_good dsf dsf_skill_good_02'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_good dsf dsf_skill_good_03'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_good dsf dsf_skill_good_04'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_good dsf dsf_skill_good_05'></span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr class='skill fair'>
+      <td class='sheet_title'>
+        <span class='skill_name dsf dsf_skill_2_label'></span>
+      </td>
+      <td class='skill_holder'>
+        <ul>
+          <li class='skill inactive'>
+            <span class='skill_fair dsf dsf_skill_fair_00'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_fair dsf dsf_skill_fair_01'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_fair dsf dsf_skill_fair_02'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_fair dsf dsf_skill_fair_03'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_fair dsf dsf_skill_fair_04'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_fair dsf dsf_skill_fair_05'></span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr class='skill average'>
+      <td class='sheet_title'>
+        <span class='skill_name dsf dsf_skill_1_label'></span>
+      </td>
+      <td class='skill_holder'>
+        <ul>
+          <li class='skill inactive'>
+            <span class='skill_average dsf dsf_skill_average_00'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_average dsf dsf_skill_average_01'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_average dsf dsf_skill_average_02'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_average dsf dsf_skill_average_03'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_average dsf dsf_skill_average_04'></span>
+          </li>
+          <li class='skill inactive'>
+            <span class='skill_average dsf dsf_skill_average_05'></span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <div class='stunts container'>
+    <span class='header left'> </span>
+    <span class='header content full_width_header'>STUNTS</span>
+    <span class='header right'> </span>
+    <table class='stunts'>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_01_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_01_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_01_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_02_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_02_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_02_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_03_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_03_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_03_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_04_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_04_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_04_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_05_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_05_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_05_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_06_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_06_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_06_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_07_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_07_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_07_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_08_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_08_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_08_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_09_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_09_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_09_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_10_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_10_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_10_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_11_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_11_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_11_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_12_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_12_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_12_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_13_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_13_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_13_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_14_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_14_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_14_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='name dsf dsf_stunt_15_name'></span>
+        </td>
+        <td>
+          <span class='value dsf dsf_stunt_15_description'></span>
+        </td>
+        <td>
+          <div class='activator'>
+            Show:
+            <span class='activator dsf dsf_stunt_15_active checkbox'></span>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <span class='dsf dsf_stunts large_text'></span>
+  </div>
+  <div class='extras container large_text'>
+    <span class='header left'> </span>
+    <span class='header content full_width_header'>EXTRAS</span>
+    <span class='header right'> </span>
+    <span class='dsf dsf_extras'></span>
+  </div>
+  <div class='hurtings'>
+    <div class='conditions container'>
+      <span class='header left'> </span>
+      <span class='header content conditons_header'>CONDITIONS</span>
+      <span class='header right'> </span>
+      <div class='fleeting condition'>
+        <span class='sheet_label dsf dsf_fleeting_condition'></span>
+      </div>
+      <div class='consequences container'>
+        <span class='header left'> </span>
+        <span class='header content consequences_header'>CONSEQUENCES</span>
+        <span class='header right'> </span>
+        <div class='mild consequence'>
+          <span class='sheet_label dsf dsf_mild_consequence_label'></span>
+          <span class='sheet_title dsf dsf_mild_consequence_title'></span>
+          <div class='grey'>
+            <span class='value dsf dsf_mild_consequence'></span>
+          </div>
+          <div class='activator'>
+            Disable:
+            <span class='activator dsf dsf_mild_consequence_activator checkbox'></span>
+          </div>
+        </div>
+        <div class='moderate consequence'>
+          <span class='sheet_label dsf dsf_moderate_consequence_label'></span>
+          <span class='sheet_title dsf dsf_moderate_consequence_title'></span>
+          <div class='grey'>
+            <span class='value dsf dsf_moderate_consequence'></span>
+          </div>
+          <div class='activator'>
+            Disable:
+            <span class='activator dsf dsf_moderate_consequence_activator checkbox'></span>
+          </div>
+        </div>
+        <div class='severe consequence'>
+          <span class='sheet_label dsf dsf_severe_consequence_label'></span>
+          <span class='sheet_title dsf dsf_severe_consequence_title'></span>
+          <div class='grey'>
+            <span class='value dsf dsf_severe_consequence'></span>
+          </div>
+          <div class='activator'>
+            Disable:
+            <span class='activator dsf dsf_severe_consequence_activator checkbox'></span>
+          </div>
+        </div>
+        <div class='extra consequence'>
+          <span class='sheet_label dsf dsf_extra_01_consequence_label'></span>
+          <span class='sheet_title dsf dsf_extra_01_consequence_title'></span>
+          <div class='grey'>
+            <span class='value dsf dsf_extra_01_consequence'></span>
+          </div>
+          <div class='activator'>
+            Enable:
+            <span class='activator dsf dsf_extra_01_consequence_activator checkbox'></span>
+          </div>
+        </div>
+        <div class='extra consequence'>
+          <span class='sheet_label dsf dsf_extra_02_consequence_label'></span>
+          <span class='sheet_title dsf dsf_extra_02_consequence_title'></span>
+          <div class='grey'>
+            <span class='value dsf dsf_extra_02_consequence'></span>
+          </div>
+          <div class='activator'>
+            Enable:
+            <span class='activator dsf dsf_extra_02_consequence_activator checkbox'></span>
+          </div>
+        </div>
+        <div class='extra consequence'>
+          <span class='sheet_label dsf dsf_extra_03_consequence_label'></span>
+          <span class='sheet_title dsf dsf_extra_03_consequence_title'></span>
+          <div class='grey'>
+            <span class='value dsf dsf_extra_03_consequence'></span>
+          </div>
+          <div class='activator'>
+            Enable:
+            <span class='activator dsf dsf_extra_03_consequence_activator checkbox'></span>
+          </div>
+        </div>
+      </div>
+      <div class='stress_container'>
+        <div class='physical stress container'>
+          <span class='header left'> </span>
+          <span class='header content stress_header'>PHYSICAL STRESS (Physique)</span>
+          <span class='header right'> </span>
+        </div>
+        <table class='physical stress'>
+          <tr>
+            <td class='stress'>
+              <div class='stress group'>
+                <div class='sheet_label'>1</div>
+                <span class='dsf dsf_physical_stress_01 checkbox'></span>
+              </div>
+              <div class='stress activator'>
+                On:
+                <span class='stress_active dsf dsf_physical_stress_01_active checkbox'></span>
+              </div>
+            </td>
+            <td class='stress'>
+              <div class='stress group'>
+                <div class='sheet_label'>2</div>
+                <span class='dsf dsf_physical_stress_02 checkbox'></span>
+              </div>
+              <div class='stress activator'>
+                On:
+                <span class='stress_active dsf dsf_physical_stress_02_active checkbox'></span>
+              </div>
+            </td>
+            <td class='stress'>
+              <div class='stress group'>
+                <div class='sheet_label'>3</div>
+                <span class='dsf dsf_physical_stress_03 checkbox'></span>
+              </div>
+              <div class='stress activator'>
+                On:
+                <span class='stress_active dsf dsf_physical_stress_03_active checkbox'></span>
+              </div>
+            </td>
+            <td class='stress'>
+              <div class='stress group'>
+                <div class='sheet_label'>4</div>
+                <span class='dsf dsf_physical_stress_04 checkbox'></span>
+              </div>
+              <div class='stress activator'>
+                On:
+                <span class='stress_active dsf dsf_physical_stress_04_active checkbox'></span>
+              </div>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+        <div class='mental stress container'>
+          <span class='header left'> </span>
+          <span class='header content stress_header'>MENTAL STRESS (Will)</span>
+          <span class='header right'> </span>
+        </div>
+        <table class='mental stress'>
+          <tr>
+            <td class='stress'>
+              <div class='stress group'>
+                <div class='sheet_label'>1</div>
+                <span class='dsf dsf_mental_stress_01 checkbox'></span>
+              </div>
+              <div class='stress activator'>
+                On:
+                <span class='stress_active dsf dsf_mental_stress_01_active checkbox'></span>
+              </div>
+            </td>
+            <td class='stress'>
+              <div class='stress group'>
+                <div class='sheet_label'>2</div>
+                <span class='dsf dsf_mental_stress_02 checkbox'></span>
+              </div>
+              <div class='stress activator'>
+                On:
+                <span class='stress_active dsf dsf_mental_stress_02_active checkbox'></span>
+              </div>
+            </td>
+            <td class='stress'>
+              <div class='stress group'>
+                <div class='sheet_label'>3</div>
+                <span class='dsf dsf_mental_stress_03 checkbox'></span>
+              </div>
+              <div class='stress activator'>
+                On:
+                <span class='stress_active dsf dsf_mental_stress_03_active checkbox'></span>
+              </div>
+            </td>
+            <td class='stress'>
+              <div class='stress group'>
+                <div class='sheet_label'>4</div>
+                <span class='dsf dsf_mental_stress_04 checkbox'></span>
+              </div>
+              <div class='stress activator'>
+                On:
+                <span class='stress_active dsf dsf_mental_stress_04_active checkbox'></span>
+              </div>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+        <div class='stress_track inactive'>
+          <div class='inactive stress container'>
+            <span class='header left'> </span>
+            <span class='header content stress_header dsf dsf_extra_01_stress_header'></span>
+            <span class='header right'> </span>
+          </div>
+          <div class='activator'>
+            Display?
+            <span class='dsf dsf_extra_01_stress_active checkbox'></span>
+          </div>
+          <table class='inactive stress'>
+            <tr>
+              <td class='stress'>
+                <div class='stress group'>
+                  <div class='sheet_label'>1</div>
+                  <span class='dsf dsf_extra_01_stress_01 checkbox'></span>
+                </div>
+                <div class='stress activator'>
+                  On:
+                  <span class='stress_active dsf dsf_extra_01_stress_01_active checkbox'></span>
+                </div>
+              </td>
+              <td class='stress'>
+                <div class='stress group'>
+                  <div class='sheet_label'>2</div>
+                  <span class='dsf dsf_extra_01_stress_02 checkbox'></span>
+                </div>
+                <div class='stress activator'>
+                  On:
+                  <span class='stress_active dsf dsf_extra_01_stress_02_active checkbox'></span>
+                </div>
+              </td>
+              <td class='stress'>
+                <div class='stress group'>
+                  <div class='sheet_label'>3</div>
+                  <span class='dsf dsf_extra_01_stress_03 checkbox'></span>
+                </div>
+                <div class='stress activator'>
+                  On:
+                  <span class='stress_active dsf dsf_extra_01_stress_03_active checkbox'></span>
+                </div>
+              </td>
+              <td class='stress'>
+                <div class='stress group'>
+                  <div class='sheet_label'>4</div>
+                  <span class='dsf dsf_extra_01_stress_04 checkbox'></span>
+                </div>
+                <div class='stress activator'>
+                  On:
+                  <span class='stress_active dsf dsf_extra_01_stress_04_active checkbox'></span>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class='bio'>
+      <div class='backstory container'>
+        <span class='header left'> </span>
+        <span class='header full_width_header content'>BACKSTORY</span>
+        <span class='header right'> </span>
+      </div>
+      <span class='dsf dsf_bio'></span>
+    </div>
+    <div class='credits'>
+      Character by
+      <span class='dsf dsf_player'></span>,
+      <span class='dsf dsf_dst_author'></span>
+    </div>
+  </div>
+  <!-- End HTML Template - Don't copy anything below here into the template! -->
+</div>
