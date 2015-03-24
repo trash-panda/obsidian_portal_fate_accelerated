@@ -88,21 +88,14 @@
   };
 
   window.fate_core_set_active_conditions = function() {
-    var condition, conditions, group, i, label, len, results;
+    var condition, conditions, i, label, len, results;
     conditions = $('td.conditions');
     results = [];
     for (i = 0, len = conditions.length; i < len; i++) {
       condition = conditions[i];
       condition = $(condition);
-      group = $(condition.children()[0]);
-      label = $(condition.children()[1]);
-      if (label.text() === aisleten.characters.jeditablePlaceholder || label.text() === '') {
-        group.addClass('inactive');
-        results.push(group.removeClass('active'));
-      } else {
-        group.addClass('active');
-        results.push(group.removeClass('inactive'));
-      }
+      label = $(condition.children('span'));
+      results.push(enable_or_disable_conditions(label));
     }
     return results;
   };
@@ -422,8 +415,32 @@
     return fate_core_set_conditions_or_consequences();
   };
 
+  window.enable_or_disable_conditions = function(label) {
+    var group, groups, i, j, len, len1, results, results1;
+    groups = label.parent().children('.group');
+    if (label.text() === aisleten.characters.jeditablePlaceholder || label.text() === '') {
+      results = [];
+      for (i = 0, len = groups.length; i < len; i++) {
+        group = groups[i];
+        group = $(group);
+        group.addClass('inactive');
+        results.push(group.removeClass('active'));
+      }
+      return results;
+    } else {
+      results1 = [];
+      for (j = 0, len1 = groups.length; j < len1; j++) {
+        group = groups[j];
+        group = $(group);
+        group.addClass('active');
+        results1.push(group.removeClass('inactive'));
+      }
+      return results1;
+    }
+  };
+
   window.fate_core_update_condition = function(opts) {
-    var group, label, match, name, value;
+    var label, match, name, value;
     name = opts['fieldName'];
     value = opts['fieldValue'];
     match = name.match(/(\w+)_condition_(\d\d)_label/);
@@ -431,14 +448,7 @@
       return;
     }
     label = $(".dsf_" + name).first();
-    group = label.parent().children().first();
-    if (label.text() === aisleten.characters.jeditablePlaceholder || label.text() === '') {
-      group.addClass('inactive');
-      return group.removeClass('active');
-    } else {
-      group.addClass('active');
-      return group.removeClass('inactive');
-    }
+    return enable_or_disable_conditions(label);
   };
 
   window.fate_core_update_skill = function(opts) {

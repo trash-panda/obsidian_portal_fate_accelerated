@@ -1,13 +1,12 @@
 .ds_fate_core {
   .conditions {
-    margin-top: 0px;
     table.conditions {
       margin-bottom: 5px;
       padding-left: 5px;
       .group {
         float: left;
         padding: 0px;
-        margin: 5px 2px;
+        margin: 5px 5px;
         height: 20px;
         width: 20px;
       }
@@ -19,7 +18,11 @@
         border: 2px solid darkgrey;
         color:darkgrey;
       }
+      td.lasting {
+        width: 40%;
+      }
       td {
+        width: 30%;
         padding-bottom: 0px;
         padding-top: 5px;
         span.dsf.condition_label {

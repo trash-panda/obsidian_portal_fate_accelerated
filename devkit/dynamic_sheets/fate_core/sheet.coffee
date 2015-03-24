@@ -75,14 +75,8 @@ window.fate_core_set_active_conditions = () ->
   conditions = $('td.conditions')
   for condition in conditions
     condition = $(condition)
-    group = $(condition.children()[0])
-    label = $(condition.children()[1])
-    if label.text() == aisleten.characters.jeditablePlaceholder or label.text() == ''
-      group.addClass('inactive')
-      group.removeClass('active')
-    else
-      group.addClass('active')
-      group.removeClass('inactive')
+    label = $(condition.children('span'))
+    enable_or_disable_conditions(label)
 
 window.fate_core_default_skill_names = () ->
   skills = $('.skill_name')
@@ -297,19 +291,26 @@ window.fate_core_activate_conditions_or_consequences = (opts) ->
   fate_core_set_conditions_or_consequences()
 
 
+window.enable_or_disable_conditions = (label) ->
+  groups = label.parent().children('.group')
+  if label.text() == aisleten.characters.jeditablePlaceholder or label.text() == ''
+    for group in groups
+      group = $(group)
+      group.addClass('inactive')
+      group.removeClass('active')
+  else
+    for group in groups
+      group = $(group)
+      group.addClass('active')
+      group.removeClass('inactive')
+
 window.fate_core_update_condition = (opts) ->
   name = opts['fieldName']
   value = opts['fieldValue']
   match = name.match(/(\w+)_condition_(\d\d)_label/)
   return unless match
   label = $(".dsf_#{name}").first()
-  group = label.parent().children().first()
-  if label.text() == aisleten.characters.jeditablePlaceholder or label.text() == ''
-    group.addClass('inactive')
-    group.removeClass('active')
-  else
-    group.addClass('active')
-    group.removeClass('inactive')
+  enable_or_disable_conditions(label)
 
 window.fate_core_update_skill = (opts) ->
   name = opts['fieldName']
