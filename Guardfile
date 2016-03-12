@@ -46,3 +46,17 @@ end
 guard :haml do
   watch(/^.+(\.html\.haml)$/)
 end
+
+# If included files are built, compile the whole chain
+guard :shell do
+  watch(/^((?!index|dst).)*(\.html)$/) do |m|
+    require 'pp'
+    pp m
+    d = File.dirname m[0]
+    `touch #{File.join(d,'dst.html.haml')}`
+  end
+  watch(%r[^(.*/)?dst(\.html)$]) do |m|
+    d = File.dirname m[0]
+    `touch #{File.join(d,'index.html.haml')}`
+  end
+end

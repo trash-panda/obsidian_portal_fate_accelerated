@@ -70,7 +70,7 @@ window.fate_core_default_aspect_names = () ->
         aspect.text('Crossing Paths')
       else if aspect.hasClass('dsf_crossing_paths_again_label')
         aspect.text('Crossing Paths Again')
-      
+
 window.fate_core_set_active_conditions = () ->
   conditions = $('td.conditions')
   for condition in conditions
